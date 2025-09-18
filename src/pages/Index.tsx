@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ProblemSolution from "@/components/ProblemSolution";
 import FeaturesGrid from "@/components/FeaturesGrid";
+import TechnicalPipeline from "@/components/TechnicalPipeline";
 import InteractiveDemo from "@/components/InteractiveDemo";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import MetricsSection from "@/components/MetricsSection";
@@ -13,6 +14,7 @@ const Index = () => {
       <Hero />
       <ProblemSolution />
       <FeaturesGrid />
+      <TechnicalPipeline />
       <InteractiveDemo />
       <TestimonialsSection />
       <MetricsSection />
