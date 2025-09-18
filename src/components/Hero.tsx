@@ -22,7 +22,7 @@ const Hero = () => {
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-light border border-accent/20 rounded-full text-sm font-medium text-foreground mb-8 animate-scale-in">
             <Shield className="w-4 h-4 text-accent" />
-            Validated by Domain Experts • Built for Accuracy
+            Enterprise Ready
           </div>
           
           {/* Main Headline */}
