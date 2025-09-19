@@ -7,19 +7,16 @@ const DeploymentSection = () => {
       icon: Shield,
       title: "Enterprise Security",
       description: "Built with security-first architecture and enterprise-grade data protection",
-      highlight: "SOC 2 Ready"
     },
     {
       icon: Server,
       title: "No Model Training",
       description: "Your data never leaves your environment or gets used for training AI models",
-      highlight: "Data Privacy Guaranteed"
     },
     {
       icon: Lock,
       title: "On-Premise Deployment",
       description: "Deploy Knowledge Stack entirely within your infrastructure for maximum control",
-      highlight: "Air-Gapped Option Available"
     }
   ];
 
@@ -33,7 +30,7 @@ const DeploymentSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-16 bg-background/40 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -47,9 +44,9 @@ const DeploymentSection = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-              Deploy With{" "}
+              Security You {""}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Complete Control
+                Control, Completely
               </span>
             </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -66,11 +63,6 @@ const DeploymentSection = () => {
                   <CardContent className="p-8 text-center">
                     <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-8 h-8 text-primary-foreground" />
-                    </div>
-                    
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-light border border-accent/20 rounded-full text-sm font-medium text-accent mb-4">
-                      <CheckCircle className="w-3 h-3" />
-                      {feature.highlight}
                     </div>
                     
                     <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">

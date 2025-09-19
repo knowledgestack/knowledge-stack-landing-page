@@ -9,11 +9,6 @@ const TestimonialsSection = () => {
       title: "CFO",
       company: "Precision Analytics",
       type: "Table Parsing",
-      metrics: [
-        { value: "99.3%", label: "Table parsing accuracy" },
-        { value: "15min", label: "Saved per complex table" },
-        { value: "80%", label: "Reduction in manual review" }
-      ]
     },
     {
       quote: "Engineering drawings and technical specifications are notoriously difficult to parse. Knowledge Stack handles our most complex blueprints with remarkable precision.",
@@ -21,11 +16,6 @@ const TestimonialsSection = () => {
       title: "Engineering Director",
       company: "Apex Construction (Top 5 US)",
       type: "Engineering Drawings",
-      metrics: [
-        { value: "94%", label: "Technical drawing accuracy" },
-        { value: "2hrs", label: "Saved per project review" },
-        { value: "60%", label: "Faster project approvals" }
-      ]
     },
     {
       quote: "Knowledge Stack took over our entire RAG pipeline, letting us focus purely on agent logic. The document processing and retrieval quality is enterprise-grade.",
@@ -33,11 +23,6 @@ const TestimonialsSection = () => {
       title: "CTO", 
       company: "AgentFlow AI",
       type: "Agentic Platform",
-      metrics: [
-        { value: "6wks", label: "Saved in development time" },
-        { value: "97%", label: "Query relevance score" },
-        { value: "100%", label: "Focus on core product" }
-      ]
     }
   ];
 
@@ -48,7 +33,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-security">
+    <section className="py-16 bg-gradient-security">
       <div className="container mx-auto px-6">
         {/* Featured Testimonial */}
         <div className="max-w-4xl mx-auto text-center mb-16">
@@ -62,7 +47,7 @@ const TestimonialsSection = () => {
           
           <Card className="shadow-large border-0">
             <CardContent className="p-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-light border border-accent/20 rounded-full text-sm font-medium text-accent mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-light border border-primary/20 rounded-full text-sm font-medium text-primary mb-4">
                 <CheckCircle className="w-3 h-3" />
                 {currentTestimonial.type}
               </div>
@@ -80,20 +65,6 @@ const TestimonialsSection = () => {
               </div>
             </CardContent>
           </Card>
-          
-          {/* Metrics */}
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            {currentTestimonial.metrics.map((metric, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-accent mb-2">
-                  {metric.value}
-                </div>
-                <div className="text-muted-foreground">
-                  {metric.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Additional Testimonial Highlights */}
@@ -117,14 +88,6 @@ const TestimonialsSection = () => {
                       {testimonial.title}, {testimonial.company}
                     </div>
                   </div>
-                  <div className="ml-auto text-right">
-                    <div className="text-2xl font-bold text-primary">
-                      {testimonial.metrics[0].value}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      {testimonial.metrics[0].label}
-                    </div>
-                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -132,7 +95,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Partner Logos */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <p className="text-muted-foreground mb-8">
             Trusted by teams at leading companies
           </p>
@@ -143,7 +106,7 @@ const TestimonialsSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

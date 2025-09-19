@@ -49,7 +49,7 @@ const MetricsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-card">
+    <section className="py-16 bg-card">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
@@ -90,29 +90,6 @@ const MetricsSection = () => {
               </Card>
             );
           })}
-        </div>
-
-        {/* Security Readiness Section */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
-            Enterprise Security Readiness
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {readinessIndicators.map((indicator, index) => (
-              <div key={index} className="bg-background/50 border border-border rounded-lg p-4 text-center hover:border-accent/30 transition-colors animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="text-sm font-medium text-foreground">{indicator.name}</div>
-                <div className="text-xs text-accent mt-1">{indicator.status}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Real-time Status */}
-        <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-light border border-accent/20 rounded-full text-sm font-medium">
-            <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-            Processing documents • Expert validation active
-          </div>
         </div>
       </div>
     </section>

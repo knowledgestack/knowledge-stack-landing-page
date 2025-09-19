@@ -2,22 +2,75 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Knowledge Stack - Answers You Can Trust, Built for the Enterprise</title>
-    <meta name="description" content="The foundational data layer that ingests, enriches, and delivers insights — secure, accurate, and scalable. Zero hallucinations, complete source tracking." />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>Knowledge Stack — Knowledge You Can Trust, Built for the Enterprise</title>
+    <meta
+      name="description"
+      content="The foundational data layer that ingests, enriches, and delivers insights — secure, accurate, and scalable. Zero hallucinations, complete source tracking."
+    />
     <meta name="author" content="Knowledge Stack" />
+    <link rel="canonical" href="https://knowledgestack.ai/" />
 
+    <!-- Favicons / PWA -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0B101A" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Knowledge Stack - Enterprise AI Data Platform" />
-    <meta property="og:description" content="Secure, accurate AI answers with complete source tracking. SOC2 certified, zero hallucinations, built for enterprise scale." />
+    <meta
+      property="og:description"
+      content="Secure, accurate AI answers with complete source tracking. SOC 2-ready, built for enterprise scale."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:site_name" content="Knowledge Stack" />
+    <meta property="og:url" content="https://knowledgestack.ai/" />
+    <meta property="og:image" content="/og/knowledge-stack-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@knowledge_stack" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:title" content="Knowledge Stack - Enterprise AI Data Platform" />
+    <meta
+      name="twitter:description"
+      content="Secure, accurate AI answers with complete source tracking. SOC 2-ready, built for enterprise scale."
+    />
+    <meta name="twitter:image" content="/og/knowledge-stack-og.png" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Performance hints (safe defaults) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- If you load a webfont, include it here -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"> -->
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Knowledge Stack",
+        "url": "https://knowledgestack.ai",
+        "logo": "https://knowledgestack.ai/logo.png"
+      }
+    </script>
   </head>
 
   <body>
+    <noscript>
+      <strong>Knowledge Stack requires JavaScript to run properly. Please enable it in your browser.</strong>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

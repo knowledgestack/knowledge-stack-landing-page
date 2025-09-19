@@ -6,20 +6,20 @@ const FeaturesGrid = () => {
     {
       icon: <Database className="w-8 h-8 text-primary" />,
       title: "Ingest Anything",
-      description: "PDFs, spreadsheets, images, videos, and 50+ data connectors. Our intelligent parsing understands structure and context.",
+      description: "PDFs, spreadsheets, images, videos, and 50+ connectors. Our intelligent parsing understands structure and context.",
       benefits: ["Multi-format support", "Smart parsing", "Real-time sync", "API integrations"]
     },
     {
       icon: <Shield className="w-8 h-8 text-accent" />,
       title: "Secure & Compliant",
       description: "Enterprise-grade security with end-to-end encryption, granular access controls, and comprehensive audit logs.",
-      benefits: ["SOC2 Type II", "GDPR compliant", "Role-based access", "Audit trails"]
+      benefits: ["Audit trails", "Tenant Level Isolation", "Deploy on own architecture"]
     },
     {
       icon: <Target className="w-8 h-8 text-primary" />,
       title: "Accurate Answers",
-      description: "Zero hallucinations guaranteed. Every response is grounded in your data with AI validation and confidence scoring.",
-      benefits: ["Source verification", "Confidence scoring", "Fact checking", "Answer validation"]
+      description: "Every response is grounded in your data with AI validation and confidence scoring.",
+      benefits: ["Source verification", "Confidence scoring", "Fast Fact checking", "Answer validation"]
     },
     {
       icon: <Layers className="w-8 h-8 text-accent" />,
@@ -30,14 +30,14 @@ const FeaturesGrid = () => {
   ];
 
   return (
-    <section className="py-24 bg-secondary/30">
+    <section className="py-16 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Built for <span className="text-primary">Enterprise</span> Scale
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Every feature designed with security, accuracy, and scalability as core principles
+            Every feature designed with accuracy,security and scalability as core principles
           </p>
         </div>
 

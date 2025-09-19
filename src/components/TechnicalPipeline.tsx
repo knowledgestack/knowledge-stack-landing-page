@@ -35,7 +35,7 @@ const TechnicalPipeline = () => {
   ];
 
   return (
-    <section className="py-24 bg-card relative overflow-hidden">
+    <section className="py-16 bg-card/80 relative overflow-hidden">
       {/* Difficult Documents Background Animation */}
       <div className="absolute inset-0 opacity-10">
         {/* Engineering Drawing */}
@@ -66,146 +66,136 @@ const TechnicalPipeline = () => {
         </div>
       </div>
 
-      {/* Animated flowing line across pipeline */}
-      <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-30">
-          <div className="w-20 h-full bg-primary" style={{
-            animation: 'flow-right 4s ease-in-out infinite'
-          }}></div>
-      </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-              From Complex Documents to
+              From <span className="text-accent">Complex Documents</span> to
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Trusted Insights
               </span>
             </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Engineering drawings, complex tables, and difficult formats → parsed, chunked, and indexed → 
-              delivering verifiable answers with complete source traceability.
+              Delivers <span className="font-semibold text-accent">accurate verifiable answers</span> using 
+              <span className="font-semibold text-primary"> custom state-of-the-art pipeline</span>
             </p>
           </div>
 
-          {/* Pipeline Visualization - Column Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-16">
-            {pipelineSteps.map((step, index) => {
-              const Icon = step.icon;
-              const isActive = true; // All columns light up
-              
-              return (
-                <div key={index} className="relative group">
-                  {/* Column */}
-                  <div className={`p-6 rounded-2xl border-2 transition-all duration-500 ${
-                    isActive 
-                      ? 'bg-gradient-primary border-primary/50 shadow-glow animate-scale-in' 
-                      : 'bg-background/50 border-border'
-                  }`} style={{ animationDelay: `${index * 0.3}s` }}>
-                    
-                    {/* Icon */}
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-background/20 flex items-center justify-center">
-                      <Icon className={`w-6 h-6 ${isActive ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
+          {/* Pipeline Visualization - Horizontal Flow */}
+          <div className="relative mb-16 px-4">
+            {/* Main Pipeline Container */}
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-2 max-w-7xl mx-auto">
+              {pipelineSteps.map((step, index) => {
+                const Icon = step.icon;
+                const isActive = true; // All columns light up
+                
+                return (
+                  <div key={index} className="flex items-center">
+                    {/* Pipeline Step Card */}
+                    <div className={`relative p-4 rounded-2xl border-2 transition-all duration-500 w-full max-w-[200px] h-[280px] flex flex-col ${
+                      isActive 
+                        ? 'bg-gradient-primary border-primary/50 shadow-lg animate-scale-in' 
+                        : 'bg-background/50 border-border'
+                    }`} style={{ animationDelay: `${index * 0.2}s` }}>
+                      
+                      {/* Icon */}
+                      <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-background/20 flex items-center justify-center shadow-sm flex-shrink-0">
+                        <Icon className={`w-6 h-6 ${isActive ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className={`text-xl font-bold text-center mb-4 ${
+                        isActive ? 'text-primary-foreground' : 'text-foreground'
+                      }`}>
+                        {step.title}
+                      </h3>
+                      
+                      {/* Description with emphasized keywords */}
+                      <p className={`text-sm text-center leading-relaxed ${
+                        isActive ? 'text-primary-foreground/90' : 'text-muted-foreground'
+                      }`}>
+                        {step.description.split('—').map((part, partIndex) => {
+                          if (partIndex === 0) {
+                            // First part: emphasize key technical terms
+                            return part.split(' ').map((word, wordIndex) => {
+                              const keyTerms = ['PDFs', 'DOCs', 'HTML', 'media', 'entities', 'metadata', 'boundaries', 'chunks', 'vector', 'keyword', 'semantic', 'LLM'];
+                              const isKeyTerm = keyTerms.some(term => word.includes(term));
+                              return (
+                                <span key={wordIndex}>
+                                  {isKeyTerm ? (
+                                    <span className="font-bold text-black">{word}</span>
+                                  ) : (
+                                    word
+                                  )}
+                                  {wordIndex < part.split(' ').length - 1 ? ' ' : ''}
+                                </span>
+                              );
+                            });
+                          } else {
+                            // Second part: emphasize action words
+                            return (
+                              <span key={partIndex}>
+                                <span className="text-muted-foreground">—</span>
+                                {part.split(' ').map((word, wordIndex) => {
+                                  const actionWords = ['creating', 'identifies', 'laying', 'segments', 'preserving', 'recall', 'builds', 'combines', 'context-rich'];
+                                  const isActionWord = actionWords.some(action => word.toLowerCase().includes(action));
+                                  return (
+                                    <span key={wordIndex}>
+                                      {isActionWord ? (
+                                        <span className="font-bold text-black">{word}</span>
+                                      ) : (
+                                        word
+                                      )}
+                                      {wordIndex < part.split(' ').length - 1 ? ' ' : ''}
+                                    </span>
+                                  );
+                                })}
+                              </span>
+                            );
+                          }
+                        })}
+                      </p>
                     </div>
-                    
-                    {/* Title */}
-                    <h3 className={`text-lg font-bold text-center mb-3 ${
-                      isActive ? 'text-primary-foreground' : 'text-foreground'
-                    }`}>
-                      {step.title}
-                    </h3>
-                    
-                    {/* Description */}
-                    <p className={`text-sm text-center leading-relaxed ${
-                      isActive ? 'text-primary-foreground/90' : 'text-muted-foreground'
-                    }`}>
-                      {step.description}
-                    </p>
-                  </div>
 
-                  {/* Document State Visualization Under Each Column */}
-                  <div className="mt-4 p-4 bg-background/80 rounded-lg border border-border">
-                    {index === 0 && (
-                      // Raw Document
-                      <div className="space-y-2">
-                        <div className="text-xs font-medium text-muted-foreground text-center">Raw Document</div>
-                        <div className="w-full h-16 bg-gradient-to-r from-destructive/20 to-destructive/10 rounded border-2 border-dashed border-destructive/30 flex items-center justify-center">
-                          <span className="text-xs text-destructive">Complex Format</span>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {index === 1 && (
-                      // Parsed
-                      <div className="space-y-2">
-                        <div className="text-xs font-medium text-muted-foreground text-center">Parsed</div>
-                        <div className="space-y-1">
-                          <div className="h-2 bg-accent/40 rounded"></div>
-                          <div className="h-2 bg-accent/30 rounded"></div>
-                          <div className="h-2 bg-accent/50 rounded"></div>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {index === 2 && (
-                      // Chunked
-                      <div className="space-y-2">
-                        <div className="text-xs font-medium text-muted-foreground text-center">Chunked</div>
-                        <div className="grid grid-cols-2 gap-1">
-                          <div className="h-6 bg-primary/40 rounded"></div>
-                          <div className="h-6 bg-primary/30 rounded"></div>
-                          <div className="h-6 bg-primary/50 rounded"></div>
-                          <div className="h-6 bg-primary/35 rounded"></div>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {index === 3 && (
-                      // Indexed
-                      <div className="space-y-2">
-                        <div className="text-xs font-medium text-muted-foreground text-center">Indexed</div>
-                        <div className="relative">
-                          <div className="w-full h-8 bg-gradient-primary rounded flex items-center justify-center">
-                            <Database className="w-4 h-4 text-primary-foreground" />
+                    {/* Connecting Arrow - Centered Between Blocks */}
+                    {index < pipelineSteps.length - 1 && (
+                      <div className="hidden lg:flex items-center justify-center mx-3">
+                        <div className="relative flex items-center justify-center">
+                          {/* Arrow Background */}
+                          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                            <ArrowRight className="w-5 h-5 text-primary animate-pulse" />
                           </div>
-                          <div className="absolute inset-0 bg-primary/20 rounded animate-pulse"></div>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {index === 4 && (
-                      // Retrieved
-                      <div className="space-y-2">
-                        <div className="text-xs font-medium text-muted-foreground text-center">Retrieved</div>
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-accent rounded-full"></div>
-                            <div className="flex-1 h-1 bg-accent/60 rounded"></div>
-                            <span className="text-xs text-accent">95%</span>
-                          </div>
-                          <div className="text-xs text-muted-foreground">Verified Answer</div>
+                          {/* Flowing line effect */}
+                          <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping"></div>
                         </div>
                       </div>
                     )}
                   </div>
+                );
+              })}
+            </div>
 
-                  {/* Connecting Arrow */}
-                  {index < pipelineSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-1/3 -right-3 z-10">
-                      <ArrowRight className="w-6 h-6 text-primary animate-pulse" />
-                    </div>
-                  )}
+            {/* Mobile Arrows - Vertical */}
+            <div className="lg:hidden flex flex-col items-center space-y-4 mt-6">
+              {pipelineSteps.slice(0, -1).map((_, index) => (
+                <div key={index} className="flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4 text-primary rotate-90 animate-pulse" />
+                  </div>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
 
           {/* Bottom CTA */}
           <div className="text-center mt-16">
             <button className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full text-lg font-medium transition-all duration-300 group">
-              EXPLORE OUR ADVANCED PIPELINE
+              <span>EXPLORE OUR</span>
+              <span className="font-bold text-accent">ADVANCED</span>
+              <span>PIPELINE</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

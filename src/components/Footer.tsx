@@ -36,8 +36,51 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-foreground text-background py-16">
-      <div className="container mx-auto px-6">
+    <footer className="relative py-16 overflow-hidden">
+      {/* Hero-style background */}
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            radial-gradient(1200px 600px at 75% 10%, rgba(56,189,248,.16), transparent 60%),
+            radial-gradient(900px 500px at 15% 85%, rgba(59,130,246,.10), transparent 65%),
+            linear-gradient(180deg, hsl(var(--background)) 0%, hsl(220 27% 6%) 100%)
+          `,
+        }}
+      />
+
+      {/* Isometric grid (subtle) */}
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[.14] mix-blend-screen"
+        style={{
+          backgroundImage: `
+            repeating-linear-gradient(60deg, rgba(255,255,255,.06) 0 1px, transparent 1px 28px),
+            repeating-linear-gradient(-60deg, rgba(255,255,255,.06) 0 1px, transparent 1px 28px)
+          `,
+          WebkitMaskImage:
+            'radial-gradient(70% 60% at 50% 40%, black 60%, transparent 100%)',
+          maskImage:
+            'radial-gradient(70% 60% at 50% 40%, black 60%, transparent 100%)',
+        }}
+      />
+
+      {/* Sparse particles (very light) */}
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[.08]"
+        style={{
+          backgroundImage: `
+            radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.28) 50%, transparent 51%),
+            radial-gradient(2px 2px at 70% 60%, rgba(255,255,255,.20) 50%, transparent 51%),
+            radial-gradient(1.5px 1.5px at 35% 75%, rgba(255,255,255,.18) 50%, transparent 51%),
+            radial-gradient(1.5px 1.5px at 85% 25%, rgba(255,255,255,.16) 50%, transparent 51%)
+          `,
+        }}
+      />
+
+      <div className="relative z-10 container mx-auto px-6">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
@@ -45,7 +88,7 @@ const Footer = () => {
             <div className="text-2xl font-bold mb-4 text-accent">
               Knowledge Stack
             </div>
-            <p className="text-background/80 text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               The foundational data layer for enterprise AI - secure, accurate, and scalable.
             </p>
             <div className="flex gap-4 mt-6">
@@ -54,7 +97,7 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="p-2 bg-background/10 rounded-lg hover:bg-background/20 transition-smooth text-background/80 hover:text-background"
+                  className="p-2 bg-muted/20 rounded-lg hover:bg-muted/40 transition-smooth text-muted-foreground hover:text-foreground"
                 >
                   {social.icon}
                 </a>
@@ -65,13 +108,13 @@ const Footer = () => {
           {/* Links Columns */}
           <div className="md:col-span-4 grid sm:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-semibold text-background mb-4">Product</h3>
+              <h3 className="font-semibold text-foreground mb-4">Product</h3>
               <ul className="space-y-3">
                 {footerLinks.product.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-background/70 hover:text-background transition-colors text-sm"
+                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                     >
                       {link.name}
                     </a>
@@ -81,13 +124,13 @@ const Footer = () => {
             </div>
 
             <div>
-              <h3 className="font-semibold text-background mb-4">Company</h3>
+              <h3 className="font-semibold text-foreground mb-4">Company</h3>
               <ul className="space-y-3">
                 {footerLinks.company.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-background/70 hover:text-background transition-colors text-sm"
+                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                     >
                       {link.name}
                     </a>
@@ -97,13 +140,13 @@ const Footer = () => {
             </div>
 
             <div>
-              <h3 className="font-semibold text-background mb-4">Security</h3>
+              <h3 className="font-semibold text-foreground mb-4">Security</h3>
               <ul className="space-y-3">
                 {footerLinks.security.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-background/70 hover:text-background transition-colors text-sm"
+                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                     >
                       {link.name}
                     </a>
@@ -113,13 +156,13 @@ const Footer = () => {
             </div>
 
             <div>
-              <h3 className="font-semibold text-background mb-4">Legal</h3>
+              <h3 className="font-semibold text-foreground mb-4">Legal</h3>
               <ul className="space-y-3">
                 {footerLinks.legal.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-background/70 hover:text-background transition-colors text-sm"
+                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                     >
                       {link.name}
                     </a>
@@ -130,21 +173,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <Separator className="bg-background/20 my-8" />
+        <Separator className="bg-border my-8" />
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-background/60 text-sm">
-            © 2024 Knowledge Stack. All rights reserved.
-          </div>
-          <div className="flex items-center gap-6 text-sm text-background/60">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-              All systems operational
-            </div>
-            <div>
-              SOC2 Type II • ISO 27001 Certified
-            </div>
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="text-muted-foreground text-sm">
+            © 2025 Knowledge Stack. All rights reserved.
           </div>
         </div>
       </div>
