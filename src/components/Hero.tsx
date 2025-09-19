@@ -22,31 +22,30 @@ const Hero = () => {
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-light border border-accent/20 rounded-full text-sm font-medium text-foreground mb-8 animate-scale-in">
             <Shield className="w-4 h-4 text-accent" />
-            SOC2 Type II Compliant • Enterprise Ready
+            Validated by Domain Experts • Built for Accuracy
           </div>
           
           {/* Main Headline */}
           <h1 className="text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6 leading-tight">
-            Answers You Can{" "}
+            Bring{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Trust
             </span>
-            , Built for the Enterprise
+            {" "}Back to AI Answers
           </h1>
           
           {/* Subheadline */}
           <p className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            The foundational data layer that ingests, enriches, and delivers insights — 
-            secure, accurate, and scalable.
+            Knowledge Stack transforms raw documents into verifiable insights with complete source traceability and continuous learning from your experts.
           </p>
           
           {/* Key Benefits */}
           <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm">
             {[
-              "Zero Hallucinations",
-              "Source Citations",
-              "Enterprise Security",
-              "99.9% Uptime SLA"
+              "Complete Source Traceability",
+              "Expert Validated Outputs",
+              "Document → Chunk → Insight Flow",
+              "Mission-Critical Accuracy"
             ].map((benefit, index) => (
               <div key={index} className="flex items-center gap-2 text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-accent" />
@@ -58,7 +57,7 @@ const Hero = () => {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="text-lg px-8 py-4 h-auto bg-primary hover:bg-primary-dark transition-smooth group">
-              Request a Demo
+              Request Demo
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
@@ -66,7 +65,7 @@ const Hero = () => {
               size="lg" 
               className="text-lg px-8 py-4 h-auto border-2 hover:bg-secondary transition-smooth"
             >
-              See Source Tracking in Action
+              Try Interactive Demo
             </Button>
           </div>
         </div>

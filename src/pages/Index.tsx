@@ -3,6 +3,7 @@ import ProblemSolution from "@/components/ProblemSolution";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import TechnicalPipeline from "@/components/TechnicalPipeline";
 import InteractiveDemo from "@/components/InteractiveDemo";
+import ExpertValidation from "@/components/ExpertValidation";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import MetricsSection from "@/components/MetricsSection";
 import CTABanner from "@/components/CTABanner";
@@ -16,6 +17,7 @@ const Index = () => {
       <FeaturesGrid />
       <TechnicalPipeline />
       <InteractiveDemo />
+      <ExpertValidation />
       <TestimonialsSection />
       <MetricsSection />
       <CTABanner />

@@ -28,11 +28,16 @@ const InteractiveDemo = () => {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            See <span className="text-accent">Source Tracking</span> in Action
+          <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+            Complete Source
+            <br />
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
+              Traceability
+            </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Every answer comes with complete source traceability. No hallucinations, just facts.
+          <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            Hover over any answer to see which document chunks support it. 
+            Every insight is grounded in your original documents with confidence scores.
           </p>
         </div>
 
@@ -53,7 +58,7 @@ const InteractiveDemo = () => {
           </Card>
 
           {/* Answer */}
-          <Card className="lg:col-span-5 shadow-medium">
+          <Card className="lg:col-span-5 shadow-medium group">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-foreground">
                 <CheckCircle className="w-5 h-5 text-accent" />
@@ -62,7 +67,7 @@ const InteractiveDemo = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-foreground leading-relaxed">
+                <p className="text-foreground leading-relaxed group-hover:bg-accent/10 p-4 rounded-lg transition-all duration-300">
                   Q3 2024 showed strong performance across key metrics:
                 </p>
                 <ul className="space-y-2 text-sm">
@@ -79,9 +84,15 @@ const InteractiveDemo = () => {
                     <span><strong>Efficiency:</strong> CAC down 18%, LTV up 25%</span>
                   </li>
                 </ul>
-                <div className="flex items-center gap-2 mt-4 text-sm text-accent font-medium">
-                  <CheckCircle className="w-4 h-4" />
-                  Confidence: 95% • Verified across 3 sources
+                <div className="flex items-center gap-4 mt-4">
+                  <div className="flex items-center gap-2 text-sm text-accent">
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                    Confidence: 96%
+                  </div>
+                  <div className="flex-1 bg-border rounded-full h-2">
+                    <div className="bg-accent h-full rounded-full w-[96%] animate-scale-in"></div>
+                  </div>
+                  <div className="text-sm text-muted-foreground">3 sources</div>
                 </div>
               </div>
             </CardContent>
