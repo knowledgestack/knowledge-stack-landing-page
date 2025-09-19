@@ -67,19 +67,23 @@ const InteractiveDemo = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-foreground leading-relaxed group-hover:bg-accent/10 p-4 rounded-lg transition-all duration-300">
+                <p className="text-foreground leading-relaxed group-hover:bg-accent/10 p-4 rounded-lg transition-all duration-300 cursor-pointer relative">
                   Q3 2024 showed strong performance across key metrics:
+                  {/* Hover tooltip */}
+                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full flex items-center justify-center text-xs text-accent-foreground font-bold animate-pulse">
+                    ?
+                  </div>
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 hover:bg-accent/5 p-2 rounded transition-colors cursor-pointer">
                     <span className="text-accent font-semibold">•</span>
                     <span><strong>Revenue:</strong> $4.2M (+32% YoY)</span>
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 hover:bg-accent/5 p-2 rounded transition-colors cursor-pointer">
                     <span className="text-accent font-semibold">•</span>
                     <span><strong>Enterprise deals:</strong> 15 closed, avg $145K (+22%)</span>
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 hover:bg-accent/5 p-2 rounded transition-colors cursor-pointer">
                     <span className="text-accent font-semibold">•</span>
                     <span><strong>Efficiency:</strong> CAC down 18%, LTV up 25%</span>
                   </li>
@@ -93,6 +97,19 @@ const InteractiveDemo = () => {
                     <div className="bg-accent h-full rounded-full w-[96%] animate-scale-in"></div>
                   </div>
                   <div className="text-sm text-muted-foreground">3 sources</div>
+                </div>
+                
+                {/* Add to Knowledge Base Dropdown */}
+                <div className="mt-4 p-3 bg-accent-light/30 border border-accent/20 rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-foreground">Add to Knowledge Base</span>
+                    <button className="px-3 py-1 bg-accent text-accent-foreground text-xs rounded-full hover:bg-accent-dark transition-colors">
+                      + Add Chunks
+                    </button>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Mark validated answers as training data for improved accuracy
+                  </p>
                 </div>
               </div>
             </CardContent>

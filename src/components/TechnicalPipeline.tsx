@@ -36,58 +36,164 @@ const TechnicalPipeline = () => {
 
   return (
     <section className="py-24 bg-card relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(74, 144, 226, 0.3) 1px, transparent 0)`,
-          backgroundSize: '32px 32px'
-        }}></div>
+      {/* Difficult Documents Background Animation */}
+      <div className="absolute inset-0 opacity-10">
+        {/* Engineering Drawing */}
+        <div className="absolute top-10 left-10 w-24 h-16 border-2 border-primary rounded grid grid-cols-3 gap-1 p-1" style={{ animation: 'float 3s ease-in-out infinite', animationDelay: '0s' }}>
+          <div className="bg-primary/30 rounded"></div>
+          <div className="bg-primary/20 rounded"></div>
+          <div className="bg-primary/40 rounded"></div>
+        </div>
+        {/* Table */}
+        <div className="absolute top-20 right-20 w-20 h-16 border border-accent" style={{ animation: 'float 3s ease-in-out infinite', animationDelay: '1s' }}>
+          <div className="grid grid-cols-2 grid-rows-3 h-full">
+            <div className="border border-accent/30 bg-accent/10"></div>
+            <div className="border border-accent/30 bg-accent/20"></div>
+            <div className="border border-accent/30 bg-accent/30"></div>
+            <div className="border border-accent/30 bg-accent/15"></div>
+            <div className="border border-accent/30 bg-accent/25"></div>
+            <div className="border border-accent/30 bg-accent/35"></div>
+          </div>
+        </div>
+        {/* Complex PDF */}
+        <div className="absolute bottom-20 left-20 w-16 h-24 bg-gradient-primary rounded-lg" style={{ animation: 'float 3s ease-in-out infinite', animationDelay: '2s' }}>
+          <div className="p-2">
+            <div className="h-1 bg-primary-foreground/50 rounded mb-1"></div>
+            <div className="h-1 bg-primary-foreground/30 rounded mb-1"></div>
+            <div className="h-1 bg-primary-foreground/40 rounded mb-2"></div>
+            <div className="h-4 bg-primary-foreground/20 rounded"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Animated flowing line across pipeline */}
+      <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-30">
+          <div className="w-20 h-full bg-primary" style={{
+            animation: 'flow-right 4s ease-in-out infinite'
+          }}></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-              Best-in-class indexing
+              From Complex Documents to
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                and retrieval
+                Trusted Insights
               </span>
             </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Powered by the most advanced RAG pipeline, Knowledge Stack uses context engineering to deliver fast, 
-              accurate, context-rich retrieval—through structured chunking, multi-layered indexing, and 
-              LLM-aware optimizations—built for production-grade generative AI.
+              Engineering drawings, complex tables, and difficult formats → parsed, chunked, and indexed → 
+              delivering verifiable answers with complete source traceability.
             </p>
           </div>
 
-          {/* Pipeline Steps */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* Pipeline Visualization - Column Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-16">
             {pipelineSteps.map((step, index) => {
               const Icon = step.icon;
+              const isActive = true; // All columns light up
+              
               return (
-                <div key={index} className="group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="flex items-start gap-6 p-8 rounded-2xl bg-background/50 border border-border hover:border-primary/30 transition-all duration-300 hover:bg-background/80">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-primary-foreground" />
-                      </div>
+                <div key={index} className="relative group">
+                  {/* Column */}
+                  <div className={`p-6 rounded-2xl border-2 transition-all duration-500 ${
+                    isActive 
+                      ? 'bg-gradient-primary border-primary/50 shadow-glow animate-scale-in' 
+                      : 'bg-background/50 border-border'
+                  }`} style={{ animationDelay: `${index * 0.3}s` }}>
+                    
+                    {/* Icon */}
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-background/20 flex items-center justify-center">
+                      <Icon className={`w-6 h-6 ${isActive ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
                     </div>
                     
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {step.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {step.description}
-                      </p>
-                    </div>
+                    {/* Title */}
+                    <h3 className={`text-lg font-bold text-center mb-3 ${
+                      isActive ? 'text-primary-foreground' : 'text-foreground'
+                    }`}>
+                      {step.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className={`text-sm text-center leading-relaxed ${
+                      isActive ? 'text-primary-foreground/90' : 'text-muted-foreground'
+                    }`}>
+                      {step.description}
+                    </p>
                   </div>
-                  
-                  {/* Connecting Arrow - only show between steps on large screens */}
-                  {index < pipelineSteps.length - 1 && index % 2 === 0 && (
-                    <div className="hidden lg:flex justify-center items-center py-4">
+
+                  {/* Document State Visualization Under Each Column */}
+                  <div className="mt-4 p-4 bg-background/80 rounded-lg border border-border">
+                    {index === 0 && (
+                      // Raw Document
+                      <div className="space-y-2">
+                        <div className="text-xs font-medium text-muted-foreground text-center">Raw Document</div>
+                        <div className="w-full h-16 bg-gradient-to-r from-destructive/20 to-destructive/10 rounded border-2 border-dashed border-destructive/30 flex items-center justify-center">
+                          <span className="text-xs text-destructive">Complex Format</span>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {index === 1 && (
+                      // Parsed
+                      <div className="space-y-2">
+                        <div className="text-xs font-medium text-muted-foreground text-center">Parsed</div>
+                        <div className="space-y-1">
+                          <div className="h-2 bg-accent/40 rounded"></div>
+                          <div className="h-2 bg-accent/30 rounded"></div>
+                          <div className="h-2 bg-accent/50 rounded"></div>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {index === 2 && (
+                      // Chunked
+                      <div className="space-y-2">
+                        <div className="text-xs font-medium text-muted-foreground text-center">Chunked</div>
+                        <div className="grid grid-cols-2 gap-1">
+                          <div className="h-6 bg-primary/40 rounded"></div>
+                          <div className="h-6 bg-primary/30 rounded"></div>
+                          <div className="h-6 bg-primary/50 rounded"></div>
+                          <div className="h-6 bg-primary/35 rounded"></div>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {index === 3 && (
+                      // Indexed
+                      <div className="space-y-2">
+                        <div className="text-xs font-medium text-muted-foreground text-center">Indexed</div>
+                        <div className="relative">
+                          <div className="w-full h-8 bg-gradient-primary rounded flex items-center justify-center">
+                            <Database className="w-4 h-4 text-primary-foreground" />
+                          </div>
+                          <div className="absolute inset-0 bg-primary/20 rounded animate-pulse"></div>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {index === 4 && (
+                      // Retrieved
+                      <div className="space-y-2">
+                        <div className="text-xs font-medium text-muted-foreground text-center">Retrieved</div>
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-accent rounded-full"></div>
+                            <div className="flex-1 h-1 bg-accent/60 rounded"></div>
+                            <span className="text-xs text-accent">95%</span>
+                          </div>
+                          <div className="text-xs text-muted-foreground">Verified Answer</div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Connecting Arrow */}
+                  {index < pipelineSteps.length - 1 && (
+                    <div className="hidden md:block absolute top-1/3 -right-3 z-10">
                       <ArrowRight className="w-6 h-6 text-primary animate-pulse" />
                     </div>
                   )}
@@ -99,7 +205,7 @@ const TechnicalPipeline = () => {
           {/* Bottom CTA */}
           <div className="text-center mt-16">
             <button className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full text-lg font-medium transition-all duration-300 group">
-              EXPLORE KNOWLEDGE STACK'S ADVANCED RAG ENGINE
+              EXPLORE OUR ADVANCED PIPELINE
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
