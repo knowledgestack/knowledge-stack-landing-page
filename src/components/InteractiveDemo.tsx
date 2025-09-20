@@ -128,7 +128,7 @@ const InteractiveDemo = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            Multi-Level Source
+            Complete Source
             <br />
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Traceability
@@ -281,11 +281,11 @@ const InteractiveDemo = () => {
           </Card>
         </div>
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <Button size="lg" className="bg-primary hover:bg-primary-dark">
             Try Interactive Demo
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

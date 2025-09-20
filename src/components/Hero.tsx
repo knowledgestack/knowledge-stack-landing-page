@@ -73,7 +73,7 @@ const Hero = () => {
           {/* Key Benefits */}
           <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm">
             {[
-              "Multi-Level Source Traceability",
+              "Complete Source Traceability",
               "Mission-Critical Accuracy",
               "Enterprise Security",
             ].map((benefit, index) => (
@@ -85,7 +85,7 @@ const Hero = () => {
           </div>
           
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="text-lg px-8 py-4 h-auto bg-primary hover:bg-primary-dark transition-smooth group">
               Request Demo
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -97,7 +97,7 @@ const Hero = () => {
             >
               Try Interactive Demo
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

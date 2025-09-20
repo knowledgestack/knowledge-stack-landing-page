@@ -29,7 +29,7 @@ Welcome! This guide will help you easily edit all the marketing content on the K
 **What you can change:**
 - Main headline: "Knowledge You Can Trust"
 - Key benefits list:
-  - "Multi-Level Source Traceability"
+  - "Complete Source Traceability"
   - "Mission-Critical Accuracy" 
   - "Enterprise Security"
 - Button text:

@@ -101,14 +101,14 @@ const DeploymentSection = () => {
               Knowledge Stack adapts to your security and compliance requirements.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-primary hover:bg-primary-dark text-primary-foreground rounded-full font-medium transition-smooth">
                 Discuss Deployment Options
               </button>
               <button className="px-8 py-4 bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground rounded-full font-medium transition-smooth">
                 Security Documentation
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

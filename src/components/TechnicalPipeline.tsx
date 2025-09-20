@@ -191,14 +191,14 @@ const TechnicalPipeline = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16">
+          {/* <div className="text-center mt-16">
             <button className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full text-lg font-medium transition-all duration-300 group">
               <span>EXPLORE OUR</span>
               <span className="font-bold text-accent">ADVANCED</span>
               <span>PIPELINE</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

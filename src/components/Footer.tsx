@@ -2,32 +2,32 @@ import { Separator } from "@/components/ui/separator";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
-  const footerLinks = {
-    product: [
-      { name: "Features", href: "#" },
-      { name: "Integrations", href: "#" },
-      { name: "API Documentation", href: "#" },
-      { name: "Pricing", href: "#" }
-    ],
-    company: [
-      { name: "About Us", href: "#" },
-      { name: "Careers", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Contact", href: "#" }
-    ],
-    security: [
-      { name: "Security Overview", href: "#" },
-      { name: "Compliance", href: "#" },
-      { name: "Trust Center", href: "#" },
-      { name: "Status Page", href: "#" }
-    ],
-    legal: [
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms of Service", href: "#" },
-      { name: "Cookie Policy", href: "#" },
-      { name: "GDPR", href: "#" }
-    ]
-  };
+  // const footerLinks = {
+  //   product: [
+  //     { name: "Features", href: "#" },
+  //     { name: "Integrations", href: "#" },
+  //     { name: "API Documentation", href: "#" },
+  //     { name: "Pricing", href: "#" }
+  //   ],
+  //   company: [
+  //     { name: "About Us", href: "#" },
+  //     { name: "Careers", href: "#" },
+  //     { name: "Blog", href: "#" },
+  //     { name: "Contact", href: "#" }
+  //   ],
+  //   security: [
+  //     { name: "Security Overview", href: "#" },
+  //     { name: "Compliance", href: "#" },
+  //     { name: "Trust Center", href: "#" },
+  //     { name: "Status Page", href: "#" }
+  //   ],
+  //   legal: [
+  //     { name: "Privacy Policy", href: "#" },
+  //     { name: "Terms of Service", href: "#" },
+  //     { name: "Cookie Policy", href: "#" },
+  //     { name: "GDPR", href: "#" }
+  //   ]
+  // };
 
   const socialLinks = [
     { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" },
@@ -81,102 +81,37 @@ const Footer = () => {
       />
 
       <div className="relative z-10 container mx-auto px-6">
-        {/* Main Footer Content */}
-        <div className="grid md:grid-cols-5 gap-8 mb-12">
+        {/* Main Footer Content - Centered */}
+        <div className="text-center mb-12">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="mb-8">
             <div className="text-2xl font-bold mb-4 text-accent">
               Knowledge Stack
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl mx-auto">
               The foundational data layer for enterprise AI - secure, accurate, and scalable.
             </p>
-            <div className="flex gap-4 mt-6">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="p-2 bg-muted/20 rounded-lg hover:bg-muted/40 transition-smooth text-muted-foreground hover:text-foreground"
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
           </div>
 
-          {/* Links Columns */}
-          <div className="md:col-span-4 grid sm:grid-cols-4 gap-8">
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Product</h3>
-              <ul className="space-y-3">
-                {footerLinks.product.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Company</h3>
-              <ul className="space-y-3">
-                {footerLinks.company.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Security</h3>
-              <ul className="space-y-3">
-                {footerLinks.security.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Legal</h3>
-              <ul className="space-y-3">
-                {footerLinks.legal.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          {/* Social Links */}
+          {/* <div className="flex justify-center gap-4 mb-8">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                aria-label={social.label}
+                className="p-2 bg-muted/20 rounded-lg hover:bg-muted/40 transition-smooth text-muted-foreground hover:text-foreground"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div> */}
         </div>
 
         <Separator className="bg-border my-8" />
 
-        {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        {/* Bottom Footer - Centered */}
+        <div className="text-center">
           <div className="text-muted-foreground text-sm">
             © 2025 Knowledge Stack. All rights reserved.
           </div>
