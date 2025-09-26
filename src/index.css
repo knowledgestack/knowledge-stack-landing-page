@@ -8,15 +8,15 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Modern dark-first color system - inverted for modern appeal */
+    /* Modern dark-first color system - improved contrast */
     --background: 220 27% 8%;
-    --foreground: 0 0% 95%;
+    --foreground: 0 0% 98%;
 
     --card: 220 27% 12%;
-    --card-foreground: 0 0% 95%;
+    --card-foreground: 0 0% 98%;
 
     --popover: 220 27% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover-foreground: 0 0% 98%;
 
     /* Bright blue palette for modern contrast */
     --primary: 214 100% 70%;
@@ -24,12 +24,12 @@ All colors MUST be HSL.
     --primary-light: 214 100% 85%;
     --primary-dark: 214 84% 60%;
 
-    /* Modern secondary colors */
+    /* Modern secondary colors with better contrast */
     --secondary: 220 20% 18%;
-    --secondary-foreground: 0 0% 85%;
+    --secondary-foreground: 0 0% 92%;
 
     --muted: 220 20% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted-foreground: 0 0% 85%;
 
     /* Bright accent for standout elements */
     --accent: 142 100% 60%;
@@ -46,9 +46,9 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Modern gradients with vibrant colors */
+    /* Modern gradients with lighter hero background */
     --gradient-primary: linear-gradient(135deg, hsl(214 100% 70%), hsl(214 84% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 27% 8%), hsl(220 20% 15%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 27% 12%), hsl(220 20% 18%));
     --gradient-security: linear-gradient(135deg, hsl(142 100% 60% / 0.1), hsl(214 100% 70% / 0.1));
 
     /* Professional shadows */
@@ -78,24 +78,24 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Light mode for dark theme toggle */
+    /* Light mode for dark theme toggle with better contrast */
     --background: 0 0% 98%;
-    --foreground: 220 15% 25%;
+    --foreground: 220 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 25%;
+    --card-foreground: 220 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
+    --popover-foreground: 220 15% 15%;
 
     --primary: 214 84% 56%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 14% 96%;
-    --secondary-foreground: 220 15% 25%;
+    --secondary-foreground: 220 15% 15%;
 
     --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted-foreground: 220 15% 25%;
 
     --accent: 142 71% 45%;
     --accent-foreground: 0 0% 100%;
