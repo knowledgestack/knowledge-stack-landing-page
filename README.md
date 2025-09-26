@@ -32,9 +32,6 @@ Welcome! This guide will help you easily edit all the marketing content on the K
   - "Complete Source Traceability"
   - "Mission-Critical Accuracy" 
   - "Enterprise Security"
-- Button text:
-  - "Request Demo"
-  - "Try Interactive Demo"
 
 **How to edit:**
 1. Open `src/components/Hero.tsx`
