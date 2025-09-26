@@ -43,7 +43,7 @@ const IndustryShowcase = () => {
         { label: "Manual Review Time", value: "85% Reduction" }
       ],
       testimonial: {
-        quote: "Knowledge Stack helped us parse documents we previously could not because of table complexity. It's probably the only AI product that has actually worked for us.",
+        quote: "Knowledge Stack helped us parse tabular documents we could not. We needed hours validating the generated reports. Now we can easily validate the results with a click",
         author: "Engineering Leader, Top 5 Global Hedge Fund"
       }
     },
@@ -137,12 +137,6 @@ const IndustryShowcase = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left: Use Case Description */}
           <div className="space-y-8">
-            <div className="bg-primary/5 border border-primary/20 rounded-lg p-1">
-              <div className="bg-primary/10 text-primary px-3 py-1 rounded text-sm font-medium w-fit mb-4">
-                Use cases
-              </div>
-            </div>
-            
             <div>
               <h3 className="text-3xl font-bold text-foreground mb-4">{currentUseCase.title}</h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
