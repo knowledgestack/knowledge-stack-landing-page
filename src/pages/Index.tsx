@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import AgenticValueProp from "@/components/AgenticValueProp";
+import IndustryShowcase from "@/components/IndustryShowcase";
 import ProblemSolution from "@/components/ProblemSolution";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import TechnicalPipeline from "@/components/TechnicalPipeline";
@@ -25,7 +25,7 @@ const Index = () => {
       />
       
       <Hero />
-      <AgenticValueProp />
+      <IndustryShowcase />
       <ProblemSolution />
       <InteractiveDemo />
       <ExpertValidation />
