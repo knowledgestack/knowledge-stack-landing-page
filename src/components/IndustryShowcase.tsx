@@ -38,13 +38,13 @@ const IndustryShowcase = () => {
       description: "Extract key insights from investor decks, huge spreadsheets, dense pitch materials, and SEC filings. Reduce handles complex tables, charts, and financial statements with precision.",
       documents: ["10-K Reports", "Earnings Calls", "Investment Decks", "Financial Statements"],
       metrics: [
-        { label: "Table Extraction Accuracy", value: "99.2%" },
-        { label: "Processing Speed", value: "10x Faster" },
-        { label: "Manual Review Time", value: "85% Reduction" }
+        { label: "Time to summary report", value: "5 minutes" },
+        { label: "Manual Review Time", value: "85% Reduction" },
+        { label: "Error rate reduction", value: "82% Reduction" }
       ],
       testimonial: {
-        quote: "Knowledge Stack helped us parse tabular documents we could not. We needed hours validating the generated reports. Now we can easily validate the results with a click",
-        author: "Engineering Leader, Top 5 Global Hedge Fund"
+        quote: "Knowledge Stack helped us parse tabular documents accurately. We needed hours validating the generated reports. Now we can easily validate the results with a click.",
+        author: "Senior Fund Manager, Major US Bank"
       }
     },
     healthcare: {
@@ -52,13 +52,13 @@ const IndustryShowcase = () => {
       description: "Process medical records, clinical trials, research papers, and regulatory documents. Extract structured data from complex medical charts and diagnostic reports.",
       documents: ["Clinical Trial Data", "Medical Records", "Research Papers", "FDA Filings"],
       metrics: [
-        { label: "Medical Chart Accuracy", value: "97.8%" },
-        { label: "Regulatory Compliance", value: "100%" },
-        { label: "Research Speed", value: "8x Faster" }
+        { label: "Time to patient report", value: "9 minutes" },
+        { label: "Manual Review Time", value: "78% Reduction" },
+        { label: "Error rate reduction", value: "94% Reduction" }
       ],
       testimonial: {
         quote: "Knowledge Stack transformed how we process clinical data. What used to take weeks of manual review now happens in hours with higher accuracy.",
-        author: "Chief Medical Officer, Fortune 500 Healthcare"
+        author: "Clincian, UHN"
       }
     },
     insurance: {
@@ -66,9 +66,9 @@ const IndustryShowcase = () => {
       description: "Analyze policy documents, claims data, risk assessments, and actuarial reports. Process complex insurance forms and regulatory filings with complete accuracy.",
       documents: ["Policy Documents", "Claims Reports", "Risk Assessments", "Actuarial Data"],
       metrics: [
-        { label: "Claims Processing", value: "75% Faster" },
-        { label: "Document Accuracy", value: "98.5%" },
-        { label: "Fraud Detection", value: "40% Improvement" }
+        { label: "Time to risk profile", value: "8 minutes" },
+        { label: "Manual Review Time", value: "89% Reduction" },
+        { label: "Error rate reduction", value: "92% Reduction" }
       ],
       testimonial: {
         quote: "The accuracy in processing our complex policy documents exceeded our expectations. Knowledge Stack handles edge cases our previous solutions missed.",
@@ -81,8 +81,7 @@ const IndustryShowcase = () => {
       documents: ["Contracts", "Legal Briefs", "Court Filings", "Compliance Reports"],
       metrics: [
         { label: "Contract Analysis", value: "90% Faster" },
-        { label: "Clause Extraction", value: "99.1%" },
-        { label: "Due Diligence", value: "70% Reduction" }
+        { label: "Due Diligence Time", value: "70% Reduction" },
       ],
       testimonial: {
         quote: "Knowledge Stack revolutionized our document review process. We can now handle complex M&A due diligence in days instead of weeks.",
@@ -124,13 +123,6 @@ const IndustryShowcase = () => {
               {industry.name}
             </button>
           ))}
-          {/* <Button 
-            variant="outline" 
-            className="flex items-center gap-2 bg-card border-border hover:bg-primary hover:text-primary-foreground transition-all"
-          >
-            Try your own
-            <ChevronRight className="w-4 h-4" />
-          </Button> */}
         </div>
 
         {/* Use Case Content */}
@@ -143,10 +135,10 @@ const IndustryShowcase = () => {
                 {currentUseCase.description}
               </p>
               
-              <Button size="lg" className="bg-card hover:bg-card/80 text-foreground border border-border">
+              {/* <Button size="lg" className="bg-card hover:bg-card/80 text-foreground border border-border">
                 Get started
                 <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              </Button> */}
             </div>
 
             {/* Document Types */}
@@ -170,7 +162,7 @@ const IndustryShowcase = () => {
           </div>
 
           {/* Right: Metrics and Visual */}
-          <div className="space-y-6">
+          <div className="flex flex-col justify-center h-full">
             {/* Metrics Grid */}
             <div className="grid gap-4">
               {currentUseCase.metrics.map((metric, index) => (
@@ -184,7 +176,7 @@ const IndustryShowcase = () => {
             </div>
 
             {/* Sample Data Visualization */}
-            <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 border border-yellow-200 rounded-lg p-6">
+            {/* <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 border border-yellow-200 rounded-lg p-6">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <DollarSign className="w-5 h-5 text-purple-600" />
@@ -194,7 +186,6 @@ const IndustryShowcase = () => {
                 </div>
               </div>
               
-              {/* Sample Table */}
               <div className="bg-white rounded border border-gray-200 overflow-hidden">
                 <table className="w-full text-sm">
                   <tbody>
@@ -217,7 +208,7 @@ const IndustryShowcase = () => {
                   </tbody>
                 </table>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

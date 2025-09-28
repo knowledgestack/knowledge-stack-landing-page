@@ -49,10 +49,10 @@ Welcome! This guide will help you easily edit all the marketing content on the K
 - Problem descriptions:
   - "Scattered PDFs" - "Engineering drawings, tables, and critical documents spread across systems"
   - "Manual Reporting" - "Hours manually extracting data from complex document formats"
-  - "AI Hallucinations" - "Unreliable AI outputs without source verification or expert validation"
+  - "AI Hallucinations" - "Unreliable AI outputs without source verification or employee validation"
 - Solution descriptions:
   - "Intelligent Ingestion" - "Parse engineering drawings, tables, and complex documents into structured chunks"
-  - "Expert Validation" - "Domain experts validate outputs, creating synthetic data for continuous learning"
+  - "Employee Validation" - " validate outputs, creating synthetic data for continuous learning"
   - "Trusted Insights" - "Get verifiable answers with complete document-to-chunk traceability"
 
 **How to edit:**
@@ -82,15 +82,15 @@ Welcome! This guide will help you easily edit all the marketing content on the K
 
 ---
 
-### 4. Expert Validation Section
-**File:** `src/components/ExpertValidation.tsx`
+### 4. Employee Validation Section
+**File:** `src/components/EmployeeValidation.tsx`
 
 **What you can change:**
 - Section title: "Crowdsourced Trust for Your Organization"
 - Subtitle: "Auto-learning Loop for Continuous Improvement"
 - Process steps around the circle:
   - "Input" - "Documents processed"
-  - "Expert Review" - "Domain experts validate"
+  - "Employee Review" - "Your employees validate"
   - "Synthetic Data" - "Corrections become training"
   - "Stronger Output" - "Continuously improving"
 - Citation hierarchy examples

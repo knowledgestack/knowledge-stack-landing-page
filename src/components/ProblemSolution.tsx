@@ -15,7 +15,7 @@ const ProblemSolution = () => {
     {
       icon: <Brain className="w-6 h-6 text-destructive" />,
       title: "AI Hallucinations",
-      description: "Unreliable AI outputs without source verification or expert validation"
+      description: "Unreliable AI outputs without source verification or employee validation"
     }
   ];
 
@@ -27,8 +27,8 @@ const ProblemSolution = () => {
     },
     {
       icon: <Shield className="w-6 h-6 text-accent" />,
-      title: "Expert Validation",
-      description: "Domain experts validate outputs, creating synthetic data for continuous learning"
+      title: "Employee Validation",
+      description: "Your team members validate outputs, creating synthetic data for continuous learning"
     },
     {
       icon: <Zap className="w-6 h-6 text-accent" />,
@@ -39,7 +39,7 @@ const ProblemSolution = () => {
 
   const expertCycle = [
     { icon: FileText, title: "Input", description: "Documents processed" },
-    { icon: CheckCircle, title: "Expert Review", description: "Domain experts validate" },
+    { icon: CheckCircle, title: "Employee Validation", description: "Your team members validate" },
     { icon: RefreshCw, title: "Synthetic Data", description: "Corrections become training" },
     { icon: TrendingUp, title: "Stronger Output", description: "Continuously improving" }
   ];

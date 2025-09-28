@@ -15,7 +15,7 @@ const DeploymentSection = () => {
     },
     {
       icon: Lock,
-      title: "On-Premise Deployment",
+      title: "On-Premise Ready",
       description: "Deploy Knowledge Stack entirely within your infrastructure for maximum control",
     }
   ];

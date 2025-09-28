@@ -5,31 +5,31 @@ const TechnicalPipeline = () => {
     {
       icon: FileText,
       title: "Parsing",
-      description: "Normalizes inputs across formats like PDFs, DOCs, HTML, and media — creating consistent, structured data ready for processing.",
+      description: "Normalizes inputs across formats like PDFs, DOCs, HTML, and media",
       color: "text-accent"
     },
     {
       icon: Search,
       title: "Extraction", 
-      description: "Identifies key signals like entities, metadata, and boundaries — laying the groundwork for high-quality, context-aware retrieval.",
+      description: "Identifies key signals like entities, metadata, and boundaries",
       color: "text-primary"
     },
     {
       icon: Layers,
       title: "Chunking",
-      description: "Segments content into logically grouped chunks using type-specific strategies — preserving context and improving recall.",
+      description: "Segments content into logically grouped chunks using type-specific strategies",
       color: "text-accent-light"
     },
     {
       icon: Database,
       title: "Indexing", 
-      description: "Builds vector, keyword, and summary indexes — enabling semantic search, keyword retrieval, and hierarchical high-level recall.",
+      description: "Builds vector, keyword, and summary indexes for semantic search and keyword retrieval",
       color: "text-primary-light"
     },
     {
       icon: Zap,
       title: "Retrieval",
-      description: "Combines multi-index recall with precision re-ranking — delivering grounded, context-rich results for any LLM.",
+      description: "Handles multi-index retrieval for context-rich results for any LLM.",
       color: "text-accent"
     }
   ];
@@ -79,7 +79,7 @@ const TechnicalPipeline = () => {
               </span>
             </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Delivers <span className="font-semibold text-accent">accurate verifiable answers</span> using 
+              Delivers <span className="font-semibold text-accent">accurate and verifiable answers</span> using 
               <span className="font-semibold text-primary"> custom state-of-the-art pipeline</span>
             </p>
           </div>

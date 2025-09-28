@@ -89,7 +89,7 @@ const Footer = () => {
               Knowledge Stack
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl mx-auto">
-              The foundational data layer for enterprise AI - secure, accurate, and scalable.
+              The trusted knowledge hub that learns - secure, accurate, and scalable.
             </p>
           </div>
 

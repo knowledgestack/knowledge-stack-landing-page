@@ -2,7 +2,7 @@ import { Users, CheckCircle, RefreshCw, TrendingUp, ChevronDown, ChevronRight, F
 import { useState } from "react";
 
 const ExpertValidation = () => {
-  const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set(['research-paper-ai-ethics.pdf', 'ieee-ai-standards.pdf', 'philosophy-of-ai.pdf']));
+  const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set(['AI Standards Survey', 'Philosophy of AI']));
 
   const steps = [
     {
@@ -13,14 +13,14 @@ const ExpertValidation = () => {
     },
     {
       icon: CheckCircle,
-      title: "Expert Review",
-      description: "Domain experts validate and correct outputs",
+      title: "Employee Review",
+      description: "Validation by your team members",
       color: "text-accent"
     },
     {
       icon: RefreshCw,
       title: "Synthetic Data",
-      description: "Corrections become new synthetic data",
+      description: "Corrections and generated insights become new content",
       color: "text-primary-light"
     },
     {
@@ -32,30 +32,25 @@ const ExpertValidation = () => {
   ];
 
   const citationHierarchy = {
-    'research-paper-ai-ethics.pdf': {
-      status: 'Verified',
-      score: 95,
-      children: []
-    },
-    'ieee-ai-standards.pdf': {
+    'AI Standards Survey': {
       status: 'Pending',
       score: 98,
       children: [
         {
-          name: 'original-ieee-proposal.pdf',
+          name: 'original-ieee-proposal.pptx',
           badge: 'Source',
           status: 'Verified',
           score: 96
         },
         {
-          name: 'expert-committee-report.pdf',
+          name: 'expert-committee-report.docx',
           badge: 'Source',
           status: 'Pending',
           score: 93
         }
       ]
     },
-    'philosophy-of-ai.pdf': {
+    'Philosophy of AI': {
       status: 'Verified',
       score: 87,
       children: [
@@ -127,7 +122,7 @@ const ExpertValidation = () => {
             <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Crowdsourced{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">Trust</span>{" "}
-              for Your Organization
+              from Your Organization
             </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Auto-learning Loop for Continuous Improvement
@@ -202,9 +197,9 @@ const ExpertValidation = () => {
                 <div className="mt-8 p-4 bg-accent/10 border border-accent/20 rounded-lg">
                   <h4 className="text-sm font-semibold text-foreground mb-2">How Citation Hierarchies Work</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    When experts validate AI outputs, those corrections become new synthetic data chunks. 
-                    These validated chunks can then be cited by future AI responses, creating a growing 
-                    web of trusted knowledge that improves over time.
+                    When your team members validate AI outputs during daily workflows, they add to your enterprise knowledge. 
+                    The validated content can then be used for future AI generations, thereby creating a growing 
+                    web of trusted knowledge over time.
                   </p>
                 </div>
               </div>
@@ -297,18 +292,18 @@ const ExpertValidation = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
                 <FileText className="w-8 h-8 text-primary-foreground" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">Source Chunks</h3>
+              <h3 className="text-xl font-bold text-foreground mb-3">Source Citations</h3>
               <p className="text-muted-foreground">
-                Validated corrections become reusable knowledge chunks that can be cited in future AI responses.
+                Every response, including generated content, is traceable back to source.
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
                 <CheckCircle className="w-8 h-8 text-primary-foreground" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">Expert Validation</h3>
+              <h3 className="text-xl font-bold text-foreground mb-3">Employee Validation</h3>
               <p className="text-muted-foreground">
-                Domain experts review and correct AI outputs, ensuring accuracy and building trust in the system.
+                Your team members review and correct AI outputs, ensuring accuracy and building trust in the system.
               </p>
             </div>
             <div className="text-center">
