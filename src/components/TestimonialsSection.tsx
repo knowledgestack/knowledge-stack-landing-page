@@ -4,24 +4,24 @@ import { Star, Quote, CheckCircle } from "lucide-react";
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      quote: "Knowledge Stack's table parsing is incredibly accurate. Complex financial tables that used to take our team hours to process are now extracted and verified in seconds.",
-      author: "Michael Rodriguez",
-      title: "CFO",
-      company: "Precision Analytics",
-      type: "Table Parsing",
+      quote: "Knowledge Stack's document processing capabilities have transformed how we handle complex telecommunications data. The accuracy and speed are remarkable.",
+      author: "Engineering Team",
+      title: "Data Processing",
+      company: "China Telecom",
+      type: "Telecommunications",
     },
     {
-      quote: "Engineering drawings and technical specifications are notoriously difficult to parse. Knowledge Stack handles our most complex blueprints with remarkable precision.",
-      author: "Lisa Wang", 
-      title: "Engineering Director",
-      company: "Apex Construction (Top 5 US)",
-      type: "Engineering Drawings",
+      quote: "Knowledge Stack's table parsing is incredibly accurate. Complex financial tables that used to take our team hours to process are now extracted and verified in seconds.",
+      author: "Analytics Team",
+      title: "Data Processing",
+      company: "NewBund31",
+      type: "Financial Analytics",
     },
     {
       quote: "Knowledge Stack took over our entire RAG pipeline, letting us focus purely on agent logic. The document processing and retrieval quality is enterprise-grade.",
-      author: "David Kim",
-      title: "CTO", 
-      company: "AgentFlow AI",
+      author: "AI Engineering Team",
+      title: "AI Platform",
+      company: "Kommon AI",
       type: "Agentic Platform",
     }
   ];

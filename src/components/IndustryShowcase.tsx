@@ -124,13 +124,13 @@ const IndustryShowcase = () => {
               {industry.name}
             </button>
           ))}
-          <Button 
+          {/* <Button 
             variant="outline" 
             className="flex items-center gap-2 bg-card border-border hover:bg-primary hover:text-primary-foreground transition-all"
           >
             Try your own
             <ChevronRight className="w-4 h-4" />
-          </Button>
+          </Button> */}
         </div>
 
         {/* Use Case Content */}
