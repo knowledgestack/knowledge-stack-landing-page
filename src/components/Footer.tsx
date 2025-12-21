@@ -1,32 +1,35 @@
 import { Separator } from "@/components/ui/separator";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   const footerLinks = {
     product: [
-      { name: "Features", href: "/features" },
-      { name: "Integrations", href: "/integrations" },
-      { name: "API Documentation", href: "/api-docs" },
-      { name: "Pricing", href: "/pricing" }
+      { name: t("footer.features"), href: "/features" },
+      { name: t("footer.integrations"), href: "/integrations" },
+      { name: t("footer.apiDocumentation"), href: "/api-docs" },
+      { name: t("footer.pricing"), href: "/pricing" }
     ],
     company: [
-      { name: "About Us", href: "/about" },
-      { name: "Careers", href: "/careers" },
-      { name: "Blog", href: "/blog" },
-      { name: "Contact", href: "/contact" }
+      { name: t("footer.aboutUs"), href: "/about" },
+      { name: t("footer.careers"), href: "/careers" },
+      { name: t("footer.blog"), href: "/blog" },
+      { name: t("footer.contact"), href: "/contact" }
     ],
     security: [
-      { name: "Security Overview", href: "/security" },
-      { name: "Compliance", href: "/compliance" },
-      { name: "Trust Center", href: "/trust-center" },
-      { name: "Status Page", href: "/status" }
+      { name: t("footer.securityOverview"), href: "/security" },
+      { name: t("footer.compliance"), href: "/compliance" },
+      { name: t("footer.trustCenter"), href: "/trust-center" },
+      { name: t("footer.statusPage"), href: "/status" }
     ],
     legal: [
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms of Service", href: "/terms" },
-      { name: "Cookie Policy", href: "/cookie-policy" },
-      { name: "GDPR", href: "/gdpr" }
+      { name: t("footer.privacyPolicy"), href: "/privacy" },
+      { name: t("footer.termsOfService"), href: "/terms" },
+      { name: t("footer.cookiePolicy"), href: "/cookie-policy" },
+      { name: t("footer.gdpr"), href: "/gdpr" }
     ]
   };
 
@@ -81,7 +84,7 @@ const Footer = () => {
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand Section */}
@@ -90,7 +93,7 @@ const Footer = () => {
               Knowledge Stack
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              The trusted knowledge hub that learns - secure, accurate, and scalable.
+              {t("footer.tagline")}
             </p>
             {/* Social Links */}
             <div className="flex gap-4">
@@ -109,7 +112,7 @@ const Footer = () => {
 
           {/* Product Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Product</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t("footer.product")}</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
@@ -126,7 +129,7 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Company</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t("footer.company")}</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -143,7 +146,7 @@ const Footer = () => {
 
           {/* Security Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Security</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t("footer.security")}</h3>
             <ul className="space-y-3">
               {footerLinks.security.map((link) => (
                 <li key={link.name}>
@@ -160,7 +163,7 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Legal</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t("footer.legal")}</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
@@ -181,7 +184,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="text-center">
           <div className="text-muted-foreground text-sm">
-            © 2025 Knowledge Stack. All rights reserved.
+            {t("footer.copyright")}
           </div>
         </div>
       </div>

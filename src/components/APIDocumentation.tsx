@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -7,8 +7,10 @@ import { Code, Copy, Check, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { loadAPISpec, OpenAPISpec, getVersionInfo } from "@/lib/api-specs";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const APIDocumentation = () => {
+  const { t } = useTranslation();
   const { version } = useParams<{ version: string }>();
   const [spec, setSpec] = useState<OpenAPISpec | null>(null);
   const [loading, setLoading] = useState(true);
@@ -78,14 +80,14 @@ const APIDocumentation = () => {
 
     return (
       <div className="mt-4">
-        <h4 className="font-semibold mb-2">Parameters</h4>
+        <h4 className="font-semibold mb-2">{t("apiDocs.parameters")}</h4>
         <div className="space-y-2">
           {parameters.map((param, idx) => (
             <div key={idx} className="border-l-2 border-muted pl-3">
               <div className="flex items-center gap-2">
                 <code className="text-sm font-mono">{param.name}</code>
                 <Badge variant={param.required ? "default" : "secondary"}>
-                  {param.required ? "required" : "optional"}
+                  {param.required ? t("apiDocs.required") : t("apiDocs.optional")}
                 </Badge>
                 <span className="text-sm text-muted-foreground">
                   ({param.in})
@@ -96,7 +98,7 @@ const APIDocumentation = () => {
               )}
               {param.schema && (
                 <p className="text-xs text-muted-foreground mt-1">
-                  Type: <code>{renderSchema(param.schema)}</code>
+                  {t("apiDocs.type")}: <code>{renderSchema(param.schema)}</code>
                 </p>
               )}
             </div>
@@ -111,16 +113,16 @@ const APIDocumentation = () => {
 
     return (
       <div className="mt-4">
-        <h4 className="font-semibold mb-2">Request Body</h4>
+        <h4 className="font-semibold mb-2">{t("apiDocs.requestBody")}</h4>
         <Badge variant={requestBody.required ? "default" : "secondary"} className="mb-2">
-          {requestBody.required ? "required" : "optional"}
+          {requestBody.required ? t("apiDocs.required") : t("apiDocs.optional")}
         </Badge>
         {requestBody.content && Object.entries(requestBody.content).map(([contentType, content]: [string, any]) => (
           <div key={contentType} className="mt-2">
-            <p className="text-sm text-muted-foreground">Content-Type: <code>{contentType}</code></p>
+            <p className="text-sm text-muted-foreground">{t("apiDocs.contentType")}: <code>{contentType}</code></p>
             {content.schema && (
               <p className="text-xs text-muted-foreground mt-1">
-                Schema: <code>{renderSchema(content.schema)}</code>
+                {t("apiDocs.schema")}: <code>{renderSchema(content.schema)}</code>
               </p>
             )}
           </div>
@@ -134,7 +136,7 @@ const APIDocumentation = () => {
 
     return (
       <div className="mt-4">
-        <h4 className="font-semibold mb-2">Responses</h4>
+        <h4 className="font-semibold mb-2">{t("apiDocs.responses")}</h4>
         <div className="space-y-2">
           {Object.entries(responses).map(([statusCode, response]: [string, any]) => (
             <div key={statusCode} className="border-l-2 border-muted pl-3">
@@ -148,7 +150,7 @@ const APIDocumentation = () => {
                 <div key={contentType} className="mt-1 text-xs text-muted-foreground">
                   <code>{contentType}</code>
                   {content.schema && (
-                    <span className="ml-2">Schema: <code>{renderSchema(content.schema)}</code></span>
+                    <span className="ml-2">{t("apiDocs.schema")}: <code>{renderSchema(content.schema)}</code></span>
                   )}
                 </div>
               ))}
@@ -161,34 +163,34 @@ const APIDocumentation = () => {
 
   if (loading) {
     return (
-      <Layout>
-        <div className="min-h-screen flex items-center justify-center">
+      <ContentLayout>
+        <div className="flex items-center justify-center min-h-[calc(100vh-200px)]">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-muted-foreground">Loading API documentation...</p>
+            <p className="text-muted-foreground">{t("common.loading")}</p>
           </div>
         </div>
-      </Layout>
+      </ContentLayout>
     );
   }
 
   if (error || !spec) {
     return (
-      <Layout>
-        <div className="min-h-screen flex items-center justify-center">
+      <ContentLayout>
+        <div className="flex items-center justify-center min-h-[calc(100vh-200px)]">
           <Card className="max-w-md">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-destructive">
                 <AlertCircle className="w-5 h-5" />
-                Error Loading Documentation
+                {t("common.error")}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">{error || 'API specification not found'}</p>
+              <p className="text-muted-foreground">{error || t("apiDocs.error")}</p>
             </CardContent>
           </Card>
         </div>
-      </Layout>
+      </ContentLayout>
     );
   }
 
@@ -213,9 +215,8 @@ const APIDocumentation = () => {
   });
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-12">
+    <ContentLayout>
+      <div className="py-12">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
@@ -230,7 +231,7 @@ const APIDocumentation = () => {
             )}
           </div>
           {spec.info.version && (
-            <p className="text-sm text-muted-foreground">Version: {spec.info.version}</p>
+            <p className="text-sm text-muted-foreground">{t("apiDocs.version")}: {spec.info.version}</p>
           )}
         </div>
 
@@ -238,7 +239,7 @@ const APIDocumentation = () => {
         {spec.servers && spec.servers.length > 0 && (
           <Card className="mb-8 border-border">
             <CardHeader>
-              <CardTitle>Base URLs</CardTitle>
+              <CardTitle>{t("apiDocs.baseUrls")}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
@@ -264,7 +265,7 @@ const APIDocumentation = () => {
               </TabsTrigger>
             ))}
             {untaggedPaths.length > 0 && (
-              <TabsTrigger value="all">Other</TabsTrigger>
+              <TabsTrigger value="all">{t("apiDocs.other")}</TabsTrigger>
             )}
           </TabsList>
 
@@ -305,7 +306,7 @@ const APIDocumentation = () => {
                   <CardContent>
                     {operation.deprecated && (
                       <Badge variant="destructive" className="mb-4">
-                        Deprecated
+                        {t("apiDocs.deprecated")}
                       </Badge>
                     )}
                     {renderParameters(operation.parameters)}
@@ -314,7 +315,7 @@ const APIDocumentation = () => {
                     {operation.security && (
                       <div className="mt-4">
                         <p className="text-sm text-muted-foreground">
-                          Security: {operation.security.map((sec: any) => Object.keys(sec).join(', ')).join(', ')}
+                          {t("apiDocs.security")}: {operation.security.map((sec: any) => Object.keys(sec).join(', ')).join(', ')}
                         </p>
                       </div>
                     )}
@@ -326,7 +327,7 @@ const APIDocumentation = () => {
 
           {untaggedPaths.length > 0 && (
             <TabsContent value="all" className="space-y-4">
-              <h2 className="text-2xl font-bold mb-4">Other Endpoints</h2>
+              <h2 className="text-2xl font-bold mb-4">{t("apiDocs.otherEndpoints")}</h2>
               {untaggedPaths.map(({ path, method, operation }, idx) => (
                 <Card key={idx} className="border-border">
                   <CardHeader>
@@ -373,9 +374,8 @@ const APIDocumentation = () => {
             </TabsContent>
           )}
         </Tabs>
-        </div>
       </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 

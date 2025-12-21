@@ -1,44 +1,66 @@
 import { Database, Shield, Target, Layers } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const FeaturesGrid = () => {
+  const { t } = useTranslation();
+  
   const features = [
     {
       icon: <Database className="w-8 h-8 text-accent" />,
-      title: "Ingest Anything",
-      description: "PDFs, spreadsheets, images, videos, and 50+ connectors. Our intelligent parsing understands structure and context.",
-      benefits: ["Multi-format support", "Smart parsing", "Real-time sync", "API integrations"]
+      title: t("featuresGrid.ingestTitle"),
+      description: t("featuresGrid.ingestDesc"),
+      benefits: [
+        t("featuresGrid.ingestBenefit1"),
+        t("featuresGrid.ingestBenefit2"),
+        t("featuresGrid.ingestBenefit3"),
+        t("featuresGrid.ingestBenefit4")
+      ]
     },
     {
       icon: <Shield className="w-8 h-8 text-primary" />,
-      title: "Secure & Compliant",
-      description: "Enterprise-grade security with end-to-end encryption, granular access controls, and comprehensive audit logs.",
-      benefits: ["Audit trails", "Tenant Level Isolation", "Deploy on own architecture"]
+      title: t("featuresGrid.secureTitle"),
+      description: t("featuresGrid.secureDesc"),
+      benefits: [
+        t("featuresGrid.secureBenefit1"),
+        t("featuresGrid.secureBenefit2"),
+        t("featuresGrid.secureBenefit3")
+      ]
     },
     {
       icon: <Layers className="w-8 h-8 text-accent"  />,
-      title: "Scalable Architecture",
-      description: "Handle millions of documents with enterprise-grade infrastructure, global CDN, and 99.9% uptime SLA.",
-      benefits: ["Auto-scaling", "Global CDN", "99.9% uptime", "Load balancing"]
+      title: t("featuresGrid.scalableTitle"),
+      description: t("featuresGrid.scalableDesc"),
+      benefits: [
+        t("featuresGrid.scalableBenefit1"),
+        t("featuresGrid.scalableBenefit2"),
+        t("featuresGrid.scalableBenefit3"),
+        t("featuresGrid.scalableBenefit4")
+      ]
     },
     {
       icon: <Target className="w-8 h-8 text-primary" />,
-      title: "Accurate Answers",
-      description: "Every response is grounded in your data with AI validation and confidence scoring.",
-      benefits: ["Source verification", "Confidence scoring", "Fast Fact checking", "Answer validation"]
+      title: t("featuresGrid.accurateTitle"),
+      description: t("featuresGrid.accurateDesc"),
+      benefits: [
+        t("featuresGrid.accurateBenefit1"),
+        t("featuresGrid.accurateBenefit2"),
+        t("featuresGrid.accurateBenefit3"),
+        t("featuresGrid.accurateBenefit4")
+      ]
     },
     
   ];
 
   return (
     <section className="py-16 bg-secondary/30">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Built for <span className="text-primary">Enterprise</span> Scale
+            {t("featuresGrid.title")} <span className="text-primary">{t("featuresGrid.enterprise")}</span> {t("featuresGrid.scale")}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Every feature designed with accuracy, security, and scalability as core principles
+            {t("featuresGrid.subtitle")}
           </p>
         </div>
 

@@ -1,65 +1,59 @@
-import Layout from "@/components/Layout";
+import LegalLayout from "@/layouts/LegalLayout";
+import { useTranslation } from "react-i18next";
 
 const CookiePolicy = () => {
+  const { t } = useTranslation();
+  
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl font-bold mb-6">Cookie Policy</h1>
-            <p className="text-muted-foreground mb-8">Last updated: January 15, 2025</p>
+    <LegalLayout>
+            <h1 className="text-5xl font-bold mb-6 text-foreground">{t("cookiePolicy.title")}</h1>
+            <p className="text-muted-foreground mb-8">{t("cookiePolicy.lastUpdated")}</p>
 
-            <div className="prose prose-invert max-w-none space-y-8">
+            <div className="prose max-w-none space-y-8">
               <section>
-                <h2 className="text-2xl font-semibold mb-4">1. What Are Cookies</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("cookiePolicy.section1Title")}</h2>
                 <p className="text-muted-foreground">
-                  Cookies are small text files that are placed on your computer or mobile device
-                  when you visit a website. They are widely used to make websites work more
-                  efficiently and provide information to website owners.
+                  {t("cookiePolicy.section1Text")}
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-semibold mb-4">2. How We Use Cookies</h2>
-                <p className="text-muted-foreground mb-4">We use cookies for the following purposes:</p>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("cookiePolicy.section2Title")}</h2>
+                <p className="text-muted-foreground mb-4">{t("cookiePolicy.section2Text")}</p>
                 <ul className="list-disc pl-6 text-muted-foreground space-y-2">
                   <li>
-                    <strong>Essential Cookies:</strong> Required for the website to function properly
+                    <strong>{t("cookiePolicy.essentialCookies")}:</strong> {t("cookiePolicy.essentialCookiesDesc")}
                   </li>
                   <li>
-                    <strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website
+                    <strong>{t("cookiePolicy.analyticsCookies")}:</strong> {t("cookiePolicy.analyticsCookiesDesc")}
                   </li>
                   <li>
-                    <strong>Preference Cookies:</strong> Remember your preferences and settings
+                    <strong>{t("cookiePolicy.preferenceCookies")}:</strong> {t("cookiePolicy.preferenceCookiesDesc")}
                   </li>
                   <li>
-                    <strong>Authentication Cookies:</strong> Keep you logged in securely
+                    <strong>{t("cookiePolicy.authenticationCookies")}:</strong> {t("cookiePolicy.authenticationCookiesDesc")}
                   </li>
                 </ul>
               </section>
 
               <section>
-                <h2 className="text-2xl font-semibold mb-4">3. Third-Party Cookies</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("cookiePolicy.section3Title")}</h2>
                 <p className="text-muted-foreground">
-                  We may use third-party services that set cookies on your device. These services
-                  help us analyze website usage and improve our services. We do not have control
-                  over these third-party cookies.
+                  {t("cookiePolicy.section3Text")}
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-semibold mb-4">4. Managing Cookies</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("cookiePolicy.section4Title")}</h2>
                 <p className="text-muted-foreground">
-                  You can control and manage cookies in various ways. Please keep in mind that
-                  removing or blocking cookies can impact your user experience and parts of our
-                  website may no longer be fully accessible.
+                  {t("cookiePolicy.section4Text")}
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-semibold mb-4">5. Contact Us</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("cookiePolicy.section5Title")}</h2>
                 <p className="text-muted-foreground">
-                  If you have any questions about our use of cookies, please contact us at{" "}
+                  {t("cookiePolicy.section5Text")}{" "}
                   <a href="/contact" className="text-primary hover:underline">
                     privacy@knowledgestack.ai
                   </a>
@@ -67,10 +61,7 @@ const CookiePolicy = () => {
                 </p>
               </section>
             </div>
-          </div>
-        </div>
-      </div>
-    </Layout>
+    </LegalLayout>
   );
 };
 

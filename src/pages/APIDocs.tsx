@@ -1,39 +1,40 @@
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Book, Key, Webhook } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const APIDocs = () => {
+  const { t } = useTranslation();
+  
   const apiFeatures = [
     {
       icon: <Code className="w-6 h-6" />,
-      title: "RESTful API",
-      description: "Comprehensive REST API with clear endpoints for all operations. Full OpenAPI specification available."
+      title: t("apiDocs.feature1Title"),
+      description: t("apiDocs.feature1Desc")
     },
     {
       icon: <Key className="w-6 h-6" />,
-      title: "Authentication",
-      description: "Secure API key authentication with scoped permissions and rate limiting."
+      title: t("apiDocs.feature2Title"),
+      description: t("apiDocs.feature2Desc")
     },
     {
       icon: <Webhook className="w-6 h-6" />,
-      title: "Webhooks",
-      description: "Real-time event notifications via webhooks for seamless integrations."
+      title: t("apiDocs.feature3Title"),
+      description: t("apiDocs.feature3Desc")
     },
     {
       icon: <Book className="w-6 h-6" />,
-      title: "Documentation",
-      description: "Interactive API documentation with code examples in multiple languages."
+      title: t("apiDocs.feature4Title"),
+      description: t("apiDocs.feature4Desc")
     }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
+    <ContentLayout>
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6">API Documentation</h1>
+            <h1 className="text-5xl font-bold mb-6">{t("apiDocs.title")}</h1>
             <p className="text-xl text-muted-foreground">
-              Build powerful integrations with our comprehensive API
+              {t("apiDocs.subtitle")}
             </p>
           </div>
 
@@ -55,8 +56,8 @@ const APIDocs = () => {
 
           <Card className="max-w-4xl mx-auto border-border">
             <CardHeader>
-              <CardTitle>Quick Start</CardTitle>
-              <CardDescription>Get started with our API in minutes</CardDescription>
+              <CardTitle>{t("apiDocs.quickStart")}</CardTitle>
+              <CardDescription>{t("apiDocs.quickStartDesc")}</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="bg-muted p-4 rounded-lg font-mono text-sm overflow-x-auto">
@@ -84,15 +85,13 @@ console.log(data.sources);`}
 
           <div className="mt-12 text-center">
             <p className="text-muted-foreground mb-4">
-              Full API documentation available in your dashboard
+              {t("apiDocs.fullDocs")}
             </p>
             <a href="https://app.knowledgestack.ai" className="text-primary hover:underline">
-              Access API Docs →
+              {t("apiDocs.accessDocs")}
             </a>
           </div>
-        </div>
-      </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 

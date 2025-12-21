@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
@@ -19,19 +19,22 @@ import {
   Github,
   MessageSquare
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const DocsOverview = () => {
+  const { t } = useTranslation();
+  
   const quickStartItems = [
     {
       icon: <Code className="w-5 h-5" />,
-      title: "API Quickstart",
-      description: "Make your first API call in minutes. Step-by-step instructions with sample requests and responses.",
+      title: t("docsOverview.quickStart1Title"),
+      description: t("docsOverview.quickStart1Desc"),
       link: "/api-docs"
     },
     {
       icon: <Play className="w-5 h-5" />,
-      title: "Studio Playground",
-      description: "Try Knowledge Stack in your browser. Upload documents, query knowledge bases, and see results instantly.",
+      title: t("docsOverview.quickStart2Title"),
+      description: t("docsOverview.quickStart2Desc"),
       link: "https://app.knowledgestack.ai",
       external: true
     }
@@ -40,99 +43,96 @@ const DocsOverview = () => {
   const coreAPIs = [
     {
       icon: <Upload className="w-6 h-6" />,
-      title: "Upload",
-      description: "Upload documents to your knowledge base. Supports PDFs, Word docs, spreadsheets, and more."
+      title: t("docsOverview.uploadTitle"),
+      description: t("docsOverview.uploadDesc")
     },
     {
       icon: <FileText className="w-6 h-6" />,
-      title: "Parse",
-      description: "Convert documents into structured text, tables, and figures—the foundation for RAG."
+      title: t("docsOverview.parseTitle"),
+      description: t("docsOverview.parseDesc")
     },
     {
       icon: <Database className="w-6 h-6" />,
-      title: "Chunk",
-      description: "Intelligently break large documents into semantic chunks while preserving context."
+      title: t("docsOverview.chunkTitle"),
+      description: t("docsOverview.chunkDesc")
     },
     {
       icon: <Search className="w-6 h-6" />,
-      title: "Query",
-      description: "Search and retrieve information from your knowledge base with source citations."
+      title: t("docsOverview.queryTitle"),
+      description: t("docsOverview.queryDesc")
     }
   ];
 
   const useCases = [
     {
       icon: <Building2 className="w-5 h-5" />,
-      title: "Financial",
-      description: "Bank statements, company reports, transaction logs"
+      title: t("docsOverview.useCase1Title"),
+      description: t("docsOverview.useCase1Desc")
     },
     {
       icon: <FileCheck className="w-5 h-5" />,
-      title: "Insurance",
-      description: "Claims, policy declarations, premium invoices"
+      title: t("docsOverview.useCase2Title"),
+      description: t("docsOverview.useCase2Desc")
     },
     {
       icon: <Heart className="w-5 h-5" />,
-      title: "Healthcare",
-      description: "Patient records, lab reports, HIPAA release forms"
+      title: t("docsOverview.useCase3Title"),
+      description: t("docsOverview.useCase3Desc")
     },
     {
       icon: <Scale className="w-5 h-5" />,
-      title: "Legal",
-      description: "Patents, deposition transcripts, contracts"
+      title: t("docsOverview.useCase4Title"),
+      description: t("docsOverview.useCase4Desc")
     },
     {
       icon: <Briefcase className="w-5 h-5" />,
-      title: "HR",
-      description: "Payroll slips, resumes, onboarding forms"
+      title: t("docsOverview.useCase5Title"),
+      description: t("docsOverview.useCase5Desc")
     },
     {
       icon: <GraduationCap className="w-5 h-5" />,
-      title: "Education",
-      description: "Course materials, research papers, academic documentation"
+      title: t("docsOverview.useCase6Title"),
+      description: t("docsOverview.useCase6Desc")
     }
   ];
 
   const resources = [
     {
-      title: "API Reference",
-      description: "Full details on every endpoint, parameters, and response format. Generated from OpenAPI specifications.",
+      title: t("docsOverview.resource1Title"),
+      description: t("docsOverview.resource1Desc"),
       link: "/api-docs"
     },
     {
-      title: "Blog",
-      description: "Tutorials, feature announcements, and customer stories.",
+      title: t("docsOverview.resource2Title"),
+      description: t("docsOverview.resource2Desc"),
       link: "/blog"
     },
     {
-      title: "GitHub",
-      description: "Open source integrations and community contributions.",
+      title: t("docsOverview.resource3Title"),
+      description: t("docsOverview.resource3Desc"),
       link: "https://github.com/knowledgestack",
       external: true
     },
     {
-      title: "Support",
-      description: "Get help from our team or join the community.",
+      title: t("docsOverview.resource4Title"),
+      description: t("docsOverview.resource4Desc"),
       link: "/contact"
     }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
+    <ContentLayout>
           {/* Header */}
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6">Welcome to Knowledge Stack Documentation</h1>
+            <h1 className="text-5xl font-bold mb-6">{t("docsOverview.title")}</h1>
             <p className="text-xl text-muted-foreground">
-              This site will help you start building enterprise RAG systems—upload documents, create knowledge bases, 
-              and query your data with AI-powered search and retrieval.
+              {t("docsOverview.subtitle")}
             </p>
           </div>
 
           {/* Get Started Quickly */}
           <div className="mb-20">
-            <h2 className="text-2xl font-semibold mb-6">Get started quickly</h2>
+            <h2 className="text-2xl font-semibold mb-6">{t("docsOverview.getStarted")}</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {quickStartItems.map((item, index) => (
                 <Card key={index} className="border-border hover:border-primary/50 transition-colors">
@@ -151,12 +151,12 @@ const DocsOverview = () => {
                         className="w-full"
                       >
                         <a href={item.link} target="_blank" rel="noopener noreferrer">
-                          Try it now <ExternalLink className="w-4 h-4 ml-2" />
+                          {t("docsOverview.tryNow")} <ExternalLink className="w-4 h-4 ml-2" />
                         </a>
                       </Button>
                     ) : (
                       <Button variant="outline" asChild className="w-full">
-                        <a href={item.link}>Get started</a>
+                        <a href={item.link}>{t("common.getStarted")}</a>
                       </Button>
                     )}
                   </CardContent>
@@ -167,10 +167,9 @@ const DocsOverview = () => {
 
           {/* Core APIs */}
           <div className="mb-20">
-            <h2 className="text-2xl font-semibold mb-6">Core APIs</h2>
+            <h2 className="text-2xl font-semibold mb-6">{t("docsOverview.coreAPIs")}</h2>
             <p className="text-muted-foreground mb-6">
-              Knowledge Stack's endpoints are the building blocks of enterprise RAG systems. 
-              Use them individually or combine them into powerful pipelines.
+              {t("docsOverview.coreAPIsDesc")}
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {coreAPIs.map((api, index) => (
@@ -191,9 +190,9 @@ const DocsOverview = () => {
 
           {/* What You Can Build */}
           <div className="mb-20">
-            <h2 className="text-2xl font-semibold mb-6">What you can build</h2>
+            <h2 className="text-2xl font-semibold mb-6">{t("docsOverview.whatYouCanBuild")}</h2>
             <p className="text-muted-foreground mb-6">
-              Teams use Knowledge Stack to build enterprise RAG systems across industries:
+              {t("docsOverview.whatYouCanBuildDesc")}
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {useCases.map((useCase, index) => (
@@ -213,14 +212,14 @@ const DocsOverview = () => {
               ))}
             </div>
             <p className="text-sm text-muted-foreground mt-6">
-              For supported formats, see <a href="/features" className="text-primary hover:underline">Supported File Types</a>. 
-              For real-world case studies, visit our <a href="/blog" className="text-primary hover:underline">blog</a>.
+              {t("docsOverview.supportedFormats")} <a href="/features" className="text-primary hover:underline">{t("docsOverview.supportedFormatsLink")}</a>. 
+              {t("docsOverview.caseStudies")} <a href="/blog" className="text-primary hover:underline">{t("docsOverview.caseStudiesLink")}</a>.
             </p>
           </div>
 
           {/* More Resources */}
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6">More resources</h2>
+            <h2 className="text-2xl font-semibold mb-6">{t("docsOverview.moreResources")}</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {resources.map((resource, index) => (
                 <Card key={index} className="border-border">
@@ -234,12 +233,12 @@ const DocsOverview = () => {
                     {resource.external ? (
                       <Button variant="link" asChild className="p-0 h-auto">
                         <a href={resource.link} target="_blank" rel="noopener noreferrer">
-                          Learn more <ExternalLink className="w-4 h-4 ml-2 inline" />
+                          {t("common.learnMore")} <ExternalLink className="w-4 h-4 ml-2 inline" />
                         </a>
                       </Button>
                     ) : (
                       <Button variant="link" asChild className="p-0 h-auto">
-                        <a href={resource.link}>Learn more</a>
+                        <a href={resource.link}>{t("common.learnMore")}</a>
                       </Button>
                     )}
                   </CardContent>
@@ -251,15 +250,13 @@ const DocsOverview = () => {
           {/* Contact Section */}
           <div className="text-center pt-8 border-t">
             <p className="text-muted-foreground">
-              If you can't find what you need, reach us at{" "}
+              {t("docsOverview.contactSupport")}{" "}
               <a href="mailto:support@knowledgestack.ai" className="text-primary hover:underline">
                 support@knowledgestack.ai
               </a>
             </p>
           </div>
-        </div>
-      </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 

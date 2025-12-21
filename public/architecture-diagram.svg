@@ -1,0 +1,112 @@
+<svg width="700" height="550" viewBox="0 0 700 550" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="layerGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="layerGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="layerGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="550" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Enterprise Architecture</text>
+  
+  <!-- Layer 1: Application Layer -->
+  <g id="application-layer">
+    <rect x="50" y="80" width="600" height="100" rx="8" fill="url(#layerGradient1)" opacity="0.2" stroke="#3b82f6" stroke-width="2"/>
+    <text x="350" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#60a5fa" text-anchor="middle">Application Layer</text>
+    
+    <!-- API Gateway -->
+    <rect x="120" y="130" width="100" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="170" y="155" font-family="Arial, sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle">API Gateway</text>
+    
+    <!-- Web Interface -->
+    <rect x="250" y="130" width="100" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="300" y="155" font-family="Arial, sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle">Web UI</text>
+    
+    <!-- Admin Console -->
+    <rect x="380" y="130" width="100" height="40" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="430" y="155" font-family="Arial, sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle">Admin Console</text>
+  </g>
+  
+  <!-- Connection Lines Layer 1 to 2 -->
+  <line x1="170" y1="180" x2="170" y2="220" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="300" y1="180" x2="300" y2="220" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="430" y1="180" x2="430" y2="220" stroke="#60a5fa" stroke-width="2"/>
+  
+  <!-- Layer 2: Processing Layer -->
+  <g id="processing-layer">
+    <rect x="50" y="220" width="600" height="120" rx="8" fill="url(#layerGradient2)" opacity="0.2" stroke="#60a5fa" stroke-width="2"/>
+    <text x="350" y="250" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#60a5fa" text-anchor="middle">Processing Layer</text>
+    
+    <!-- Ingestion Service -->
+    <rect x="80" y="270" width="110" height="50" rx="4" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+    <text x="135" y="295" font-family="Arial, sans-serif" font-size="11" fill="#38bdf8" text-anchor="middle" font-weight="bold">Ingestion</text>
+    <text x="135" y="310" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Service</text>
+    
+    <!-- Parsing Engine -->
+    <rect x="210" y="270" width="110" height="50" rx="4" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+    <text x="265" y="295" font-family="Arial, sans-serif" font-size="11" fill="#38bdf8" text-anchor="middle" font-weight="bold">Parsing</text>
+    <text x="265" y="310" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Engine</text>
+    
+    <!-- Vector Index -->
+    <rect x="340" y="270" width="110" height="50" rx="4" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+    <text x="395" y="295" font-family="Arial, sans-serif" font-size="11" fill="#38bdf8" text-anchor="middle" font-weight="bold">Vector</text>
+    <text x="395" y="310" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Index</text>
+    
+    <!-- Retrieval Service -->
+    <rect x="470" y="270" width="110" height="50" rx="4" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+    <text x="525" y="295" font-family="Arial, sans-serif" font-size="11" fill="#38bdf8" text-anchor="middle" font-weight="bold">Retrieval</text>
+    <text x="525" y="310" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Service</text>
+  </g>
+  
+  <!-- Connection Lines Layer 2 to 3 -->
+  <line x1="135" y1="340" x2="135" y2="380" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="265" y1="340" x2="265" y2="380" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="395" y1="340" x2="395" y2="380" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="525" y1="340" x2="525" y2="380" stroke="#60a5fa" stroke-width="2"/>
+  
+  <!-- Layer 3: Data Layer -->
+  <g id="data-layer">
+    <rect x="50" y="380" width="600" height="120" rx="8" fill="url(#layerGradient3)" opacity="0.2" stroke="#38bdf8" stroke-width="2"/>
+    <text x="350" y="410" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#38bdf8" text-anchor="middle">Data Layer</text>
+    
+    <!-- Document Store -->
+    <rect x="100" y="430" width="120" height="50" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="110" y="440" width="100" height="6" rx="1" fill="#475569"/>
+    <rect x="110" y="450" width="80" height="4" rx="1" fill="#64748b"/>
+    <rect x="110" y="457" width="90" height="4" rx="1" fill="#64748b"/>
+    <text x="160" y="485" font-family="Arial, sans-serif" font-size="10" fill="#38bdf8" text-anchor="middle" font-weight="bold">Document Store</text>
+    
+    <!-- Vector DB -->
+    <rect x="250" y="430" width="120" height="50" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="280" cy="450" r="8" fill="#38bdf8" opacity="0.5"/>
+    <circle cx="300" cy="450" r="8" fill="#60a5fa" opacity="0.5"/>
+    <circle cx="320" cy="450" r="8" fill="#38bdf8" opacity="0.5"/>
+    <line x1="272" y1="458" x2="328" y2="458" stroke="#38bdf8" stroke-width="2" opacity="0.5"/>
+    <text x="310" y="485" font-family="Arial, sans-serif" font-size="10" fill="#38bdf8" text-anchor="middle" font-weight="bold">Vector Database</text>
+    
+    <!-- Metadata Store -->
+    <rect x="400" y="430" width="120" height="50" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="410" y="440" width="100" height="8" rx="1" fill="#38bdf8" opacity="0.3"/>
+    <rect x="410" y="452" width="90" height="4" rx="1" fill="#64748b"/>
+    <rect x="410" y="460" width="95" height="4" rx="1" fill="#64748b"/>
+    <text x="460" y="485" font-family="Arial, sans-serif" font-size="10" fill="#38bdf8" text-anchor="middle" font-weight="bold">Metadata Store</text>
+  </g>
+  
+  <!-- Security Layer (Bottom) -->
+  <g id="security-layer">
+    <rect x="50" y="520" width="600" height="20" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+    <text x="350" y="535" font-family="Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle">🔒 End-to-End Encryption • Audit Logs • Access Control</text>
+  </g>
+</svg>
+

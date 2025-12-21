@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import BlogPostLayout from "@/layouts/BlogPostLayout";
 import { useParams, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -9,11 +9,13 @@ import { getPostBySlug, getAllPosts } from "@/lib/blog";
 import { format } from "date-fns";
 import NotFound from "./NotFound";
 import { getTagColor } from "@/lib/tag-colors";
+import { useTranslation } from "react-i18next";
 
 const BlogPost = () => {
+  const { t, i18n } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
-  const post = slug ? getPostBySlug(slug) : undefined;
-  const allPosts = getAllPosts();
+  const post = slug ? getPostBySlug(slug, i18n.language) : undefined;
+  const allPosts = getAllPosts(i18n.language);
   const currentIndex = post ? allPosts.findIndex((p) => p.slug === post.slug) : -1;
   const relatedPosts = allPosts
     .filter((p) => p.slug !== post?.slug && p.tags.some((tag) => post?.tags.includes(tag)))
@@ -24,14 +26,11 @@ const BlogPost = () => {
   }
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-24">
-          <div className="max-w-[680px] mx-auto">
+    <BlogPostLayout>
             <Link to="/blog">
               <Button variant="ghost" className="mb-8 text-gray-600 hover:text-gray-900">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Blog
+                {t("blog.backToBlog")}
               </Button>
             </Link>
 
@@ -66,7 +65,7 @@ const BlogPost = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    {post.readingTime} min read
+                    {post.readingTime} {t("common.minRead")}
                   </div>
                 </div>
               </header>
@@ -79,7 +78,7 @@ const BlogPost = () => {
               {/* Related Posts */}
               {relatedPosts.length > 0 && (
                 <div className="mt-20 pt-8 border-t border-gray-200">
-                  <h2 className="text-2xl font-bold mb-6 text-gray-900">Related Posts</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-gray-900">{t("blog.relatedPosts")}</h2>
                   <div className="grid md:grid-cols-3 gap-4">
                     {relatedPosts.map((relatedPost) => (
                       <Link key={relatedPost.slug} to={`/blog/${relatedPost.slug}`}>
@@ -93,10 +92,7 @@ const BlogPost = () => {
                 </div>
               )}
             </article>
-          </div>
-        </div>
-      </div>
-    </Layout>
+    </BlogPostLayout>
   );
 };
 

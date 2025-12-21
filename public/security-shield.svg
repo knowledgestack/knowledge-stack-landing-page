@@ -1,0 +1,88 @@
+<svg width="350" height="400" viewBox="0 0 350 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="shieldGlow" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="350" height="400" fill="#0f172a"/>
+  
+  <!-- Glow Effect -->
+  <ellipse cx="175" cy="150" rx="120" ry="150" fill="url(#shieldGlow)"/>
+  
+  <!-- Main Shield -->
+  <path d="M 175 50 
+           Q 175 50, 120 70 
+           L 120 180 
+           Q 120 250, 175 320 
+           Q 230 250, 230 180 
+           L 230 70 
+           Q 175 50, 175 50 Z" 
+        fill="url(#shieldGradient)" 
+        stroke="#10b981" 
+        stroke-width="3"/>
+  
+  <!-- Shield Inner Border -->
+  <path d="M 175 70 
+           Q 175 70, 135 85 
+           L 135 185 
+           Q 135 235, 175 295 
+           Q 215 235, 215 185 
+           L 215 85 
+           Q 175 70, 175 70 Z" 
+        fill="none" 
+        stroke="#ffffff" 
+        stroke-width="2" 
+        opacity="0.3"/>
+  
+  <!-- Checkmark -->
+  <path d="M 140 160 L 165 185 L 210 140" 
+        fill="none" 
+        stroke="#ffffff" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Lock Icon at Bottom -->
+  <g transform="translate(175, 240)">
+    <rect x="-25" y="-15" width="50" height="35" rx="4" fill="#ffffff" opacity="0.2"/>
+    <rect x="-20" y="-10" width="40" height="25" rx="3" fill="#ffffff" opacity="0.3"/>
+    <circle cx="0" cy="-5" r="8" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <rect x="-15" y="5" width="30" height="20" rx="2" fill="#10b981"/>
+    <circle cx="0" cy="15" r="3" fill="#ffffff"/>
+  </g>
+  
+  <!-- Security Badges Around Shield -->
+  <!-- Top Left -->
+  <circle cx="90" cy="100" r="15" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="90" y="107" font-family="Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle" font-weight="bold">E2E</text>
+  
+  <!-- Top Right -->
+  <circle cx="260" cy="100" r="15" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="260" y="107" font-family="Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle" font-weight="bold">AES</text>
+  
+  <!-- Bottom Left -->
+  <circle cx="100" cy="280" r="15" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="100" y="287" font-family="Arial, sans-serif" font-size="10" fill="#10b981" text-anchor="middle" font-weight="bold">RBAC</text>
+  
+  <!-- Bottom Right -->
+  <circle cx="250" cy="280" r="15" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="250" y="287" font-family="Arial, sans-serif" font-size="10" fill="#10b981" text-anchor="middle" font-weight="bold">SOC2</text>
+  
+  <!-- Connection Lines -->
+  <line x1="105" y1="105" x2="140" y2="120" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+  <line x1="245" y1="105" x2="210" y2="120" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+  <line x1="115" y1="270" x2="150" y2="255" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+  <line x1="235" y1="270" x2="200" y2="255" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Title -->
+  <text x="175" y="360" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">Enterprise Security</text>
+  <text x="175" y="385" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">End-to-End Encryption • Access Control</text>
+</svg>
+

@@ -1,32 +1,35 @@
 import { Shield, Server, Lock, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const DeploymentSection = () => {
+  const { t } = useTranslation();
+  
   const deploymentFeatures = [
     {
       icon: Shield,
-      title: "Enterprise Security",
-      description: "Built with security-first architecture and enterprise-grade data protection",
+      title: t("deployment.feature1Title"),
+      description: t("deployment.feature1Desc"),
     },
     {
       icon: Server,
-      title: "No Model Training",
-      description: "Your data never leaves your environment or gets used for training AI models",
+      title: t("deployment.feature2Title"),
+      description: t("deployment.feature2Desc"),
     },
     {
       icon: Lock,
-      title: "On-Premise Ready",
-      description: "Deploy Knowledge Stack entirely within your infrastructure for maximum control",
+      title: t("deployment.feature3Title"),
+      description: t("deployment.feature3Desc"),
     }
   ];
 
   const securityChecks = [
-    "Zero data retention policy",
-    "End-to-end encryption",
-    "Role-based access controls", 
-    "Audit trail logging",
-    "Compliance framework ready",
-    "Private cloud deployment"
+    t("deployment.check1"),
+    t("deployment.check2"),
+    t("deployment.check3"), 
+    t("deployment.check4"),
+    t("deployment.check5"),
+    t("deployment.check6")
   ];
 
   return (
@@ -39,18 +42,18 @@ const DeploymentSection = () => {
         }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-              Security You {""}
+              {t("deployment.title")} {""}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Control, Completely
+                {t("deployment.control")}
               </span>
             </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Choose how and where you deploy Knowledge Stack. Your data, your infrastructure, your rules.
+              {t("deployment.subtitle")}
             </p>
           </div>
 
@@ -81,7 +84,7 @@ const DeploymentSection = () => {
           {/* Security Checklist */}
           <div className="bg-card/50 border border-border rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-foreground text-center mb-8">
-              Security & Compliance Features
+              {t("deployment.securityTitle")}
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -97,8 +100,7 @@ const DeploymentSection = () => {
           {/* Deployment Options */}
           <div className="text-center mt-16">
             <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-              From cloud-native SaaS to fully air-gapped on-premise installations, 
-              Knowledge Stack adapts to your security and compliance requirements.
+              {t("deployment.deploymentText")}
             </p>
             
             {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,49 +1,50 @@
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Lock, Eye, FileCheck, AlertCircle, CheckCircle2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Security = () => {
+  const { t } = useTranslation();
+  
   const features = [
     {
       icon: <Lock className="w-6 h-6" />,
-      title: "End-to-End Encryption",
-      description: "All data is encrypted in transit using TLS 1.3 and at rest using AES-256 encryption."
+      title: t("security.feature1Title"),
+      description: t("security.feature1Desc")
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "SOC 2 Type II Certified",
-      description: "We maintain SOC 2 Type II certification, ensuring the highest standards of security and compliance."
+      title: t("security.feature2Title"),
+      description: t("security.feature2Desc")
     },
     {
       icon: <Eye className="w-6 h-6" />,
-      title: "Access Control",
-      description: "Role-based access control (RBAC) ensures users only access data they're authorized to view."
+      title: t("security.feature3Title"),
+      description: t("security.feature3Desc")
     },
     {
       icon: <FileCheck className="w-6 h-6" />,
-      title: "Audit Logging",
-      description: "Comprehensive audit logs track all access and modifications for complete traceability."
+      title: t("security.feature4Title"),
+      description: t("security.feature4Desc")
     },
     {
       icon: <AlertCircle className="w-6 h-6" />,
-      title: "Threat Detection",
-      description: "Advanced threat detection and monitoring systems protect against security incidents."
+      title: t("security.feature5Title"),
+      description: t("security.feature5Desc")
     },
     {
       icon: <CheckCircle2 className="w-6 h-6" />,
-      title: "Regular Security Audits",
-      description: "We conduct regular third-party security audits and penetration testing."
+      title: t("security.feature6Title"),
+      description: t("security.feature6Desc")
     }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
+    <ContentLayout>
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6">Security Overview</h1>
+            <h1 className="text-5xl font-bold mb-6">{t("security.title")}</h1>
             <p className="text-xl text-muted-foreground">
-              Enterprise-grade security built into every layer of our platform
+              {t("security.subtitle")}
             </p>
           </div>
 
@@ -65,34 +66,32 @@ const Security = () => {
 
           <Card className="max-w-4xl mx-auto border-border">
             <CardHeader>
-              <CardTitle>Security Certifications</CardTitle>
+              <CardTitle>{t("security.certificationsTitle")}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-semibold mb-2">Compliance</h3>
+                  <h3 className="font-semibold mb-2">{t("security.compliance")}</h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• SOC 2 Type II</li>
-                    <li>• GDPR Compliant</li>
-                    <li>• HIPAA Ready</li>
-                    <li>• ISO 27001</li>
+                    <li>• {t("security.compliance1")}</li>
+                    <li>• {t("security.compliance2")}</li>
+                    <li>• {t("security.compliance3")}</li>
+                    <li>• {t("security.compliance4")}</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Data Protection</h3>
+                  <h3 className="font-semibold mb-2">{t("security.dataProtection")}</h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• AES-256 Encryption</li>
-                    <li>• TLS 1.3 in Transit</li>
-                    <li>• Regular Backups</li>
-                    <li>• Data Residency Options</li>
+                    <li>• {t("security.dataProtection1")}</li>
+                    <li>• {t("security.dataProtection2")}</li>
+                    <li>• {t("security.dataProtection3")}</li>
+                    <li>• {t("security.dataProtection4")}</li>
                   </ul>
                 </div>
               </div>
             </CardContent>
           </Card>
-        </div>
-      </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 

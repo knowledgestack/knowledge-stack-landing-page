@@ -1,68 +1,82 @@
 import { Users, CheckCircle, RefreshCw, TrendingUp, ChevronDown, ChevronRight, FileText } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const ExpertValidation = () => {
-  const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set(['AI Standards Survey', 'Philosophy of AI']));
+  const { t } = useTranslation();
+  const aiStandardsKey = t("expertValidation.citationFiles.aiStandardsSurvey");
+  const philosophyKey = t("expertValidation.citationFiles.philosophyOfAI");
+  const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set([aiStandardsKey, philosophyKey]));
 
   const steps = [
     {
       icon: Users,
-      title: "Input",
-      description: "Documents processed through our pipeline",
+      title: t("expertValidation.input"),
+      description: t("expertValidation.inputDesc"),
       color: "text-primary"
     },
     {
       icon: CheckCircle,
-      title: "Employee Review",
-      description: "Validation by your team members",
+      title: t("expertValidation.employeeReview"),
+      description: t("expertValidation.employeeReviewDesc"),
       color: "text-accent"
     },
     {
       icon: RefreshCw,
-      title: "Synthetic Data",
-      description: "Corrections and generated insights become new content",
+      title: t("expertValidation.syntheticData"),
+      description: t("expertValidation.syntheticDataDesc"),
       color: "text-primary-light"
     },
     {
       icon: TrendingUp,
-      title: "Stronger Output",
-      description: "Continuously improving accuracy",
+      title: t("expertValidation.strongerOutput"),
+      description: t("expertValidation.strongerOutputDesc"),
       color: "text-accent"
     }
   ];
 
-  const citationHierarchy = {
-    'AI Standards Survey': {
-      status: 'Pending',
-      score: 98,
-      children: [
-        {
-          name: 'original-ieee-proposal.pptx',
-          badge: 'Source',
-          status: 'Verified',
-          score: 96
-        },
-        {
-          name: 'expert-committee-report.docx',
-          badge: 'Source',
-          status: 'Pending',
-          score: 93
-        }
-      ]
-    },
-    'Philosophy of AI': {
-      status: 'Verified',
-      score: 87,
-      children: [
-        {
-          name: 'kant-moral-philosophy.pdf',
-          badge: 'Source',
-          status: 'Verified',
-          score: 91
-        }
-      ]
-    }
+  const getCitationHierarchy = () => {
+    const aiStandardsKey = t("expertValidation.citationFiles.aiStandardsSurvey");
+    const philosophyKey = t("expertValidation.citationFiles.philosophyOfAI");
+    const originalIeeeKey = t("expertValidation.citationFiles.originalIeeeProposal");
+    const expertCommitteeKey = t("expertValidation.citationFiles.expertCommitteeReport");
+    const kantKey = t("expertValidation.citationFiles.kantMoralPhilosophy");
+    
+    return {
+      [aiStandardsKey]: {
+        status: 'Pending',
+        score: 98,
+        children: [
+          {
+            name: originalIeeeKey,
+            badge: 'Source',
+            status: 'Verified',
+            score: 96
+          },
+          {
+            name: expertCommitteeKey,
+            badge: 'Source',
+            status: 'Pending',
+            score: 93
+          }
+        ]
+      },
+      [philosophyKey]: {
+        status: 'Verified',
+        score: 87,
+        children: [
+          {
+            name: kantKey,
+            badge: 'Source',
+            status: 'Verified',
+            score: 91
+          }
+        ]
+      }
+    };
   };
+
+  const citationHierarchy = getCitationHierarchy();
 
   const toggleNode = (nodeName: string) => {
     const newExpanded = new Set(expandedNodes);
@@ -115,17 +129,17 @@ const ExpertValidation = () => {
         ></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Crowdsourced{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">Trust</span>{" "}
-              from Your Organization
+              {t("expertValidation.title")}{" "}
+              <span className="bg-gradient-primary bg-clip-text text-transparent">{t("expertValidation.trust")}</span>{" "}
+              {t("expertValidation.fromOrganization")}
             </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Auto-learning Loop for Continuous Improvement
+              {t("expertValidation.subtitle")}
             </p>
           </div>
 
@@ -134,8 +148,8 @@ const ExpertValidation = () => {
             {/* Left Side - Citation Hierarchy Background */}
             <div className="relative">
               <div className="bg-card/30 border border-border/50 rounded-2xl p-8 backdrop-blur-sm">
-                <h3 className="text-2xl font-bold text-foreground mb-4">Citation Hierarchy • Cite: 1</h3>
-                <p className="text-sm text-muted-foreground mb-6">Visual map showing how this citation was constructed from source materials.</p>
+                <h3 className="text-2xl font-bold text-foreground mb-4">{t("expertValidation.citationHierarchy")} • {t("expertValidation.cite")}: 1</h3>
+                <p className="text-sm text-muted-foreground mb-6">{t("expertValidation.hierarchyDesc")}</p>
                 
                 <div className="space-y-3">
                   {Object.entries(citationHierarchy).map(([fileName, data]) => (
@@ -156,7 +170,7 @@ const ExpertValidation = () => {
                         <span className="text-sm font-medium text-foreground flex-1">{fileName}</span>
                         <div className="flex items-center gap-2">
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(data.status)}`}>
-                            {data.status}
+                            {data.status === 'Verified' ? t("expertValidation.verified") : data.status === 'Pending' ? t("expertValidation.pending") : t("expertValidation.source")}
                           </span>
                           <span className={`text-sm font-medium ${getScoreColor(data.score)}`}>
                             {data.score}%
@@ -175,11 +189,11 @@ const ExpertValidation = () => {
                               <div className="flex items-center gap-2">
                                 {child.badge && (
                                   <span className={`px-2 py-0.5 rounded text-xs ${getStatusColor(child.badge)}`}>
-                                    {child.badge}
+                                    {child.badge === 'Source' ? t("expertValidation.source") : child.badge}
                                   </span>
                                 )}
                                 <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(child.status)}`}>
-                                  {child.status}
+                                  {child.status === 'Verified' ? t("expertValidation.verified") : child.status === 'Pending' ? t("expertValidation.pending") : t("expertValidation.source")}
                                 </span>
                                 <span className={`text-sm font-medium ${getScoreColor(child.score)}`}>
                                   {child.score}%
@@ -195,11 +209,9 @@ const ExpertValidation = () => {
 
                 {/* Explanation Text */}
                 <div className="mt-8 p-4 bg-accent/10 border border-accent/20 rounded-lg">
-                  <h4 className="text-sm font-semibold text-foreground mb-2">How Citation Hierarchies Work</h4>
+                  <h4 className="text-sm font-semibold text-foreground mb-2">{t("expertValidation.howItWorksTitle")}</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    When your team members validate AI outputs during daily workflows, they add to your enterprise knowledge. 
-                    The validated content can then be used for future AI generations, thereby creating a growing 
-                    web of trusted knowledge over time.
+                    {t("expertValidation.howItWorksText")}
                   </p>
                 </div>
               </div>
@@ -292,27 +304,27 @@ const ExpertValidation = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
                 <FileText className="w-8 h-8 text-primary-foreground" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">Source Citations</h3>
+              <h3 className="text-xl font-bold text-foreground mb-3">{t("expertValidation.sourceCitations")}</h3>
               <p className="text-muted-foreground">
-                Every response, including generated content, is traceable back to source.
+                {t("expertValidation.sourceCitationsDesc")}
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
                 <CheckCircle className="w-8 h-8 text-primary-foreground" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">Employee Validation</h3>
+              <h3 className="text-xl font-bold text-foreground mb-3">{t("expertValidation.employeeValidation")}</h3>
               <p className="text-muted-foreground">
-                Your team members review and correct AI outputs, ensuring accuracy and building trust in the system.
+                {t("expertValidation.employeeValidationDesc")}
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
                 <TrendingUp className="w-8 h-8 text-primary-foreground" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">Growing Knowledge</h3>
+              <h3 className="text-xl font-bold text-foreground mb-3">{t("expertValidation.growingKnowledge")}</h3>
               <p className="text-muted-foreground">
-                Each validation creates new synthetic data, expanding the knowledge base and improving future accuracy.
+                {t("expertValidation.growingKnowledgeDesc")}
               </p>
             </div>
           </div>

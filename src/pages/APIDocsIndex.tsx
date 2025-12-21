@@ -1,22 +1,22 @@
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Code, Book, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { API_VERSIONS, getCurrentVersion, getVersionInfo } from "@/lib/api-specs";
+import { useTranslation } from "react-i18next";
 
 const APIDocsIndex = () => {
+  const { t } = useTranslation();
   const currentVersion = getCurrentVersion();
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
+    <ContentLayout>
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6">API Documentation</h1>
+            <h1 className="text-5xl font-bold mb-6">{t("apiDocsIndex.title")}</h1>
             <p className="text-xl text-muted-foreground">
-              Choose an API version to view detailed documentation
+              {t("apiDocsIndex.subtitle")}
             </p>
           </div>
 
@@ -27,16 +27,16 @@ const APIDocsIndex = () => {
                 const statusBadge = version.status === 'current' ? (
                   <Badge variant="default" className="bg-green-500">
                     <CheckCircle2 className="w-3 h-3 mr-1" />
-                    Current
+                    {t("apiDocsIndex.current")}
                   </Badge>
                 ) : version.status === 'deprecated' ? (
                   <Badge variant="destructive">
                     <AlertCircle className="w-3 h-3 mr-1" />
-                    Deprecated
+                    {t("apiDocsIndex.deprecated")}
                   </Badge>
                 ) : version.status === 'preview' ? (
                   <Badge variant="secondary">
-                    Preview
+                    {t("apiDocsIndex.preview")}
                   </Badge>
                 ) : null;
 
@@ -62,12 +62,12 @@ const APIDocsIndex = () => {
                       <div className="flex items-center justify-between">
                         <div className="text-sm text-muted-foreground">
                           {version.releaseDate && (
-                            <p>Released: {new Date(version.releaseDate).toLocaleDateString()}</p>
+                            <p>{t("apiDocsIndex.released")} {new Date(version.releaseDate).toLocaleDateString()}</p>
                           )}
                         </div>
                         <Button asChild>
                           <Link to={`/api-docs/${version.version}`}>
-                            View Documentation
+                            {t("apiDocsIndex.viewDocumentation")}
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Link>
                         </Button>
@@ -82,24 +82,22 @@ const APIDocsIndex = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Book className="w-5 h-5" />
-                  Quick Start
+                  {t("apiDocsIndex.quickStart")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  New to our API? Start with the {getCurrentVersion()} documentation to get up and running quickly.
+                  {t("apiDocsIndex.quickStartDesc", { version: getCurrentVersion() })}
                 </p>
                 <Button asChild variant="outline">
                   <Link to={`/api-docs/${getCurrentVersion()}`}>
-                    Get Started with {getCurrentVersion()}
+                    {t("apiDocsIndex.getStartedWith", { version: getCurrentVersion() })}
                   </Link>
                 </Button>
               </CardContent>
             </Card>
           </div>
-        </div>
-      </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 

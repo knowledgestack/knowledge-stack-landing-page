@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -16,18 +16,21 @@ import {
 } from "@/components/ui/form";
 import { toast } from "sonner";
 import { Mail, MessageSquare, Building, User } from "lucide-react";
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  company: z.string().optional(),
-  subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+  
+  const contactSchema = z.object({
+    name: z.string().min(2, t("contact.nameError")),
+    email: z.string().email(t("contact.emailError")),
+    company: z.string().optional(),
+    subject: z.string().min(5, t("contact.subjectError")),
+    message: z.string().min(10, t("contact.messageError")),
+  });
+
+  type ContactFormValues = z.infer<typeof contactSchema>;
+  
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -53,23 +56,21 @@ const Contact = () => {
       // Temporary: Open mailto link
       window.location.href = mailtoLink;
       
-      toast.success("Thank you for contacting us! We'll get back to you soon.");
+      toast.success(t("contact.successToast"));
       form.reset();
     } catch (error) {
-      toast.error("Failed to send message. Please try again.");
+      toast.error(t("contact.errorToast"));
       console.error(error);
     }
   };
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
+    <ContentLayout>
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
+              <h1 className="text-5xl font-bold mb-6">{t("contact.title")}</h1>
               <p className="text-xl text-muted-foreground">
-                Have questions? We'd love to hear from you.
+                {t("contact.subtitle")}
               </p>
             </div>
 
@@ -78,15 +79,15 @@ const Contact = () => {
                 <div className="flex items-start gap-4">
                   <Mail className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1">Email</h3>
+                    <h3 className="font-semibold mb-1">{t("contact.email")}</h3>
                     <p className="text-muted-foreground">info@knowledgestack.ai</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <MessageSquare className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1">Support</h3>
-                    <p className="text-muted-foreground">Available 24/7 for Enterprise customers</p>
+                    <h3 className="font-semibold mb-1">{t("contact.support")}</h3>
+                    <p className="text-muted-foreground">{t("contact.supportDesc")}</p>
                   </div>
                 </div>
               </div>
@@ -94,15 +95,15 @@ const Contact = () => {
                 <div className="flex items-start gap-4">
                   <Building className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1">Sales</h3>
-                    <p className="text-muted-foreground">Schedule a demo with our team</p>
+                    <h3 className="font-semibold mb-1">{t("contact.sales")}</h3>
+                    <p className="text-muted-foreground">{t("contact.salesDesc")}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <User className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-1">Response Time</h3>
-                    <p className="text-muted-foreground">We typically respond within 24 hours</p>
+                    <h3 className="font-semibold mb-1">{t("contact.responseTime")}</h3>
+                    <p className="text-muted-foreground">{t("contact.responseTimeDesc")}</p>
                   </div>
                 </div>
               </div>
@@ -116,9 +117,9 @@ const Contact = () => {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <FormLabel>{t("contact.name")}</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" {...field} />
+                          <Input placeholder={t("contact.namePlaceholder")} {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -129,9 +130,9 @@ const Contact = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>{t("contact.emailLabel")}</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="john@example.com" {...field} />
+                          <Input type="email" placeholder={t("contact.emailPlaceholder")} {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -144,9 +145,9 @@ const Contact = () => {
                   name="company"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Company (Optional)</FormLabel>
+                      <FormLabel>{t("contact.company")}</FormLabel>
                       <FormControl>
-                        <Input placeholder="Acme Inc." {...field} />
+                        <Input placeholder={t("contact.companyPlaceholder")} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -158,9 +159,9 @@ const Contact = () => {
                   name="subject"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Subject</FormLabel>
+                      <FormLabel>{t("contact.subject")}</FormLabel>
                       <FormControl>
-                        <Input placeholder="How can we help?" {...field} />
+                        <Input placeholder={t("contact.subjectPlaceholder")} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -172,16 +173,16 @@ const Contact = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Message</FormLabel>
+                      <FormLabel>{t("contact.message")}</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Tell us more about your needs..."
+                          placeholder={t("contact.messagePlaceholder")}
                           className="min-h-[150px]"
                           {...field}
                         />
                       </FormControl>
                       <FormDescription>
-                        Please provide as much detail as possible so we can help you better.
+                        {t("contact.messageDescription")}
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -189,14 +190,12 @@ const Contact = () => {
                 />
 
                 <Button type="submit" className="w-full" size="lg">
-                  Send Message
+                  {t("contact.sendMessage")}
                 </Button>
               </form>
             </Form>
           </div>
-        </div>
-      </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 

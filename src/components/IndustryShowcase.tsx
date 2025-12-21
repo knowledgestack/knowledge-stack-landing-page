@@ -1,91 +1,113 @@
 import { useState } from "react";
 import { DollarSign, Activity, Shield, Scale, ArrowRight, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const IndustryShowcase = () => {
+  const { t } = useTranslation();
   const [activeIndustry, setActiveIndustry] = useState("finance");
 
   const industries = [
     {
       id: "finance",
       icon: <DollarSign className="w-5 h-5" />,
-      name: "Finance",
+      name: t("industryShowcase.finance"),
       color: "text-purple-600 bg-purple-100 border-purple-200"
     },
     {
       id: "healthcare", 
       icon: <Activity className="w-5 h-5" />,
-      name: "Healthcare",
+      name: t("industryShowcase.healthcare"),
       color: "text-blue-600 bg-blue-100 border-blue-200"
     },
     {
       id: "insurance",
       icon: <Shield className="w-5 h-5" />,
-      name: "Insurance", 
+      name: t("industryShowcase.insurance"), 
       color: "text-green-600 bg-green-100 border-green-200"
     },
     {
       id: "legal",
       icon: <Scale className="w-5 h-5" />,
-      name: "Legal",
+      name: t("industryShowcase.legal"),
       color: "text-orange-600 bg-orange-100 border-orange-200"
     }
   ];
 
   const useCases = {
     finance: {
-      title: "Finance",
-      description: "Extract key insights from investor decks, huge spreadsheets, dense pitch materials, and SEC filings. Reduce handles complex tables, charts, and financial statements with precision.",
-      documents: ["10-K Reports", "Earnings Calls", "Investment Decks", "Financial Statements"],
+      title: t("industryShowcase.finance"),
+      description: t("industryShowcase.financeDesc"),
+      documents: [
+        t("industryShowcase.financeDoc1"),
+        t("industryShowcase.financeDoc2"),
+        t("industryShowcase.financeDoc3"),
+        t("industryShowcase.financeDoc4")
+      ],
       metrics: [
-        { label: "Time to summary report", value: "5 minutes" },
-        { label: "Manual Review Time", value: "85% Reduction" },
-        { label: "Error rate reduction", value: "82% Reduction" }
+        { label: t("industryShowcase.financeMetric1"), value: t("industryShowcase.financeMetric1Value") },
+        { label: t("industryShowcase.financeMetric2"), value: t("industryShowcase.financeMetric2Value") },
+        { label: t("industryShowcase.financeMetric3"), value: t("industryShowcase.financeMetric3Value") }
       ],
       testimonial: {
-        quote: "Knowledge Stack helped us parse tabular documents accurately. We needed hours validating the generated reports. Now we can easily validate the results with a click.",
-        author: "Senior Fund Manager, Major US Bank"
+        quote: t("industryShowcase.financeTestimonial"),
+        author: t("industryShowcase.financeAuthor")
       }
     },
     healthcare: {
-      title: "Healthcare", 
-      description: "Process medical records, clinical trials, research papers, and regulatory documents. Extract structured data from complex medical charts and diagnostic reports.",
-      documents: ["Clinical Trial Data", "Medical Records", "Research Papers", "FDA Filings"],
+      title: t("industryShowcase.healthcare"), 
+      description: t("industryShowcase.healthcareDesc"),
+      documents: [
+        t("industryShowcase.healthcareDoc1"),
+        t("industryShowcase.healthcareDoc2"),
+        t("industryShowcase.healthcareDoc3"),
+        t("industryShowcase.healthcareDoc4")
+      ],
       metrics: [
-        { label: "Time to patient report", value: "9 minutes" },
-        { label: "Manual Review Time", value: "78% Reduction" },
-        { label: "Error rate reduction", value: "94% Reduction" }
+        { label: t("industryShowcase.healthcareMetric1"), value: t("industryShowcase.healthcareMetric1Value") },
+        { label: t("industryShowcase.healthcareMetric2"), value: t("industryShowcase.healthcareMetric2Value") },
+        { label: t("industryShowcase.healthcareMetric3"), value: t("industryShowcase.healthcareMetric3Value") }
       ],
       testimonial: {
-        quote: "Knowledge Stack transformed how we process clinical data. What used to take weeks of manual review now happens in hours with higher accuracy.",
-        author: "Clincian, UHN"
+        quote: t("industryShowcase.healthcareTestimonial"),
+        author: t("industryShowcase.healthcareAuthor")
       }
     },
     insurance: {
-      title: "Insurance",
-      description: "Analyze policy documents, claims data, risk assessments, and actuarial reports. Process complex insurance forms and regulatory filings with complete accuracy.",
-      documents: ["Policy Documents", "Claims Reports", "Risk Assessments", "Actuarial Data"],
+      title: t("industryShowcase.insurance"),
+      description: t("industryShowcase.insuranceDesc"),
+      documents: [
+        t("industryShowcase.insuranceDoc1"),
+        t("industryShowcase.insuranceDoc2"),
+        t("industryShowcase.insuranceDoc3"),
+        t("industryShowcase.insuranceDoc4")
+      ],
       metrics: [
-        { label: "Time to risk profile", value: "8 minutes" },
-        { label: "Manual Review Time", value: "89% Reduction" },
-        { label: "Error rate reduction", value: "92% Reduction" }
+        { label: t("industryShowcase.insuranceMetric1"), value: t("industryShowcase.insuranceMetric1Value") },
+        { label: t("industryShowcase.insuranceMetric2"), value: t("industryShowcase.insuranceMetric2Value") },
+        { label: t("industryShowcase.insuranceMetric3"), value: t("industryShowcase.insuranceMetric3Value") }
       ],
       testimonial: {
-        quote: "The accuracy in processing our complex policy documents exceeded our expectations. Knowledge Stack handles edge cases our previous solutions missed.",
-        author: "VP of Technology, Major Insurance Carrier"
+        quote: t("industryShowcase.insuranceTestimonial"),
+        author: t("industryShowcase.insuranceAuthor")
       }
     },
     legal: {
-      title: "Legal",
-      description: "Process contracts, legal briefs, court filings, and regulatory documents. Extract key clauses, dates, and obligations from complex legal documents.",
-      documents: ["Contracts", "Legal Briefs", "Court Filings", "Compliance Reports"],
+      title: t("industryShowcase.legal"),
+      description: t("industryShowcase.legalDesc"),
+      documents: [
+        t("industryShowcase.legalDoc1"),
+        t("industryShowcase.legalDoc2"),
+        t("industryShowcase.legalDoc3"),
+        t("industryShowcase.legalDoc4")
+      ],
       metrics: [
-        { label: "Contract Analysis", value: "90% Faster" },
-        { label: "Due Diligence Time", value: "70% Reduction" },
+        { label: t("industryShowcase.legalMetric1"), value: t("industryShowcase.legalMetric1Value") },
+        { label: t("industryShowcase.legalMetric2"), value: t("industryShowcase.legalMetric2Value") },
       ],
       testimonial: {
-        quote: "Knowledge Stack revolutionized our document review process. We can now handle complex M&A due diligence in days instead of weeks.",
-        author: "Partner, Top-Tier Law Firm"
+        quote: t("industryShowcase.legalTestimonial"),
+        author: t("industryShowcase.legalAuthor")
       }
     }
   };
@@ -94,16 +116,16 @@ const IndustryShowcase = () => {
 
   return (
     <section className="py-20 bg-background relative overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Transforming Industries with {""}
+            {t("industryShowcase.title")} {""}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Trusted AI Knowledge
+              {t("industryShowcase.trustedAI")}
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            See how Knowledge Stack delivers mission-critical accuracy across different industries, handling their most complex documents with precision.
+            {t("industryShowcase.subtitle")}
           </p>
         </div>
 
@@ -143,7 +165,7 @@ const IndustryShowcase = () => {
 
             {/* Document Types */}
             <div>
-              <h4 className="text-lg font-semibold text-foreground mb-4">Document Types We Handle:</h4>
+              <h4 className="text-lg font-semibold text-foreground mb-4">{t("industryShowcase.documentTypes")}</h4>
               <div className="grid grid-cols-2 gap-3">
                 {currentUseCase.documents.map((doc, index) => (
                   <div key={index} className="flex items-center gap-2 text-muted-foreground">

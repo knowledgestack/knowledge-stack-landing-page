@@ -32,9 +32,10 @@ export const markdownPosts = [
     date: "2025-12-19",
     author: "Knowledge Stack Team",
     excerpt: "Different document types require different chunking strategies. Learn how to optimize chunking for code, tables, lists, and other content types.",
-    tags: ["RAG","Chunking","Document Types","Optimization"],
+    tags: ["RAG","Chunking","Document Processing"],
     content: post0,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/chunking-strategies-document-types.jpg"
   },
   {
     slug: "complex-tables",
@@ -42,9 +43,10 @@ export const markdownPosts = [
     date: "2025-09-12",
     author: "Knowledge Stack Team",
     excerpt: "Complex tables with merged cells and nested structures are common in enterprise documents. Learn how to parse these challenging structures while preserving meaning.",
-    tags: ["RAG","Tables","Complex Parsing","Enterprise"],
+    tags: ["RAG","Tables","Parsing","Enterprise"],
     content: post1,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/complex-tables.jpg"
   },
   {
     slug: "document-parsing-fundamentals",
@@ -52,9 +54,10 @@ export const markdownPosts = [
     date: "2025-08-08",
     author: "Knowledge Stack Team",
     excerpt: "Document parsing is the foundation of any RAG system. Learn why parsing matters, the challenges enterprises face, and how proper parsing ensures accurate knowledge retrieval.",
-    tags: ["RAG","Parsing","Document Processing","Technical"],
+    tags: ["RAG","Parsing","Document Processing"],
     content: post2,
-    readingTime: 3
+    readingTime: 3,
+    image: "/blog-images/document-parsing-fundamentals.jpg"
   },
   {
     slug: "email-threads-conversations",
@@ -62,9 +65,10 @@ export const markdownPosts = [
     date: "2025-11-07",
     author: "Knowledge Stack Team",
     excerpt: "Email threads contain valuable knowledge but require careful parsing to preserve context. Learn how to handle email conversations, attachments, and threaded discussions in RAG systems.",
-    tags: ["RAG","Email","Conversations","Context"],
+    tags: ["RAG","Email","Parsing"],
     content: post3,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/email-threads-conversations.jpg"
   },
   {
     slug: "fixed-size-chunking",
@@ -72,9 +76,10 @@ export const markdownPosts = [
     date: "2025-11-28",
     author: "Knowledge Stack Team",
     excerpt: "Fixed-size chunking is the simplest chunking strategy. Learn when it works well, its limitations, and how to optimize it for better RAG performance.",
-    tags: ["RAG","Chunking","Fixed-Size","Document Processing"],
+    tags: ["RAG","Chunking","Document Processing"],
     content: post4,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/fixed-size-chunking.jpg"
   },
   {
     slug: "getting-started-with-knowledge-stack",
@@ -84,7 +89,8 @@ export const markdownPosts = [
     excerpt: "Learn how to set up and start using Knowledge Stack in your organization. This comprehensive guide covers everything from initial setup to advanced features.",
     tags: ["Getting Started","Tutorial","Product"],
     content: post5,
-    readingTime: 2
+    readingTime: 2,
+    image: "/blog-images/getting-started-with-knowledge-stack.jpg"
   },
   {
     slug: "handling-scanned-pdfs",
@@ -92,9 +98,10 @@ export const markdownPosts = [
     date: "2025-10-03",
     author: "Knowledge Stack Team",
     excerpt: "Scanned PDFs present unique challenges for RAG systems. Learn how to assess quality, apply preprocessing techniques, and achieve high OCR accuracy for scanned documents.",
-    tags: ["RAG","OCR","Scanned PDFs","Preprocessing"],
+    tags: ["RAG","OCR","Images"],
     content: post6,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/handling-scanned-pdfs.jpg"
   },
   {
     slug: "handling-spreadsheets",
@@ -102,9 +109,10 @@ export const markdownPosts = [
     date: "2025-10-31",
     author: "Knowledge Stack Team",
     excerpt: "Spreadsheets contain vast amounts of structured data. Learn how to parse Excel files, CSV data, and spreadsheet formats while preserving structure and relationships.",
-    tags: ["RAG","Spreadsheets","Excel","Data Files"],
+    tags: ["RAG","Spreadsheets","Parsing"],
     content: post7,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/handling-spreadsheets.jpg"
   },
   {
     slug: "image-based-documents",
@@ -112,9 +120,10 @@ export const markdownPosts = [
     date: "2025-10-17",
     author: "Knowledge Stack Team",
     excerpt: "Not all information in documents is text. Charts, diagrams, and visual content contain valuable knowledge. Learn how to extract and utilize this visual information in RAG systems.",
-    tags: ["RAG","Images","Visual Content","Diagrams"],
+    tags: ["RAG","Images","Parsing"],
     content: post8,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/image-based-documents.jpg"
   },
   {
     slug: "introduction-to-rag",
@@ -122,9 +131,10 @@ export const markdownPosts = [
     date: "2025-08-01",
     author: "Knowledge Stack Team",
     excerpt: "Discover why Retrieval-Augmented Generation (RAG) is revolutionizing how enterprises manage and access their knowledge. Learn the fundamentals and see how Knowledge Stack makes RAG accessible for every organization.",
-    tags: ["RAG","AI","Enterprise","Introduction"],
+    tags: ["RAG","AI","Enterprise"],
     content: post9,
-    readingTime: 3
+    readingTime: 3,
+    image: "/blog-images/introduction-to-rag.jpg"
   },
   {
     slug: "knowledge-stack-intelligent-chunking",
@@ -132,9 +142,10 @@ export const markdownPosts = [
     date: "2025-12-26",
     author: "Knowledge Stack Team",
     excerpt: "Learn how Knowledge Stack combines multiple chunking strategies into an intelligent, adaptive system that optimizes for each document and use case.",
-    tags: ["RAG","Chunking","Knowledge Stack","Adaptive"],
+    tags: ["RAG","Chunking","Product"],
     content: post10,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/knowledge-stack-intelligent-chunking.jpg"
   },
   {
     slug: "multi-format-documents",
@@ -142,9 +153,10 @@ export const markdownPosts = [
     date: "2025-08-22",
     author: "Knowledge Stack Team",
     excerpt: "Enterprises deal with documents in dozens of formats from various sources. Learn how to handle this complexity and ensure consistent parsing across all document types.",
-    tags: ["RAG","Parsing","Enterprise","Multi-Format"],
+    tags: ["RAG","Parsing","Enterprise"],
     content: post11,
-    readingTime: 4
+    readingTime: 4,
+    image: "/blog-images/multi-format-documents.jpg"
   },
   {
     slug: "multi-language-ocr",
@@ -152,9 +164,10 @@ export const markdownPosts = [
     date: "2025-10-10",
     author: "Knowledge Stack Team",
     excerpt: "Global enterprises deal with documents in multiple languages. Learn how multi-language OCR enables RAG systems to extract knowledge from documents in any language.",
-    tags: ["RAG","OCR","Multi-language","Global"],
+    tags: ["RAG","OCR","Enterprise"],
     content: post12,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/multi-language-ocr.jpg"
   },
   {
     slug: "ocr-in-rag",
@@ -162,9 +175,10 @@ export const markdownPosts = [
     date: "2025-09-26",
     author: "Knowledge Stack Team",
     excerpt: "Many enterprise documents are scanned images or PDFs. Learn how OCR (Optical Character Recognition) enables RAG systems to extract knowledge from these documents and the challenges involved.",
-    tags: ["RAG","OCR","Scanned Documents","Image Processing"],
+    tags: ["RAG","OCR","Images"],
     content: post13,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/ocr-in-rag.jpg"
   },
   {
     slug: "parsing-challenges-edge-cases",
@@ -172,9 +186,10 @@ export const markdownPosts = [
     date: "2025-11-14",
     author: "Knowledge Stack Team",
     excerpt: "Real-world documents present edge cases that challenge parsing systems. Learn about common edge cases and how Knowledge Stack handles them to ensure reliable parsing.",
-    tags: ["RAG","Parsing","Edge Cases","Challenges"],
+    tags: ["RAG","Parsing","Document Processing"],
     content: post14,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/parsing-challenges-edge-cases.jpg"
   },
   {
     slug: "parsing-code-documentation",
@@ -182,9 +197,10 @@ export const markdownPosts = [
     date: "2025-10-24",
     author: "Knowledge Stack Team",
     excerpt: "Technical documentation and code require specialized parsing. Learn how to handle code blocks, API documentation, and technical content in RAG systems.",
-    tags: ["RAG","Code","Technical Documentation","Parsing"],
+    tags: ["RAG","Code","Parsing"],
     content: post15,
-    readingTime: 4
+    readingTime: 4,
+    image: "/blog-images/parsing-code-documentation.jpg"
   },
   {
     slug: "parsing-structured-tables",
@@ -192,9 +208,10 @@ export const markdownPosts = [
     date: "2025-09-05",
     author: "Knowledge Stack Team",
     excerpt: "Learn how to parse structured tables while preserving row and column relationships. Discover techniques for maintaining table structure in RAG systems.",
-    tags: ["RAG","Tables","Parsing","Structured Data"],
+    tags: ["RAG","Tables","Parsing"],
     content: post16,
-    readingTime: 4
+    readingTime: 4,
+    image: "/blog-images/parsing-structured-tables.jpg"
   },
   {
     slug: "recursive-chunking",
@@ -202,9 +219,10 @@ export const markdownPosts = [
     date: "2025-12-12",
     author: "Knowledge Stack Team",
     excerpt: "Recursive chunking handles documents with nested structures by chunking hierarchically. Learn how it works for complex documents with multiple levels of organization.",
-    tags: ["RAG","Chunking","Recursive","Hierarchical"],
+    tags: ["RAG","Chunking","Document Processing"],
     content: post17,
-    readingTime: 4
+    readingTime: 4,
+    image: "/blog-images/recursive-chunking.jpg"
   },
   {
     slug: "semantic-chunking",
@@ -212,9 +230,10 @@ export const markdownPosts = [
     date: "2025-12-05",
     author: "Knowledge Stack Team",
     excerpt: "Semantic chunking splits documents at semantic boundaries, preserving meaning and context. Learn how it works and when it outperforms fixed-size chunking.",
-    tags: ["RAG","Chunking","Semantic","ML"],
+    tags: ["RAG","Chunking","Document Processing"],
     content: post18,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/semantic-chunking.jpg"
   },
   {
     slug: "table-extraction-best-practices",
@@ -222,9 +241,10 @@ export const markdownPosts = [
     date: "2025-09-19",
     author: "Knowledge Stack Team",
     excerpt: "Learn the best practices for table extraction in RAG systems and how Knowledge Stack implements them to ensure accurate, reliable table parsing for enterprise use cases.",
-    tags: ["RAG","Tables","Best Practices","Knowledge Stack"],
+    tags: ["RAG","Tables","Parsing"],
     content: post19,
-    readingTime: 4
+    readingTime: 4,
+    image: "/blog-images/table-extraction-best-practices.jpg"
   },
   {
     slug: "text-extraction-formats",
@@ -232,9 +252,10 @@ export const markdownPosts = [
     date: "2025-08-15",
     author: "Knowledge Stack Team",
     excerpt: "Learn the intricacies of extracting text from different document formats. Discover the challenges and best practices for PDFs, Word documents, and Markdown files in RAG systems.",
-    tags: ["RAG","Parsing","PDF","Text Extraction"],
+    tags: ["RAG","Parsing","Document Processing"],
     content: post20,
-    readingTime: 4
+    readingTime: 4,
+    image: "/blog-images/text-extraction-formats.jpg"
   },
   {
     slug: "why-chunking-matters",
@@ -242,9 +263,10 @@ export const markdownPosts = [
     date: "2025-11-21",
     author: "Knowledge Stack Team",
     excerpt: "Chunking is crucial for RAG systems. Learn why breaking documents into optimal chunks affects retrieval accuracy, answer quality, and system performance.",
-    tags: ["RAG","Chunking","Document Processing","Retrieval"],
+    tags: ["RAG","Chunking","Document Processing"],
     content: post21,
-    readingTime: 5
+    readingTime: 5,
+    image: "/blog-images/why-chunking-matters.jpg"
   },
   {
     slug: "why-tables-matter",
@@ -254,6 +276,7 @@ export const markdownPosts = [
     excerpt: "Tables contain some of the most valuable information in enterprise documents. Learn why table parsing is crucial for RAG systems and what happens when tables are parsed incorrectly.",
     tags: ["RAG","Tables","Parsing","Enterprise"],
     content: post22,
-    readingTime: 4
+    readingTime: 4,
+    image: "/blog-images/why-tables-matter.jpg"
   }
 ];

@@ -1,28 +1,31 @@
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, AlertCircle, XCircle, Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Status = () => {
+  const { t } = useTranslation();
+  
   const services = [
     {
-      name: "API",
+      name: t("status.api"),
       status: "operational",
-      description: "All systems operational"
+      description: t("status.allNormal")
     },
     {
-      name: "Web Application",
+      name: t("status.webApp"),
       status: "operational",
-      description: "All systems operational"
+      description: t("status.allNormal")
     },
     {
-      name: "Database",
+      name: t("status.database"),
       status: "operational",
-      description: "All systems operational"
+      description: t("status.allNormal")
     },
     {
-      name: "Authentication",
+      name: t("status.authentication"),
       status: "operational",
-      description: "All systems operational"
+      description: t("status.allNormal")
     }
   ];
 
@@ -42,25 +45,23 @@ const Status = () => {
   const getStatusText = (status: string) => {
     switch (status) {
       case "operational":
-        return "Operational";
+        return t("status.operational");
       case "degraded":
-        return "Degraded Performance";
+        return t("status.degraded");
       case "outage":
-        return "Outage";
+        return t("status.outage");
       default:
-        return "Unknown";
+        return t("status.unknown");
     }
   };
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
-          <div className="max-w-4xl mx-auto">
+    <ContentLayout>
+      <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-5xl font-bold mb-6">Status Page</h1>
+              <h1 className="text-5xl font-bold mb-6">{t("status.title")}</h1>
               <p className="text-xl text-muted-foreground">
-                Real-time status of Knowledge Stack services
+                {t("status.subtitle")}
               </p>
             </div>
 
@@ -69,8 +70,8 @@ const Status = () => {
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="w-6 h-6 text-green-500" />
                   <div>
-                    <CardTitle>All Systems Operational</CardTitle>
-                    <CardDescription>All services are running normally</CardDescription>
+                    <CardTitle>{t("status.allOperational")}</CardTitle>
+                    <CardDescription>{t("status.allNormal")}</CardDescription>
                   </div>
                 </div>
               </CardHeader>
@@ -99,24 +100,22 @@ const Status = () => {
 
             <Card className="mt-8 border-border">
               <CardHeader>
-                <CardTitle>Subscribe to Updates</CardTitle>
+                <CardTitle>{t("status.subscribeTitle")}</CardTitle>
                 <CardDescription>
-                  Get notified when there are incidents or scheduled maintenance
+                  {t("status.subscribeDesc")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Subscribe to receive email notifications about service status updates.
+                  {t("status.subscribeText")}
                 </p>
                 <a href="/contact" className="text-primary hover:underline">
-                  Contact us to subscribe →
+                  {t("status.contactSubscribe")}
                 </a>
               </CardContent>
             </Card>
-          </div>
-        </div>
       </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 

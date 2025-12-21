@@ -1,49 +1,50 @@
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Lock, Eye, FileText, AlertCircle, CheckCircle2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const TrustCenter = () => {
+  const { t } = useTranslation();
+  
   const trustPillars = [
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Security",
-      description: "Enterprise-grade security measures protect your data at every layer."
+      title: t("trustCenter.pillar1Title"),
+      description: t("trustCenter.pillar1Desc")
     },
     {
       icon: <Lock className="w-6 h-6" />,
-      title: "Privacy",
-      description: "Your data is yours. We never use your content to train models."
+      title: t("trustCenter.pillar2Title"),
+      description: t("trustCenter.pillar2Desc")
     },
     {
       icon: <Eye className="w-6 h-6" />,
-      title: "Transparency",
-      description: "Clear policies and practices you can trust and verify."
+      title: t("trustCenter.pillar3Title"),
+      description: t("trustCenter.pillar3Desc")
     },
     {
       icon: <FileText className="w-6 h-6" />,
-      title: "Compliance",
-      description: "Meeting the highest standards of regulatory compliance."
+      title: t("trustCenter.pillar4Title"),
+      description: t("trustCenter.pillar4Desc")
     },
     {
       icon: <AlertCircle className="w-6 h-6" />,
-      title: "Incident Response",
-      description: "Rapid response and clear communication in the event of security incidents."
+      title: t("trustCenter.pillar5Title"),
+      description: t("trustCenter.pillar5Desc")
     },
     {
       icon: <CheckCircle2 className="w-6 h-6" />,
-      title: "Reliability",
-      description: "99.9% uptime SLA with comprehensive monitoring and alerting."
+      title: t("trustCenter.pillar6Title"),
+      description: t("trustCenter.pillar6Desc")
     }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
+    <ContentLayout>
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6">Trust Center</h1>
+            <h1 className="text-5xl font-bold mb-6">{t("trustCenter.title")}</h1>
             <p className="text-xl text-muted-foreground">
-              Your trust is our foundation. Learn how we protect your data and maintain the highest standards.
+              {t("trustCenter.subtitle")}
             </p>
           </div>
 
@@ -66,35 +67,33 @@ const TrustCenter = () => {
           <div className="max-w-4xl mx-auto space-y-6">
             <Card className="border-border">
               <CardHeader>
-                <CardTitle>Security Practices</CardTitle>
+                <CardTitle>{t("trustCenter.practicesTitle")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• Regular security audits and penetration testing</li>
-                  <li>• 24/7 security monitoring and threat detection</li>
-                  <li>• Employee security training and background checks</li>
-                  <li>• Bug bounty program for responsible disclosure</li>
+                  <li>• {t("trustCenter.practice1")}</li>
+                  <li>• {t("trustCenter.practice2")}</li>
+                  <li>• {t("trustCenter.practice3")}</li>
+                  <li>• {t("trustCenter.practice4")}</li>
                 </ul>
               </CardContent>
             </Card>
 
             <Card className="border-border">
               <CardHeader>
-                <CardTitle>Data Protection</CardTitle>
+                <CardTitle>{t("trustCenter.dataProtectionTitle")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• Data encryption at rest and in transit</li>
-                  <li>• Regular automated backups</li>
-                  <li>• Data retention and deletion policies</li>
-                  <li>• Data residency options for compliance</li>
+                  <li>• {t("trustCenter.dataProtection1")}</li>
+                  <li>• {t("trustCenter.dataProtection2")}</li>
+                  <li>• {t("trustCenter.dataProtection3")}</li>
+                  <li>• {t("trustCenter.dataProtection4")}</li>
                 </ul>
               </CardContent>
             </Card>
           </div>
-        </div>
-      </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 

@@ -1,28 +1,31 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote, CheckCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const TestimonialsSection = () => {
+  const { t } = useTranslation();
+  
   const testimonials = [
     {
-      quote: "Knowledge Stack's document processing capabilities have transformed how we handle complex telecommunications data. The accuracy and speed are remarkable.",
-      author: "Engineering Team",
-      title: "Data Processing",
-      company: "China Telecom",
-      type: "Telecommunications",
+      quote: t("testimonials.testimonial1Quote"),
+      author: t("testimonials.testimonial1Author"),
+      title: t("testimonials.testimonial1Title"),
+      company: t("testimonials.testimonial1Company"),
+      type: t("testimonials.testimonial1Type"),
     },
     {
-      quote: "Knowledge Stack's table parsing is incredibly accurate. Complex financial tables that used to take our team hours to process are now extracted and verified in seconds.",
-      author: "Analytics Team",
-      title: "Data Processing",
-      company: "NewBund31",
-      type: "Financial Analytics",
+      quote: t("testimonials.testimonial2Quote"),
+      author: t("testimonials.testimonial2Author"),
+      title: t("testimonials.testimonial2Title"),
+      company: t("testimonials.testimonial2Company"),
+      type: t("testimonials.testimonial2Type"),
     },
     {
-      quote: "Knowledge Stack took over our entire RAG pipeline, letting us focus purely on agent logic. The document processing and retrieval quality is enterprise-grade.",
-      author: "AI Engineering Team",
-      title: "AI Platform",
-      company: "Kommon AI",
-      type: "Agentic Platform",
+      quote: t("testimonials.testimonial3Quote"),
+      author: t("testimonials.testimonial3Author"),
+      title: t("testimonials.testimonial3Title"),
+      company: t("testimonials.testimonial3Company"),
+      type: t("testimonials.testimonial3Type"),
     }
   ];
 
@@ -34,7 +37,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="py-16 bg-gradient-security">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         {/* Featured Testimonial */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <div className="flex justify-center mb-6">

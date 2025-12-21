@@ -1,39 +1,40 @@
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileCheck, Shield, Lock, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Compliance = () => {
+  const { t } = useTranslation();
+  
   const standards = [
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "SOC 2 Type II",
-      description: "We maintain SOC 2 Type II certification, demonstrating our commitment to security, availability, and confidentiality."
+      title: t("compliance.standard1Title"),
+      description: t("compliance.standard1Desc")
     },
     {
       icon: <Globe className="w-6 h-6" />,
-      title: "GDPR",
-      description: "Fully compliant with GDPR requirements, ensuring the privacy and protection of EU citizens' data."
+      title: t("compliance.standard2Title"),
+      description: t("compliance.standard2Desc")
     },
     {
       icon: <FileCheck className="w-6 h-6" />,
-      title: "HIPAA Ready",
-      description: "Our platform meets HIPAA requirements for healthcare organizations handling protected health information."
+      title: t("compliance.standard3Title"),
+      description: t("compliance.standard3Desc")
     },
     {
       icon: <Lock className="w-6 h-6" />,
-      title: "ISO 27001",
-      description: "ISO 27001 certified information security management system ensures comprehensive security controls."
+      title: t("compliance.standard4Title"),
+      description: t("compliance.standard4Desc")
     }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
+    <ContentLayout>
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6">Compliance</h1>
+            <h1 className="text-5xl font-bold mb-6">{t("compliance.title")}</h1>
             <p className="text-xl text-muted-foreground">
-              Meeting the highest standards of regulatory compliance
+              {t("compliance.subtitle")}
             </p>
           </div>
 
@@ -55,29 +56,27 @@ const Compliance = () => {
 
           <Card className="max-w-4xl mx-auto border-border">
             <CardHeader>
-              <CardTitle>Compliance Documentation</CardTitle>
+              <CardTitle>{t("compliance.documentationTitle")}</CardTitle>
               <CardDescription>
-                Request compliance documentation and reports for your organization
+                {t("compliance.documentationDesc")}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                We provide comprehensive compliance documentation including:
+                {t("compliance.documentationText")}
               </p>
               <ul className="space-y-2 text-muted-foreground mb-6">
-                <li>• SOC 2 Type II reports</li>
-                <li>• Security questionnaires</li>
-                <li>• Data processing agreements</li>
-                <li>• Compliance certifications</li>
+                <li>• {t("compliance.doc1")}</li>
+                <li>• {t("compliance.doc2")}</li>
+                <li>• {t("compliance.doc3")}</li>
+                <li>• {t("compliance.doc4")}</li>
               </ul>
               <a href="/contact" className="text-primary hover:underline">
-                Contact us to request documentation →
+                {t("compliance.requestDoc")}
               </a>
             </CardContent>
           </Card>
-        </div>
-      </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 

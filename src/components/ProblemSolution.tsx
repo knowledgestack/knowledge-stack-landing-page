@@ -1,47 +1,50 @@
 import { ArrowRight, FileText, BarChart3, Brain, Shield, Search, Zap, CheckCircle, Users, RefreshCw, TrendingUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ProblemSolution = () => {
+  const { t } = useTranslation();
+  
   const problems = [
     {
       icon: <FileText className="w-6 h-6 text-destructive" />,
-      title: "Scattered PDFs",
-      description: "Engineering drawings, tables, and critical documents spread across systems"
+      title: t("problemSolution.challenge1Title"),
+      description: t("problemSolution.challenge1Desc")
     },
     {
       icon: <BarChart3 className="w-6 h-6 text-destructive" />,
-      title: "Manual Reporting",
-      description: "Hours manually extracting data from complex document formats"
+      title: t("problemSolution.challenge2Title"),
+      description: t("problemSolution.challenge2Desc")
     },
     {
       icon: <Brain className="w-6 h-6 text-destructive" />,
-      title: "AI Hallucinations",
-      description: "Unreliable AI outputs without source verification or employee validation"
+      title: t("problemSolution.challenge3Title"),
+      description: t("problemSolution.challenge3Desc")
     }
   ];
 
   const solutions = [
     {
       icon: <Search className="w-6 h-6 text-accent" />,
-      title: "Intelligent Ingestion",
-      description: "Parse engineering drawings, tables, and complex documents into structured chunks"
+      title: t("problemSolution.solution1Title"),
+      description: t("problemSolution.solution1Desc")
     },
     {
       icon: <Shield className="w-6 h-6 text-accent" />,
-      title: "Employee Validation",
-      description: "Your team members validate outputs, creating synthetic data for continuous learning"
+      title: t("problemSolution.solution2Title"),
+      description: t("problemSolution.solution2Desc")
     },
     {
       icon: <Zap className="w-6 h-6 text-accent" />,
-      title: "Trusted Insights",
-      description: "Get verifiable answers with complete document-to-chunk traceability"
+      title: t("problemSolution.solution3Title"),
+      description: t("problemSolution.solution3Desc")
     }
   ];
 
   const expertCycle = [
-    { icon: FileText, title: "Input", description: "Documents processed" },
-    { icon: CheckCircle, title: "Employee Validation", description: "Your team members validate" },
-    { icon: RefreshCw, title: "Synthetic Data", description: "Corrections become training" },
-    { icon: TrendingUp, title: "Stronger Output", description: "Continuously improving" }
+    { icon: FileText, title: t("problemSolution.cycle1Title"), description: t("problemSolution.cycle1Desc") },
+    { icon: CheckCircle, title: t("problemSolution.cycle2Title"), description: t("problemSolution.cycle2Desc") },
+    { icon: RefreshCw, title: t("problemSolution.cycle3Title"), description: t("problemSolution.cycle3Desc") },
+    { icon: TrendingUp, title: t("problemSolution.cycle4Title"), description: t("problemSolution.cycle4Desc") }
   ];
 
   return (
@@ -55,16 +58,16 @@ const ProblemSolution = () => {
         <div className="absolute top-24 right-14 w-32 h-40 bg-accent/30 rounded-lg animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            Built for {""}
+            {t("problemSolution.title")} {""}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Mission-Critical Accuracy
+                {t("problemSolution.missionCritical")}
               </span>
           </h2>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto">
-            Transform scattered documents into a trusted knowledge base
+            {t("problemSolution.subtitle")}
           </p>
         </div>
 
@@ -73,7 +76,7 @@ const ProblemSolution = () => {
           {/* Problems */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
-              Current Challenges
+              {t("problemSolution.challenges")}
             </h3>
             {problems.map((problem, index) => (
               <div key={index} className="p-6 bg-card border border-destructive/20 rounded-lg animate-fade-in hover:border-destructive/40 transition-all duration-300" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -103,7 +106,7 @@ const ProblemSolution = () => {
           {/* Solutions */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
-              Knowledge Stack Solution
+              {t("problemSolution.solution")}
             </h3>
             {solutions.map((solution, index) => (
               <div key={index} className="p-6 bg-card border border-accent/40 rounded-lg animate-slide-up shadow-subtle hover:shadow-medium transition-smooth">

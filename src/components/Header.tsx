@@ -1,19 +1,31 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Globe } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const handleSignIn = () => {
     window.location.href = "https://app.knowledgestack.ai";
   };
 
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-transparent">
-      <div className="mx-auto px-3">
+    <header className="relative z-50 w-full bg-transparent">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
@@ -31,48 +43,67 @@ const Header = () => {
               to="/docs"
               className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Docs
+              {t("header.docs")}
             </Link>
             <Link
               to="/features"
               className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Features
+              {t("header.features")}
             </Link>
             <Link
               to="/pricing"
               className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Pricing
+              {t("header.pricing")}
             </Link>
             <Link
               to="/blog"
               className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Blog
+              {t("header.blog")}
             </Link>
             <Link
               to="/contact"
               className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Contact
+              {t("header.contact")}
             </Link>
           </nav>
 
-          {/* Sign In Button */}
+          {/* Sign In Button & Language Switcher */}
           <div className="flex items-center gap-3">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hidden sm:inline-flex"
+                >
+                  <Globe className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => changeLanguage("en")}>
+                  English
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage("zh")}>
+                  中文
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button
               variant="ghost"
               onClick={handleSignIn}
               className="hidden sm:inline-flex"
             >
-              Sign In
+              {t("header.signIn")}
             </Button>
             <Button
               onClick={handleSignIn}
               className="hidden sm:inline-flex"
             >
-              Get Started
+              {t("header.getStarted")}
             </Button>
             <Button
               variant="ghost"
@@ -93,49 +124,67 @@ const Header = () => {
               className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Docs
+              {t("header.docs")}
             </Link>
             <Link
               to="/features"
               className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Features
+              {t("header.features")}
             </Link>
             <Link
               to="/pricing"
               className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Pricing
+              {t("header.pricing")}
             </Link>
             <Link
               to="/blog"
               className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Blog
+              {t("header.blog")}
             </Link>
             <Link
               to="/contact"
               className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              {t("header.contact")}
             </Link>
             <div className="flex flex-col gap-2 pt-2 border-t">
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => changeLanguage("en")}
+                  className="flex-1"
+                >
+                  EN
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => changeLanguage("zh")}
+                  className="flex-1"
+                >
+                  中文
+                </Button>
+              </div>
               <Button
                 variant="outline"
                 onClick={handleSignIn}
                 className="w-full"
               >
-                Sign In
+                {t("header.signIn")}
               </Button>
               <Button
                 onClick={handleSignIn}
                 className="w-full"
               >
-                Get Started
+                {t("header.getStarted")}
               </Button>
             </div>
           </div>

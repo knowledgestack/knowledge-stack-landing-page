@@ -14,8 +14,11 @@ date: "YYYY-MM-DD"
 author: "Author Name"
 excerpt: "A brief description that appears in the blog listing"
 tags: ["Tag1", "Tag2", "Tag3"]
+image: "/blog-images/your-image.jpg"
 ---
 ```
+
+**Note:** The `image` field is **required**. Images should be stored in the `/public/blog-images/` directory. If you don't specify an image, it will default to `/blog-images/{slug}.jpg` based on your post's filename.
 
 3. Write your content using Markdown syntax
 4. The file will automatically appear in the blog listing
@@ -40,6 +43,7 @@ date: "2025-01-20"
 author: "John Doe"
 excerpt: "This is what readers will see in the blog listing"
 tags: ["Tutorial", "Product"]
+image: "/blog-images/my-first-blog-post.jpg"
 ---
 
 # My First Blog Post

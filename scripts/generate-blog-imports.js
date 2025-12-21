@@ -34,6 +34,8 @@ files.forEach((file, index) => {
   const readingTime = Math.ceil(words / 200);
   
   // Generate post object
+  // Image is required - default to slug-based image if not specified
+  const imagePath = data.image || `/blog-images/${slug}.jpg`;
   posts.push(`  {
     slug: "${slug}",
     title: ${JSON.stringify(data.title || '')},
@@ -42,7 +44,8 @@ files.forEach((file, index) => {
     excerpt: ${JSON.stringify(data.excerpt || '')},
     tags: ${JSON.stringify(Array.isArray(data.tags) ? data.tags : [])},
     content: post${index},
-    readingTime: ${readingTime}
+    readingTime: ${readingTime},
+    image: ${JSON.stringify(imagePath)}
   }`);
 });
 

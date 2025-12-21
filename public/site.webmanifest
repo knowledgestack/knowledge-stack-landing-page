@@ -1,0 +1,22 @@
+{
+  "name": "Knowledge Stack",
+  "short_name": "Knowledge Stack",
+  "description": "Enterprise RAG Solutions & Agentic AI Platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B101A",
+  "theme_color": "#0B101A",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+

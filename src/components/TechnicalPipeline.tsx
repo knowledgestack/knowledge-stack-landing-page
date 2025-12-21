@@ -1,35 +1,38 @@
 import { ArrowRight, FileText, Search, Layers, Database, Zap } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const TechnicalPipeline = () => {
+  const { t } = useTranslation();
+  
   const pipelineSteps = [
     {
       icon: FileText,
-      title: "Parsing",
-      description: "Normalizes inputs across formats like PDFs, DOCs, HTML, and media",
+      title: t("technicalPipeline.parsing"),
+      description: t("technicalPipeline.parsingDesc"),
       color: "text-accent"
     },
     {
       icon: Search,
-      title: "Extraction", 
-      description: "Identifies key signals like entities, metadata, and boundaries",
+      title: t("technicalPipeline.extraction"), 
+      description: t("technicalPipeline.extractionDesc"),
       color: "text-primary"
     },
     {
       icon: Layers,
-      title: "Chunking",
-      description: "Segments content into logically grouped chunks using type-specific strategies",
+      title: t("technicalPipeline.chunking"),
+      description: t("technicalPipeline.chunkingDesc"),
       color: "text-accent-light"
     },
     {
       icon: Database,
-      title: "Indexing", 
-      description: "Builds vector, keyword, and summary indexes for semantic search and keyword retrieval",
+      title: t("technicalPipeline.indexing"), 
+      description: t("technicalPipeline.indexingDesc"),
       color: "text-primary-light"
     },
     {
       icon: Zap,
-      title: "Retrieval",
-      description: "Handles multi-index retrieval for context-rich results for any LLM.",
+      title: t("technicalPipeline.retrieval"),
+      description: t("technicalPipeline.retrievalDesc"),
       color: "text-accent"
     }
   ];
@@ -67,20 +70,20 @@ const TechnicalPipeline = () => {
       </div>
 
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-              From <span className="text-accent">Complex Documents</span> to
+              {t("technicalPipeline.title")} <span className="text-accent">{t("technicalPipeline.complexDocuments")}</span> {t("technicalPipeline.to")}
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Trusted Insights
+                {t("technicalPipeline.trustedInsights")}
               </span>
             </h2>
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Delivers <span className="font-semibold text-accent">accurate and verifiable answers</span> using 
-              <span className="font-semibold text-primary"> custom state-of-the-art pipeline</span>
+              {t("technicalPipeline.subtitle1")} <span className="font-semibold text-accent">{t("technicalPipeline.accurate")}</span> {t("technicalPipeline.subtitle2")} 
+              <span className="font-semibold text-primary"> {t("technicalPipeline.customPipeline")}</span>
             </p>
           </div>
 

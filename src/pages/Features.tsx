@@ -1,49 +1,50 @@
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Zap, Database, Search, Lock, BarChart3 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Features = () => {
+  const { t } = useTranslation();
+  
   const features = [
     {
       icon: <Search className="w-6 h-6" />,
-      title: "Complete Source Traceability",
-      description: "Every answer includes full source citations, allowing you to verify information and trace back to original documents."
+      title: t("features.feature1Title"),
+      description: t("features.feature1Desc")
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Enterprise Security",
-      description: "SOC 2 compliant with end-to-end encryption, role-based access control, and comprehensive audit logs."
+      title: t("features.feature2Title"),
+      description: t("features.feature2Desc")
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Mission-Critical Accuracy",
-      description: "Advanced AI models trained specifically for knowledge work, ensuring reliable and accurate responses."
+      title: t("features.feature3Title"),
+      description: t("features.feature3Desc")
     },
     {
       icon: <Database className="w-6 h-6" />,
-      title: "Scalable Infrastructure",
-      description: "Built to handle enterprise-scale workloads with automatic scaling and high availability."
+      title: t("features.feature4Title"),
+      description: t("features.feature4Desc")
     },
     {
       icon: <Lock className="w-6 h-6" />,
-      title: "Data Privacy",
-      description: "Your data stays yours. We never use your content to train models, ensuring complete data sovereignty."
+      title: t("features.feature5Title"),
+      description: t("features.feature5Desc")
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
-      title: "Analytics & Insights",
-      description: "Comprehensive analytics dashboard to track usage, performance, and knowledge gaps."
+      title: t("features.feature6Title"),
+      description: t("features.feature6Desc")
     }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
+    <ContentLayout>
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6">Features</h1>
+            <h1 className="text-5xl font-bold mb-6">{t("features.title")}</h1>
             <p className="text-xl text-muted-foreground">
-              Everything you need to build a trusted knowledge hub for your organization
+              {t("features.subtitle")}
             </p>
           </div>
 
@@ -62,9 +63,7 @@ const Features = () => {
               </Card>
             ))}
           </div>
-        </div>
-      </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 

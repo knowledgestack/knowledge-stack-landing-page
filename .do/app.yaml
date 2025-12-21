@@ -1,4 +1,6 @@
 name: knowledge-stack-landing-page
 
-build_command: bun run build
-
+static_sites:
+  - name: web
+    build_command: bun run build
+    output_dir: dist

@@ -1,0 +1,26 @@
+<svg width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top book - bright orange/amber -->
+  <path
+    d="M1 1 L28 1 L32 5 L28 9 L1 9 Z"
+    fill="#FF8C42"
+  />
+  
+  <!-- Second book - reddish-orange -->
+  <path
+    d="M1 10 L28 10 L32 14 L28 18 L1 18 Z"
+    fill="#FF6B35"
+  />
+  
+  <!-- Third book - vibrant red with rounded left spine (book effect) -->
+  <path
+    d="M3.5 19 Q1.5 19 1.5 22.5 Q1.5 26 3.5 26 L28 26 L32 22.5 L28 19 Z"
+    fill="#FF4757"
+  />
+  
+  <!-- Bottom book - medium blue with rounded left spine (book effect) -->
+  <path
+    d="M3.5 27 Q1.5 27 1.5 28.5 Q1.5 30 3.5 30 L28 30 L32 26.5 L28 23 Z"
+    fill="#4A90E2"
+  />
+</svg>
+

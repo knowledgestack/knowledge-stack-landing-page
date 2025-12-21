@@ -1,43 +1,46 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, Clock, Database, Users, Shield, Zap } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const MetricsSection = () => {
+  const { t } = useTranslation();
+  
   const metrics = [
     {
       icon: TrendingUp,
-      value: "95%",
-      label: "Answer Accuracy",
-      description: "Verified by domain experts with source traceability"
+      value: t("metrics.metric1Value"),
+      label: t("metrics.metric1Label"),
+      description: t("metrics.metric1Desc")
     },
     {
       icon: Clock,
-      value: "<2s",
-      label: "Processing Time", 
-      description: "From document upload to searchable chunks"
+      value: t("metrics.metric2Value"),
+      label: t("metrics.metric2Label"), 
+      description: t("metrics.metric2Desc")
     },
     {
       icon: Database,
-      value: "10k+",
-      label: "Documents Processed",
-      description: "Across audits, compliance, and engineering teams"
+      value: t("metrics.metric3Value"),
+      label: t("metrics.metric3Label"),
+      description: t("metrics.metric3Desc")
     },
     {
       icon: Users,
-      value: "150+",
-      label: "Employee Validations",
-      description: "Your team members can improve our accuracy daily"
+      value: t("metrics.metric4Value"),
+      label: t("metrics.metric4Label"),
+      description: t("metrics.metric4Desc")
     },
     {
       icon: Shield,
-      value: "Enterprise",
-      label: "Security Ready",
-      description: "Built with compliance frameworks in mind"
+      value: t("metrics.metric5Value"),
+      label: t("metrics.metric5Label"),
+      description: t("metrics.metric5Desc")
     },
     {
       icon: Zap,
-      value: "24/7",
-      label: "Processing",
-      description: "Continuous document ingestion and enrichment"
+      value: t("metrics.metric6Value"),
+      label: t("metrics.metric6Label"),
+      description: t("metrics.metric6Desc")
     }
   ];
 
@@ -50,18 +53,17 @@ const MetricsSection = () => {
 
   return (
     <section className="py-16 bg-card">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            Built for{" "}
+            {t("metrics.title")}{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Mission-Critical
+              {t("metrics.missionCritical")}
             </span>
-            {" "}Accuracy
+            {" "}{t("metrics.accuracy")}
           </h2>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Processing thousands of documents with expert-validated accuracy. 
-            Ready for industries where precision matters most.
+            {t("metrics.subtitle")}
           </p>
         </div>
 

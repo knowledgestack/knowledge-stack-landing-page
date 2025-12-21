@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg-subtle.jpg";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
       {/* Background Image - Blue Ocean Theme */}
@@ -65,23 +68,23 @@ const Hero = () => {
       />
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 container mx-auto text-center">
         <div className="max-w-4xl mx-auto animate-fade-in">
           
           {/* Main Headline */}
           <h1 className="text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6 leading-tight">
-            Knowledge You Can{" "}
+            {t("hero.headline")}{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Trust
+              {t("hero.trust")}
             </span>
           </h1>
           
           {/* Key Benefits */}
           <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm">
             {[
-              "Complete Source Traceability",
-              "Mission-Critical Accuracy",
-              "Enterprise Security",
+              t("hero.benefit1"),
+              t("hero.benefit2"),
+              t("hero.benefit3"),
             ].map((benefit, index) => (
               <div key={index} className="flex items-center gap-2 text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-accent" />
@@ -97,7 +100,7 @@ const Hero = () => {
               className="text-lg px-8 py-4 h-auto bg-primary hover:bg-primary-dark transition-smooth group"
               onClick={() => window.location.href = "https://app.knowledgestack.ai"}
             >
-              Get Started
+              {t("hero.getStarted")}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
@@ -106,7 +109,7 @@ const Hero = () => {
               className="text-lg px-8 py-4 h-auto border-2 hover:bg-secondary transition-smooth"
               onClick={() => window.location.href = "/contact"}
             >
-              Contact Sales
+              {t("hero.contactSales")}
             </Button>
           </div>
         </div>

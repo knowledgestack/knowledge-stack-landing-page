@@ -1,53 +1,56 @@
-import Layout from "@/components/Layout";
+import ContentLayout from "@/layouts/ContentLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Pricing = () => {
+  const { t } = useTranslation();
+  
   const plans = [
     {
-      name: "Starter",
-      price: "$99",
-      period: "month",
-      description: "Perfect for small teams getting started",
+      name: t("pricing.starter"),
+      price: t("pricing.starterPrice"),
+      period: t("pricing.starterPeriod"),
+      description: t("pricing.starterDesc"),
       features: [
-        "Up to 10,000 queries/month",
-        "5GB document storage",
-        "Basic integrations",
-        "Email support",
-        "Source traceability"
+        t("pricing.starterFeature1"),
+        t("pricing.starterFeature2"),
+        t("pricing.starterFeature3"),
+        t("pricing.starterFeature4"),
+        t("pricing.starterFeature5")
       ]
     },
     {
-      name: "Professional",
-      price: "$499",
-      period: "month",
-      description: "For growing teams and departments",
+      name: t("pricing.professional"),
+      price: t("pricing.professionalPrice"),
+      period: t("pricing.professionalPeriod"),
+      description: t("pricing.professionalDesc"),
       features: [
-        "Up to 100,000 queries/month",
-        "100GB document storage",
-        "All integrations",
-        "Priority support",
-        "Advanced analytics",
-        "Custom branding",
-        "API access"
+        t("pricing.professionalFeature1"),
+        t("pricing.professionalFeature2"),
+        t("pricing.professionalFeature3"),
+        t("pricing.professionalFeature4"),
+        t("pricing.professionalFeature5"),
+        t("pricing.professionalFeature6"),
+        t("pricing.professionalFeature7")
       ],
       popular: true
     },
     {
-      name: "Enterprise",
-      price: "Custom",
+      name: t("pricing.enterprise"),
+      price: t("pricing.enterprisePrice"),
       period: "",
-      description: "For large organizations with custom needs",
+      description: t("pricing.enterpriseDesc"),
       features: [
-        "Unlimited queries",
-        "Unlimited storage",
-        "Dedicated infrastructure",
-        "24/7 support",
-        "Custom integrations",
-        "SLA guarantee",
-        "On-premise deployment",
-        "Dedicated account manager"
+        t("pricing.enterpriseFeature1"),
+        t("pricing.enterpriseFeature2"),
+        t("pricing.enterpriseFeature3"),
+        t("pricing.enterpriseFeature4"),
+        t("pricing.enterpriseFeature5"),
+        t("pricing.enterpriseFeature6"),
+        t("pricing.enterpriseFeature7"),
+        t("pricing.enterpriseFeature8")
       ]
     }
   ];
@@ -57,13 +60,11 @@ const Pricing = () => {
   };
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
-        <div className="container mx-auto px-6 py-24">
+    <ContentLayout>
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6">Pricing</h1>
+            <h1 className="text-5xl font-bold mb-6">{t("pricing.title")}</h1>
             <p className="text-xl text-muted-foreground">
-              Choose the plan that fits your organization
+              {t("pricing.subtitle")}
             </p>
           </div>
 
@@ -75,7 +76,7 @@ const Pricing = () => {
               >
                 <CardHeader>
                   {plan.popular && (
-                    <div className="text-xs font-semibold text-primary mb-2">POPULAR</div>
+                    <div className="text-xs font-semibold text-primary mb-2">{t("pricing.popular")}</div>
                   )}
                   <CardTitle className="text-2xl">{plan.name}</CardTitle>
                   <CardDescription>{plan.description}</CardDescription>
@@ -98,7 +99,7 @@ const Pricing = () => {
                     variant={plan.popular ? "default" : "outline"}
                     onClick={handleGetStarted}
                   >
-                    Get Started
+                    {t("common.getStarted")}
                   </Button>
                 </CardContent>
               </Card>
@@ -107,15 +108,13 @@ const Pricing = () => {
 
           <div className="mt-16 text-center">
             <p className="text-muted-foreground mb-4">
-              Need help choosing? We're here to help.
+              {t("pricing.helpText")}
             </p>
             <a href="/contact" className="text-primary hover:underline">
-              Contact Sales →
+              {t("pricing.contactSales")}
             </a>
           </div>
-        </div>
-      </div>
-    </Layout>
+    </ContentLayout>
   );
 };
 
