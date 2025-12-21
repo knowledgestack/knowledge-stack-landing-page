@@ -87,11 +87,11 @@ const APIDocsIndex = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  {t("apiDocsIndex.quickStartDesc", { version: getCurrentVersion() })}
+                  {t("apiDocsIndex.quickStartDesc")}
                 </p>
                 <Button asChild variant="outline">
                   <Link to={`/api-docs/${getCurrentVersion()}`}>
-                    {t("apiDocsIndex.getStartedWith", { version: getCurrentVersion() })}
+                    {t("apiDocsIndex.getStartedWith")}
                   </Link>
                 </Button>
               </CardContent>

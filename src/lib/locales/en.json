@@ -908,8 +908,8 @@
     "released": "Released:",
     "viewDocumentation": "View Documentation",
     "quickStart": "Quick Start",
-    "quickStartDesc": "New to our API? Start with the {version} documentation to get up and running quickly.",
-    "getStartedWith": "Get Started with {version}"
+    "quickStartDesc": "New to our API? Start with the 0.0.1 documentation to get up and running quickly.",
+    "getStartedWith": "Get Started with 0.0.1"
   },
   "privacy": {
     "title": "Privacy Policy",

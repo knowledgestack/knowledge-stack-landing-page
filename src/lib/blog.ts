@@ -26,6 +26,7 @@ export interface BlogPostRaw {
   excerpt: string;
   tags: string[];
   content: string;
+  contentByLanguage?: Record<string, string>; // Language-specific content (e.g., { zh: "...", fr: "..." })
   readingTime: number;
   image: string;
   source?: 'local' | 'medium' | 'external';
@@ -75,10 +76,15 @@ function getTranslatedPost(rawPost: BlogPostRaw, language: string): BlogPost {
     return translatedTag;
   });
   
-  // Content stays in markdown files (not in translation files to avoid bloat)
-  // For now, we use the original content. If language-specific markdown files
-  // are needed in the future, they can be added (e.g., post-slug.zh.md)
+  // Try to load language-specific content if available
+  // Language-specific files are named: post-slug.{lang}.md
   let content = rawPost.content;
+  
+  // Check if we have language-specific content loaded
+  // The blog-imports script will load both base and language-specific files
+  if (language !== 'en' && rawPost.contentByLanguage?.[language]) {
+    content = rawPost.contentByLanguage[language];
+  }
   
   // Process content if it's markdown
   if (content && typeof content === 'string') {

@@ -191,212 +191,212 @@
     "relatedPosts": "相关文章",
     "posts": {
       "chunking-strategies-document-types": {
-        "title": "Chunking Strategies for Different Document Types",
-        "excerpt": "Different document types require different chunking strategies. Learn how to optimize chunking for code, tables, lists, and other content types.",
+        "title": "不同文档类型的分块策略",
+        "excerpt": "不同的文档类型需要不同的分块策略。了解如何优化代码、表格、列表和其他内容类型的分块。",
         "tags": {
           "RAG": "RAG",
-          "Chunking": "Chunking",
-          "Document Processing": "Document Processing"
+          "Chunking": "分块",
+          "Document Processing": "文档处理"
         }
       },
       "complex-tables": {
-        "title": "Complex Tables: Merged Cells, Nested Structures, and Headers",
-        "excerpt": "Complex tables with merged cells and nested structures are common in enterprise documents. Learn how to parse these challenging structures while preserving meaning.",
+        "title": "复杂表格：合并单元格、嵌套结构和表头",
+        "excerpt": "带有合并单元格和嵌套结构的复杂表格在企业文档中很常见。了解如何解析这些具有挑战性的结构，同时保留含义。",
         "tags": {
           "RAG": "RAG",
-          "Tables": "Tables",
-          "Parsing": "Parsing",
-          "Enterprise": "Enterprise"
+          "Tables": "表格",
+          "Parsing": "解析",
+          "Enterprise": "企业"
         }
       },
       "document-parsing-fundamentals": {
-        "title": "The Foundation: Understanding Document Parsing in RAG Systems",
-        "excerpt": "Document parsing is the foundation of any RAG system. Learn why parsing matters, the challenges enterprises face, and how proper parsing ensures accurate knowledge retrieval.",
+        "title": "基础：理解 RAG 系统中的文档解析",
+        "excerpt": "文档解析是任何 RAG 系统的基础。了解为什么解析很重要，企业面临的挑战，以及正确的解析如何确保准确的知识检索。",
         "tags": {
           "RAG": "RAG",
-          "Parsing": "Parsing",
-          "Document Processing": "Document Processing"
+          "Parsing": "解析",
+          "Document Processing": "文档处理"
         }
       },
       "email-threads-conversations": {
-        "title": "Email Threads and Conversations: Context Preservation",
-        "excerpt": "Email threads contain valuable knowledge but require careful parsing to preserve context. Learn how to handle email conversations, attachments, and threaded discussions in RAG systems.",
+        "title": "邮件线程和对话：上下文保留",
+        "excerpt": "邮件线程包含宝贵的知识，但需要仔细解析以保留上下文。了解如何在 RAG 系统中处理邮件对话、附件和线程讨论。",
         "tags": {
           "RAG": "RAG",
-          "Email": "Email",
-          "Parsing": "Parsing"
+          "Email": "邮件",
+          "Parsing": "解析"
         }
       },
       "fixed-size-chunking": {
-        "title": "Fixed-Size Chunking: Simple but Effective",
-        "excerpt": "Fixed-size chunking is the simplest chunking strategy. Learn when it works well, its limitations, and how to optimize it for better RAG performance.",
+        "title": "固定大小分块：简单但有效",
+        "excerpt": "固定大小分块是最简单的分块策略。了解它在什么时候效果好，它的局限性，以及如何优化它以获得更好的 RAG 性能。",
         "tags": {
           "RAG": "RAG",
-          "Chunking": "Chunking",
-          "Document Processing": "Document Processing"
+          "Chunking": "分块",
+          "Document Processing": "文档处理"
         }
       },
       "getting-started-with-knowledge-stack": {
-        "title": "Getting Started with Knowledge Stack: A Complete Guide",
-        "excerpt": "Learn how to set up and start using Knowledge Stack in your organization. This comprehensive guide covers everything from initial setup to advanced features.",
+        "title": "Knowledge Stack 入门：完整指南",
+        "excerpt": "了解如何在您的组织中设置并开始使用 Knowledge Stack。本综合指南涵盖从初始设置到高级功能的所有内容。",
         "tags": {
-          "Getting Started": "Getting Started",
-          "Tutorial": "Tutorial",
-          "Product": "Product"
+          "Getting Started": "入门",
+          "Tutorial": "教程",
+          "Product": "产品"
         }
       },
       "handling-scanned-pdfs": {
-        "title": "Handling Scanned PDFs: Quality, Accuracy, and Preprocessing",
-        "excerpt": "Scanned PDFs present unique challenges for RAG systems. Learn how to assess quality, apply preprocessing techniques, and achieve high OCR accuracy for scanned documents.",
+        "title": "处理扫描 PDF：质量、准确性和预处理",
+        "excerpt": "扫描的 PDF 对 RAG 系统提出了独特的挑战。了解如何评估质量、应用预处理技术，并为扫描文档实现高 OCR 准确性。",
         "tags": {
           "RAG": "RAG",
           "OCR": "OCR",
-          "Images": "Images"
+          "Images": "图像"
         }
       },
       "handling-spreadsheets": {
-        "title": "Handling Spreadsheets: Excel, CSV, and Data Files",
-        "excerpt": "Spreadsheets contain vast amounts of structured data. Learn how to parse Excel files, CSV data, and spreadsheet formats while preserving structure and relationships.",
+        "title": "处理电子表格：Excel、CSV 和数据文件",
+        "excerpt": "电子表格包含大量结构化数据。了解如何解析 Excel 文件、CSV 数据和电子表格格式，同时保留结构和关系。",
         "tags": {
           "RAG": "RAG",
-          "Spreadsheets": "Spreadsheets",
-          "Parsing": "Parsing"
+          "Spreadsheets": "电子表格",
+          "Parsing": "解析"
         }
       },
       "image-based-documents": {
-        "title": "Image-Based Documents: Charts, Diagrams, and Visual Content",
-        "excerpt": "Not all information in documents is text. Charts, diagrams, and visual content contain valuable knowledge. Learn how to extract and utilize this visual information in RAG systems.",
+        "title": "基于图像的文档：图表、图表和视觉内容",
+        "excerpt": "并非文档中的所有信息都是文本。图表、图表和视觉内容包含宝贵的知识。了解如何在 RAG 系统中提取和利用这些视觉信息。",
         "tags": {
           "RAG": "RAG",
-          "Images": "Images",
-          "Parsing": "Parsing"
+          "Images": "图像",
+          "Parsing": "解析"
         }
       },
       "introduction-to-rag": {
-        "title": "Introduction to RAG: Why It Matters for Enterprise Knowledge",
-        "excerpt": "Discover why Retrieval-Augmented Generation (RAG) is revolutionizing how enterprises manage and access their knowledge. Learn the fundamentals and see how Knowledge Stack makes RAG accessible for every organization.",
+        "title": "RAG 简介：为什么它对企业知识很重要",
+        "excerpt": "了解为什么检索增强生成（RAG）正在彻底改变企业管理和访问知识的方式。学习基础知识，了解 Knowledge Stack 如何使每个组织都能使用 RAG。",
         "tags": {
           "RAG": "RAG",
           "AI": "AI",
-          "Enterprise": "Enterprise"
+          "Enterprise": "企业"
         }
       },
       "knowledge-stack-intelligent-chunking": {
-        "title": "Knowledge Stack's Intelligent Chunking: Adaptive Strategies",
-        "excerpt": "Learn how Knowledge Stack combines multiple chunking strategies into an intelligent, adaptive system that optimizes for each document and use case.",
+        "title": "Knowledge Stack 的智能分块：自适应策略",
+        "excerpt": "了解 Knowledge Stack 如何将多种分块策略组合成一个智能的自适应系统，为每个文档和用例进行优化。",
         "tags": {
           "RAG": "RAG",
-          "Chunking": "Chunking",
-          "Product": "Product"
+          "Chunking": "分块",
+          "Product": "产品"
         }
       },
       "multi-format-documents": {
-        "title": "The Challenge of Multi-Format Documents in Enterprise",
-        "excerpt": "Enterprises deal with documents in dozens of formats from various sources. Learn how to handle this complexity and ensure consistent parsing across all document types.",
+        "title": "企业多格式文档的挑战",
+        "excerpt": "企业处理来自各种来源的数十种格式的文档。了解如何处理这种复杂性，并确保所有文档类型的一致解析。",
         "tags": {
           "RAG": "RAG",
-          "Parsing": "Parsing",
-          "Enterprise": "Enterprise"
+          "Parsing": "解析",
+          "Enterprise": "企业"
         }
       },
       "multi-language-ocr": {
-        "title": "Multi-language OCR: Supporting Global Enterprises",
-        "excerpt": "Global enterprises deal with documents in multiple languages. Learn how multi-language OCR enables RAG systems to extract knowledge from documents in any language.",
+        "title": "多语言 OCR：支持全球企业",
+        "excerpt": "全球企业处理多种语言的文档。了解多语言 OCR 如何使 RAG 系统能够从任何语言的文档中提取知识。",
         "tags": {
           "RAG": "RAG",
           "OCR": "OCR",
-          "Enterprise": "Enterprise"
+          "Enterprise": "企业"
         }
       },
       "ocr-in-rag": {
-        "title": "OCR in RAG: Extracting Text from Scanned Documents",
-        "excerpt": "Many enterprise documents are scanned images or PDFs. Learn how OCR (Optical Character Recognition) enables RAG systems to extract knowledge from these documents and the challenges involved.",
+        "title": "RAG 中的 OCR：从扫描文档中提取文本",
+        "excerpt": "许多企业文档是扫描图像或 PDF。了解 OCR（光学字符识别）如何使 RAG 系统能够从这些文档中提取知识以及涉及的挑战。",
         "tags": {
           "RAG": "RAG",
           "OCR": "OCR",
-          "Images": "Images"
+          "Images": "图像"
         }
       },
       "parsing-challenges-edge-cases": {
-        "title": "Parsing Challenges: Edge Cases and How Knowledge Stack Solves Them",
-        "excerpt": "Real-world documents present edge cases that challenge parsing systems. Learn about common edge cases and how Knowledge Stack handles them to ensure reliable parsing.",
+        "title": "解析挑战：边缘情况以及 Knowledge Stack 如何解决它们",
+        "excerpt": "真实世界的文档会呈现挑战解析系统的边缘情况。了解常见的边缘情况以及 Knowledge Stack 如何处理它们以确保可靠的解析。",
         "tags": {
           "RAG": "RAG",
-          "Parsing": "Parsing",
-          "Document Processing": "Document Processing"
+          "Parsing": "解析",
+          "Document Processing": "文档处理"
         }
       },
       "parsing-code-documentation": {
-        "title": "Parsing Code and Technical Documentation",
-        "excerpt": "Technical documentation and code require specialized parsing. Learn how to handle code blocks, API documentation, and technical content in RAG systems.",
+        "title": "解析代码和技术文档",
+        "excerpt": "技术文档和代码需要专门的解析。了解如何在 RAG 系统中处理代码块、API 文档和技术内容。",
         "tags": {
           "RAG": "RAG",
-          "Code": "Code",
-          "Parsing": "Parsing"
+          "Code": "代码",
+          "Parsing": "解析"
         }
       },
       "parsing-structured-tables": {
-        "title": "Parsing Structured Tables: Preserving Relationships",
-        "excerpt": "Learn how to parse structured tables while preserving row and column relationships. Discover techniques for maintaining table structure in RAG systems.",
+        "title": "解析结构化表格：保留关系",
+        "excerpt": "了解如何在保留行和列关系的同时解析结构化表格。发现在 RAG 系统中维护表格结构的技术。",
         "tags": {
           "RAG": "RAG",
-          "Tables": "Tables",
-          "Parsing": "Parsing"
+          "Tables": "表格",
+          "Parsing": "解析"
         }
       },
       "recursive-chunking": {
-        "title": "Recursive Chunking: Handling Nested Structures",
-        "excerpt": "Recursive chunking handles documents with nested structures by chunking hierarchically. Learn how it works for complex documents with multiple levels of organization.",
+        "title": "递归分块：处理嵌套结构",
+        "excerpt": "递归分块通过分层分块来处理具有嵌套结构的文档。了解它如何用于具有多个组织级别的复杂文档。",
         "tags": {
           "RAG": "RAG",
-          "Chunking": "Chunking",
-          "Document Processing": "Document Processing"
+          "Chunking": "分块",
+          "Document Processing": "文档处理"
         }
       },
       "semantic-chunking": {
-        "title": "Semantic Chunking: Preserving Meaning Across Boundaries",
-        "excerpt": "Semantic chunking splits documents at semantic boundaries, preserving meaning and context. Learn how it works and when it outperforms fixed-size chunking.",
+        "title": "语义分块：在边界处保留含义",
+        "excerpt": "语义分块在语义边界处分割文档，保留含义和上下文。了解它的工作原理以及何时优于固定大小分块。",
         "tags": {
           "RAG": "RAG",
-          "Chunking": "Chunking",
-          "Document Processing": "Document Processing"
+          "Chunking": "分块",
+          "Document Processing": "文档处理"
         }
       },
       "table-extraction-best-practices": {
-        "title": "Table Extraction Best Practices: What Knowledge Stack Does",
-        "excerpt": "Learn the best practices for table extraction in RAG systems and how Knowledge Stack implements them to ensure accurate, reliable table parsing for enterprise use cases.",
+        "title": "表格提取最佳实践：Knowledge Stack 的做法",
+        "excerpt": "了解 RAG 系统中表格提取的最佳实践，以及 Knowledge Stack 如何实现它们以确保企业用例的准确、可靠的表格解析。",
         "tags": {
           "RAG": "RAG",
-          "Tables": "Tables",
-          "Parsing": "Parsing"
+          "Tables": "表格",
+          "Parsing": "解析"
         }
       },
       "text-extraction-formats": {
-        "title": "Text Extraction: Handling PDFs, Word Docs, and Markdown",
-        "excerpt": "Learn the intricacies of extracting text from different document formats. Discover the challenges and best practices for PDFs, Word documents, and Markdown files in RAG systems.",
+        "title": "文本提取：处理 PDF、Word 文档和 Markdown",
+        "excerpt": "了解从不同文档格式中提取文本的复杂性。发现 RAG 系统中 PDF、Word 文档和 Markdown 文件的挑战和最佳实践。",
         "tags": {
           "RAG": "RAG",
-          "Parsing": "Parsing",
-          "Document Processing": "Document Processing"
+          "Parsing": "解析",
+          "Document Processing": "文档处理"
         }
       },
       "why-chunking-matters": {
-        "title": "Why Chunking Matters: Breaking Down Documents for RAG",
-        "excerpt": "Chunking is crucial for RAG systems. Learn why breaking documents into optimal chunks affects retrieval accuracy, answer quality, and system performance.",
+        "title": "为什么分块很重要：为 RAG 分解文档",
+        "excerpt": "分块对 RAG 系统至关重要。了解为什么将文档分解为最佳块会影响检索准确性、答案质量和系统性能。",
         "tags": {
           "RAG": "RAG",
-          "Chunking": "Chunking",
-          "Document Processing": "Document Processing"
+          "Chunking": "分块",
+          "Document Processing": "文档处理"
         }
       },
       "why-tables-matter": {
-        "title": "Why Tables Are Critical in Enterprise RAG Systems",
-        "excerpt": "Tables contain some of the most valuable information in enterprise documents. Learn why table parsing is crucial for RAG systems and what happens when tables are parsed incorrectly.",
+        "title": "为什么表格在企业 RAG 系统中至关重要",
+        "excerpt": "表格包含企业文档中一些最有价值的信息。了解为什么表格解析对 RAG 系统至关重要，以及当表格解析不正确时会发生什么。",
         "tags": {
           "RAG": "RAG",
-          "Tables": "Tables",
-          "Parsing": "Parsing",
-          "Enterprise": "Enterprise"
+          "Tables": "表格",
+          "Parsing": "解析",
+          "Enterprise": "企业"
         }
       }
     }
@@ -908,8 +908,8 @@
     "released": "发布日期：",
     "viewDocumentation": "查看文档",
     "quickStart": "快速开始",
-    "quickStartDesc": "刚接触我们的 API？从 {version} 文档开始，快速上手。",
-    "getStartedWith": "开始使用 {version}"
+    "quickStartDesc": "刚接触我们的 API？从 0.0.1 文档开始，快速上手。",
+    "getStartedWith": "开始使用 0.0.1"
   },
   "privacy": {
     "title": "隐私政策",

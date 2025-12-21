@@ -44,12 +44,11 @@ const Footer = () => {
       {/* Hero-style background */}
       <div
         aria-hidden
-        className="absolute inset-0"
+        className="absolute inset-0 bg-background"
         style={{
           backgroundImage: `
             radial-gradient(1200px 600px at 75% 10%, rgba(56,189,248,.16), transparent 60%),
-            radial-gradient(900px 500px at 15% 85%, rgba(59,130,246,.10), transparent 65%),
-            linear-gradient(180deg, hsl(var(--background)) 0%, hsl(220 27% 6%) 100%)
+            radial-gradient(900px 500px at 15% 85%, rgba(59,130,246,.10), transparent 65%)
           `,
         }}
       />
