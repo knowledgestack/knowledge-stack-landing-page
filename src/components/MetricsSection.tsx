@@ -25,7 +25,7 @@ const MetricsSection = () => {
       icon: Users,
       value: "150+",
       label: "Employee Validations",
-      description: "Your team members improving our accuracy daily"
+      description: "Your team members can improve our accuracy daily"
     },
     {
       icon: Shield,

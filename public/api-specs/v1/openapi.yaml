@@ -1,0 +1,123 @@
+openapi: 3.1.2
+
+info:
+  title: public-api
+  description: Public-facing API for external access
+  version: ffbbde8f
+
+servers:
+- url: http://localhost:8000
+  description: public-api local dev server
+
+paths:
+  /api/v1/tenant/{tenant_id}/folders/{folder_id}/documents/ingest:
+    post:
+      tags:
+      - Documents
+      summary: Create Document
+      description: Asynchronous document ingestion via Celery + Private API SDK.
+      operationId: ingest_document
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+          description: Tenant ID
+          title: Tenant Id
+        description: Tenant ID
+      - name: folder_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+          description: Folder ID for the document
+          title: Folder Id
+        description: Folder ID for the document
+      - name: force_reprocess_str
+        in: query
+        required: false
+        schema:
+          type: string
+          nullable: true
+          description: Force reprocess the document (comma-separated)
+          title: Force Reprocess Str
+        description: Force reprocess the document (comma-separated)
+      - name: ks_uat
+        in: cookie
+        required: false
+        schema:
+          type: string
+          nullable: true
+          title: Ks Uat
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_ingest_document'
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RespAsyncIngest'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+components:
+  schemas:
+    RespAsyncIngest:
+      properties:
+        message:
+          type: string
+          title: Message
+          description: Status message
+        status:
+          type: string
+          title: Status
+          description: Queue status
+        job_id:
+          type: string
+          format: uuid
+          title: Job Id
+          description: Job identifier
+      required:
+      - message
+      - status
+      - job_id
+      type: object
+      title: RespAsyncIngest
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            type: object
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    Body_ingest_document:
+      properties:
+        input_file:
+          type: string
+          format: binary
+          title: Input File
+      type: object
+      required:
+      - input_file
+      title: Body_ingest_document
+  securitySchemes:
+    HTTPBearer:
+      type: http
+      scheme: bearer
+

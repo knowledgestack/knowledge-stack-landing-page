@@ -5,15 +5,21 @@ import heroBg from "@/assets/hero-bg-subtle.jpg";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
-      {/* Background Image */}
+      {/* Background Image - Blue Ocean Theme */}
       <div
   aria-hidden
   className="absolute inset-0"
   style={{
     backgroundImage: `
-      radial-gradient(1200px 600px at 75% 10%, rgba(56,189,248,.16), transparent 60%),
-      radial-gradient(900px 500px at 15% 85%, rgba(59,130,246,.10), transparent 65%),
-      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(220 27% 6%) 100%)
+      radial-gradient(1200px 600px at 75% 10%, rgba(96,165,250,.25), transparent 60%),
+      radial-gradient(900px 500px at 15% 85%, rgba(59,130,246,.18), transparent 65%),
+      radial-gradient(1000px 800px at 50% 90%, rgba(37,99,235,.15), transparent 70%),
+      linear-gradient(180deg, 
+        hsl(var(--background)) 0%, 
+        hsl(214 100% 98%) 30%, 
+        hsl(214 95% 96%) 60%, 
+        hsl(214 90% 94%) 85%,
+        hsl(214 85% 92%) 100%)
     `,
   }}
 />
@@ -85,19 +91,24 @@ const Hero = () => {
           </div>
           
           {/* CTAs */}
-          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="text-lg px-8 py-4 h-auto bg-primary hover:bg-primary-dark transition-smooth group">
-              Request Demo
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              className="text-lg px-8 py-4 h-auto bg-primary hover:bg-primary-dark transition-smooth group"
+              onClick={() => window.location.href = "https://app.knowledgestack.ai"}
+            >
+              Get Started
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
               className="text-lg px-8 py-4 h-auto border-2 hover:bg-secondary transition-smooth"
+              onClick={() => window.location.href = "/contact"}
             >
-              Try Interactive Demo
+              Contact Sales
             </Button>
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
