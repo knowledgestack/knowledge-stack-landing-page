@@ -44,3 +44,4 @@ After updating the build command, the deployment should:
 2. Run `bun run build` instead of `npm run build`
 3. Successfully build the application
 
+

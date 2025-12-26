@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, Globe } from "lucide-react";
 import { useState } from "react";
@@ -12,8 +12,12 @@ import {
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  
+  // Check if we're on the home page
+  const isHomePage = location.pathname === "/";
 
   const handleSignIn = () => {
     window.location.href = "https://app.knowledgestack.ai";
@@ -24,7 +28,13 @@ const Header = () => {
   };
 
   return (
-    <header className="relative z-50 w-full bg-transparent">
+    <header 
+      className={`w-full transition-colors ${
+        isHomePage 
+          ? "fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm border-b border-transparent" 
+          : "relative z-50 bg-background border-b border-border/20"
+      }`}
+    >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}

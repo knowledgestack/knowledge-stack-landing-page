@@ -71,3 +71,4 @@ console.log(`Updated ${enLocaleFile}`);
 console.log(`Updated ${zhLocaleFile}`);
 console.log('\nNote: Chinese translations are placeholders and need to be translated manually.');
 
+

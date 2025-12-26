@@ -96,7 +96,7 @@ const TechnicalPipeline = () => {
                 const isActive = true; // All columns light up
                 
                 return (
-                  <div key={index} className="flex items-center">
+                  <div key={index} className="flex flex-col lg:flex-row items-center">
                     {/* Pipeline Step Card */}
                     <div className={`relative p-4 rounded-2xl border-2 transition-all duration-500 w-full max-w-[200px] h-[280px] flex flex-col ${
                       isActive 
@@ -163,33 +163,34 @@ const TechnicalPipeline = () => {
                       </p>
                     </div>
 
-                    {/* Connecting Arrow - Centered Between Blocks */}
+                    {/* Connecting Arrow - Desktop Horizontal / Mobile Vertical */}
                     {index < pipelineSteps.length - 1 && (
-                      <div className="hidden lg:flex items-center justify-center mx-3">
-                        <div className="relative flex items-center justify-center">
-                          {/* Arrow Background */}
-                          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                            <ArrowRight className="w-5 h-5 text-primary animate-pulse" />
+                      <>
+                        {/* Desktop Arrow - Horizontal */}
+                        <div className="hidden lg:flex items-center justify-center mx-3">
+                          <div className="relative flex items-center justify-center">
+                            {/* Arrow Background */}
+                            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                              <ArrowRight className="w-5 h-5 text-primary animate-pulse" />
+                            </div>
+                            {/* Flowing line effect */}
+                            <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping"></div>
                           </div>
-                          {/* Flowing line effect */}
-                          <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping"></div>
                         </div>
-                      </div>
+                        {/* Mobile Arrow - Vertical */}
+                        <div className="lg:hidden flex items-center justify-center my-4">
+                          <div className="relative flex items-center justify-center">
+                            {/* Arrow Background */}
+                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                              <ArrowRight className="w-4 h-4 text-primary rotate-90 animate-pulse" />
+                            </div>
+                          </div>
+                        </div>
+                      </>
                     )}
                   </div>
                 );
               })}
-            </div>
-
-            {/* Mobile Arrows - Vertical */}
-            <div className="lg:hidden flex flex-col items-center space-y-4 mt-6">
-              {pipelineSteps.slice(0, -1).map((_, index) => (
-                <div key={index} className="flex items-center justify-center">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-primary rotate-90 animate-pulse" />
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 

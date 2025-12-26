@@ -218,3 +218,4 @@ await Promise.all([
 
 console.log('\n✅ All WebP images generated successfully!');
 
+

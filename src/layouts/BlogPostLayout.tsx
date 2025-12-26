@@ -25,3 +25,4 @@ const BlogPostLayout = ({ children }: BlogPostLayoutProps) => {
 
 export default BlogPostLayout;
 
+

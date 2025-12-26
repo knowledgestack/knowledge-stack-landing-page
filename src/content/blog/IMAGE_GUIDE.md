@@ -101,3 +101,4 @@ Before uploading:
 - Use appropriate format (PNG for diagrams, JPG for photos)
 - Keep file sizes reasonable (<500KB for hero images, <200KB for diagrams)
 
+

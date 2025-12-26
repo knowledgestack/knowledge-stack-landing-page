@@ -23,3 +23,4 @@ const BlogLayout = ({ children }: BlogLayoutProps) => {
 
 export default BlogLayout;
 
+

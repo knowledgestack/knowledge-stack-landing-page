@@ -85,7 +85,7 @@ const Footer = () => {
 
       <div className="relative z-10 container mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12 text-center md:text-left">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="text-2xl font-bold mb-4 text-accent">
@@ -95,7 +95,7 @@ const Footer = () => {
               {t("footer.tagline")}
             </p>
             {/* Social Links */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center md:justify-start">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
