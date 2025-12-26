@@ -1,7 +1,7 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, Globe } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import {
   DropdownMenu,
@@ -12,12 +12,14 @@ import {
 
 const Header = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   
-  // Check if we're on the home page
-  const isHomePage = location.pathname === "/";
+  // Determine home-page only on the client to avoid calling Router hooks during build/SSR
+  const [isHomePage, setIsHomePage] = useState(false);
+  useEffect(() => {
+    setIsHomePage(typeof window !== "undefined" && window.location.pathname === "/");
+  }, []);
 
   const handleSignIn = () => {
     window.location.href = "https://app.knowledgestack.ai";
